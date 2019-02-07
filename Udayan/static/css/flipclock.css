@@ -60,6 +60,7 @@
   left: 0;
   right: 0;
   margin: auto;
+  top: 30%;
 }
 
 .flip-clock-wrapper:before,
@@ -208,17 +209,18 @@
   left: 5px; }
 
 .flip-clock-divider .flip-clock-label {
-  position: absolute;
-  top: -1.5em;
-  right: -86px;
-  color: #444;
-  text-shadow: none; }
+    position: absolute;
+    top: -1.5em;
+    right: -100px;
+    color: #dcdcdc;
+    font-size: 25px;
+    text-shadow: 2px 2px 2px black; }
 
 .flip-clock-divider.minutes .flip-clock-label {
-  right: -88px; }
+  right: -115px; }
 
 .flip-clock-divider.seconds .flip-clock-label {
-  right: -91px; }
+  right: -114px; }
 
 .flip-clock-dot.top {
   top: 30px; }
