@@ -9,3 +9,11 @@ def index(request):
 def admin(request):
 
     return render(request,"dashboard.html")
+
+def photographers(request):
+
+    return render(request,"photographers.html")
+
+def photo_upload(request):
+
+    return render(request,"photo.html")
