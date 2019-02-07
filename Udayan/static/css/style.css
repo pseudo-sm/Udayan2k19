@@ -102,11 +102,11 @@ html{
 #drone {
   margin: -51px 0 0 0px;
   z-index: 5;
-  width: 19vw;
+  width: 28vw;
   height: auto;
   position: absolute;
-  left: 7%;
-    top: 10%;
+  left: -3%;
+    top: -3%;
     filter: blur(2px);
   }
 #robot {

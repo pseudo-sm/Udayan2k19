@@ -4,4 +4,8 @@ from django.shortcuts import render,HttpResponse
 
 def index(request):
 
-    return render(request,"index.html")
+    return render(request,"comingsoon.html")
+
+def admin(request):
+
+    return render(request,"dashboard.html")
