@@ -1,5 +1,5 @@
-from django.shortcuts import render,HttpResponse
-
+from django.shortcuts import render,HttpResponse,HttpResponseRedirect
+import json
 # Create your views here.
 
 def index(request):
@@ -21,3 +21,17 @@ def photo_upload(request):
 def events(request):
 
     return render(request,"events.html")
+
+def add_events(request):
+
+    form = request.FILES
+    name = request.POST.getlist("name[]")
+    phone = request.POST.getlist("phone[]")
+    event = request.POST.getlist("event[]")
+    email = request.POST.getlist("email[]")
+    department = request.POST.getlist("department[]")
+    title = request.POST.get("title")
+    about = request.POST.get("about")
+    image = form["image"]
+    print(name,phone,event,email,department,about,image,title)
+    return HttpResponseRedirect('/events/')
