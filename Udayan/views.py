@@ -17,3 +17,7 @@ def photographers(request):
 def photo_upload(request):
 
     return render(request,"photo.html")
+
+def events(request):
+
+    return render(request,"events.html")

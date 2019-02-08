@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'admin/',views.admin,name="admin"),
     url(r'photo-upload/',views.photo_upload,name="photo_upload"),
     url(r'photographers/',views.photographers,name="photographers"),
+    url(r'events/',views.events,name="events"),
     url(r'',views.index,name="index"),
 
 
