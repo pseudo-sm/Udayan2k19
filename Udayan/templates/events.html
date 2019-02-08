@@ -124,7 +124,8 @@ $(window).on("load resize ", function() {
       </thead>
     </table>
   </div>
-        <form action="">
+        <form method="post" action="{% url 'addevent'  %}" enctype="multipart/form-data">
+            {% csrf_token %}
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
@@ -133,17 +134,17 @@ $(window).on("load resize ", function() {
               <div class="form-row">
                   <div class="form-group col-md-6">
                       <label for="fileupload"><h5>&nbsp;Photo &nbsp;</h5> </label>
-                      <input type="file"  id="fileupload" class=" form-control form-control-file">
+                      <input type="file" name="image"  id="fileupload" class=" form-control form-control-file">
                   </div>
                   <div class="form-group col-md-6">
-                      <label for="title"><h5> &nbsp; Title &nbsp; </h5></label>
+                      <label for="title"><h5> &nbsp; Event Name &nbsp; </h5></label>
                       <input type="text" class="form-control" id="title" name="title">
                   </div>
 
               </div>
               <div class="row">
                   <h5>&nbsp;About the event</h5>
-                 <textarea class="form-control" style="margin:10px"></textarea>
+                 <textarea class="form-control" name="about" style="margin:10px"></textarea>
 
               </div>
               <div class="row">
@@ -152,10 +153,10 @@ $(window).on("load resize ", function() {
               <div class="coordinator" id="coordinator">
                   <div class="row">
                       <div class="col-md-1 text-center"><h6>1</h6></div>
-                      <div class="col-md-2"><input type="text" class="form-control" placeholder="name"></div>
-                      <div class="col-md-2"><input type="number" class="form-control" placeholder="phone"></div>
-                      <div class="col-md-2"><input type="email" class="form-control" placeholder="email"></div>
-                      <div class="col-md-2"><select name="role" class="form-control">
+                      <div class="col-md-2"><input type="text" class="form-control" placeholder="name" name="name[]"></div>
+                      <div class="col-md-2"><input type="number" class="form-control" placeholder="phone" name="phone[]"></div>
+                      <div class="col-md-2"><input type="email" class="form-control" placeholder="email" name="email[]"></div>
+                      <div class="col-md-2"><select name="role[]" class="form-control">
                           <option disabled selected>Select role</option>
                           <option>Faculty</option>
                           <option>Student</option>
@@ -165,7 +166,7 @@ $(window).on("load resize ", function() {
               </div>
 
                  <input type="text" class="btn btn-warning top-buffer" onclick="addrow()" value="Add more">
-
+                 <input type="submit" class="btn btn-success" value="Submit">
           </td>
         </tr>
       </tbody>
@@ -179,7 +180,7 @@ $(window).on("load resize ", function() {
         $(".temp").each(function(){
             $(this).parent().remove();
         });
-        $('#coordinator').append('<div  class="row coordinatorRow top-buffer"><div class="col-md-1 text-center"><h6>1</h6></div><div class="col-md-2"><input type="text" class="form-control" placeholder="name"></div><div class="col-md-2"><input type="number" class="form-control" placeholder="phone"></div><div class="col-md-2"><input type="email" class="form-control" placeholder="email"></div><div class="col-md-2"><select name="role" class="form-control"><option disabled selected>Select role</option><option>Faculty</option><option>Student</option></select></div><div class="col-md-2"><input  type="button" class="temp btn btn-danger" onclick="removerow(this)" value="Remove"></div></div>');
+        $('#coordinator').append('<div  class="row coordinatorRow top-buffer"><div class="col-md-1 text-center"><h6>1</h6></div><div class="col-md-2"><input type="text" class="form-control" placeholder="name" name="name[]"></div><div class="col-md-2"><input type="number" class="form-control" placeholder="phone" name="phone[]"></div><div class="col-md-2"><input type="email" class="form-control" placeholder="email" name="email[]"></div><div class="col-md-2"><select name="role[]" class="form-control"><option disabled selected>Select role</option><option>Faculty</option><option>Student</option></select></div><div class="col-md-2"><input  type="button" class="temp btn btn-danger" onclick="removerow(this)" value="Remove"></div></div>');
 
     }
     function removerow(e){

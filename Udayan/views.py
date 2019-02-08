@@ -27,11 +27,10 @@ def add_events(request):
     form = request.FILES
     name = request.POST.getlist("name[]")
     phone = request.POST.getlist("phone[]")
-    event = request.POST.getlist("event[]")
     email = request.POST.getlist("email[]")
     department = request.POST.getlist("department[]")
     title = request.POST.get("title")
     about = request.POST.get("about")
     image = form["image"]
-    print(name,phone,event,email,department,about,image,title)
+    print(name,phone,email,about,image,title)
     return HttpResponseRedirect('/events/')
