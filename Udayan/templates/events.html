@@ -177,15 +177,16 @@ $(window).on("load resize ", function() {
     function addrow(){
 
         $(".temp").each(function(){
-            $(this).remove();
+            $(this).parent().remove();
         });
-        $('#coordinator').append('<div class="row top-buffer"><div class="col-md-1 text-center"><h6>1</h6></div><div class="col-md-2"><input type="text" class="form-control" placeholder="name"></div><div class="col-md-2"><input type="number" class="form-control" placeholder="phone"></div><div class="col-md-2"><input type="email" class="form-control" placeholder="email"></div><div class="col-md-2"><select name="role" class="form-control"><option disabled selected>Select role</option><option>Faculty</option><option>Student</option></select></div><div class="col-md-2"><input  type="button" class="temp btn btn-danger" value="Remove"></div></div>');
+        $('#coordinator').append('<div  class="row coordinatorRow top-buffer"><div class="col-md-1 text-center"><h6>1</h6></div><div class="col-md-2"><input type="text" class="form-control" placeholder="name"></div><div class="col-md-2"><input type="number" class="form-control" placeholder="phone"></div><div class="col-md-2"><input type="email" class="form-control" placeholder="email"></div><div class="col-md-2"><select name="role" class="form-control"><option disabled selected>Select role</option><option>Faculty</option><option>Student</option></select></div><div class="col-md-2"><input  type="button" class="temp btn btn-danger" onclick="removerow(this)" value="Remove"></div></div>');
 
     }
-    $(".coordinator .row .temp").click(function(){
-    console.log('clicked');
-        $(this).parent().remove();
-    });
+    function removerow(e){
+        $(e).parent().parent().remove();
+        var a=$('.coordinatorRow');
+        $(a[a.length-1]).append('<div class="col-md-2"><input  type="button" class="temp btn btn-danger" onclick="removerow(this)" value="Remove"></div>');
+    }
 </script>
 </body>
 </html>
