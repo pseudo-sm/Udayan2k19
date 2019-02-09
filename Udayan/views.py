@@ -1,7 +1,19 @@
 from django.shortcuts import render,HttpResponse,HttpResponseRedirect
 import json
+import pyrebase
 # Create your views here.
-
+config = {
+    'apiKey': "AIzaSyAOyWzVCElVUAqPF98altdRz5pTa-f_y9I",
+    'authDomain': "udayan-7b42f.firebaseapp.com",
+    'databaseURL': "https://udayan-7b42f.firebaseio.com",
+    'projectId': "udayan-7b42f",
+    'storageBucket': "udayan-7b42f.appspot.com",
+    'messagingSenderId': "264861686730"
+  };
+firebase = pyrebase.initialize_app(config)
+db = firebase.database()
+auth = firebase.auth()
+storage = firebase.storage()
 def index(request):
 
     return render(request,"comingsoon.html")
@@ -28,9 +40,17 @@ def add_events(request):
     name = request.POST.getlist("name[]")
     phone = request.POST.getlist("phone[]")
     email = request.POST.getlist("email[]")
-    department = request.POST.getlist("department[]")
+    role = request.POST.getlist("role[]")
     title = request.POST.get("title")
     about = request.POST.get("about")
+    branch = request.POST.get("branch")
     image = form["image"]
-    print(name,phone,email,about,image,title)
+    prize1 = request.POST.get("prize1")
+    prize2 = request.POST.get("prize2",None)
+    prize3 = request.POST.get("prize3",None)
+    print(name,phone,email,branch,role,title,about,image,prize1,prize2,prize3)
+    for i in range(len(name)):
+        db.child("events").child(branch).child(title).child("committee").child(name[i]).update({"email":email[i],"phone":phone[i],"role":role[i]})
+    db.child("events").child(branch).child(title).update({"about":about,"prize1":prize1,"prize2":prize2,"prize3":prize3})
+    storage.child("events").child(title).child(title).put(image)
     return HttpResponseRedirect('/events/')
