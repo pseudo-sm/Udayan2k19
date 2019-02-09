@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse,HttpResponseRedirect
 import json
 import pyrebase
+from datetime import datetime
 # Create your views here.
 config = {
     'apiKey': "AIzaSyAOyWzVCElVUAqPF98altdRz5pTa-f_y9I",
@@ -54,3 +55,15 @@ def add_events(request):
     db.child("events").child(branch).child(title).update({"about":about,"prize1":prize1,"prize2":prize2,"prize3":prize3})
     storage.child("events").child(title).child(title).put(image)
     return HttpResponseRedirect('/events/')
+def photographer_upload(request):
+
+    auth.sign_in_with_email_and_password("photographer@gmail.com","password")
+    uid = auth.current_user["localId"]
+    files = request.FILES.getlist("images")
+    date = str(datetime.now().date())
+    i = 0
+    for image in files:
+        print(image)
+        storage.child("photographers").child(uid).child(date).child(str(i)).put(image)
+        i+=1
+    return HttpResponseRedirect('/photo-upload/')
