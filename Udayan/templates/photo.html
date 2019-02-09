@@ -10,7 +10,9 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-
+        .top-buffer{
+            margin-top:20px;
+        }
         *,
         *::before,
         *::after {
@@ -235,54 +237,61 @@
             width: 100%;
           }
         }
-
+        .image{
+            margin:10px;
+            width: 306px;
+            transition:width 1s;
+        }
+        .image:hover{
+            width:400px;
+        }
     </style>
 </head>
 <body>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" language="JavaScript"></script>
-<div style="height:50px;width:100%;background-color:rgb(35,52,40)">
-</div>
-<div>
-    <button data-toggle="modal" data-target="#upload"  class="btn btn-default">Upload</button>
-</div>
-<div class="file-upload-wrapper">
-  <input type="file" id="input-file-now-custom-1" class="file-upload" data-default-file="https://mdbootstrap.com/img/Photos/Others/images/89.jpg" />
-</div>
-<!--modal-->
-        <div class="modal fade" id="upload" role="dialog">
-            <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">Upload Photo</h4>
-                 <button type="button" class="fas fa-times" data-dismiss="modal"></button>
-                </div>
-                     <div class="modal-body" >
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+        <!-- Brand/logo -->
+        <a class="navbar-brand col-md-4" href="#">Welcome</a>
 
-                    <div class="wrapper" style="position:relative;left:0;width:100%;">
-                  <div class="content">
-                    <div class="upload-border">
-                      <div class="upload">
-                        <h3>Drop your files here</h3>
-                          <!--<div class="file-upload-wrapper">-->
-                          <!--<input type="file" id="input-file-now" class="file-upload">-->
-                              <!--</div>-->
-                        <i class="fa fa-plus plus" id="plus" aria-hidden="true"></i>
-                        <span>Or click on the area</span>
+        <!-- Links -->
 
-                    </div>
-                  </div>
-                </div>
-                </div>
-                </div>
-                <div class="modal-footer" style="margin-top:-30%;">
-                  <button type="button" class="btn btn-default" id="subjectsubmit">Submit</button>
-                </div>
+              <div class=" nav-item col-md-4 text-center">
+                  <span class="nav-item nav-link" style="color:#fff">Upload your photos</span>
               </div>
 
-            </div>
-          </div>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" language="JavaScript">
+              <form class="form-inline my-2 my-lg-0 col-md-4" block-center>
+                  <button class="btn btn-danger my-2 my-sm-0 text-center" type="button">Logout</button>
+              </form>
+
+
+    </nav>
+
+<form >
+<div class="file-upload-wrapper text-center top-buffer">
+  <input required type="file" multiple id="input-file-now-custom-1" class="file-upload" data-default-file="https://mdbootstrap.com/img/Photos/Others/images/89.jpg" />
+</div>
+<div class="showimage " style="border:2px black;">
+
+</div>
+<div class="text-center">
+    <input type="submit" value="Upload" class="top-buffer btn btn-success">
+</div>
+</form>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" language="JavaScript"></script>
+<script>
+    $('#input-file-now-custom-1').change(function(){
+         $('.showimage').empty();
+         var files = $("#input-file-now-custom-1")[0].files;
+
+        for (var i = 0; i < files.length; i++)
+        {
+
+            $('.showimage').append("<img class='image' src='"+URL.createObjectURL(files[i])+"' >");
+        }
+    });
+
+
+</script>
 </body>
 </html>
 
