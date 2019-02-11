@@ -166,9 +166,11 @@
         $(document).bind('mousewheel keydown', function(e) {
 
 			console.log($(".main").css("perspective").replace("px", "") );
-            if ((e.originalEvent.wheelDelta  > 0 || e.which == 38)&& $(".main").css("perspective").replace("px", "")-900>=500) {
-
-                $(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 - 900);
+            if (e.originalEvent.wheelDelta  > 0 || e.which == 38) {
+            	if($(".main").css("perspective").replace("px", "")-800>=500)
+                	$(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 - 900);
+                else
+                	$(".main").css("perspective", 500);
             } else if (e.originalEvent.wheelDelta  < 0 || e.which == 40) {
 
                 if ($(".main").css("perspective").replace("px", "") < 50000)
