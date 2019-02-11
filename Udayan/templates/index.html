@@ -1,6 +1,6 @@
 <html>
 <head>
-
+        {% load static %}
       <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -52,26 +52,30 @@
         }
 
         .level2 {
-            transform: translateZ(11000px) scale(1);
+            transform: translateZ(10000px) scale(1);
+            <!--background: red;-->
         }
         .level2 .rivals:first-child img
         {
-            transform: rotateY(10deg);
+            transform: rotateY(180deg);
         }
         .level3 {
-            transform: translateZ(7000px) scale(0.8);
+            transform: translateZ(8000px) scale(1);
         }
 
         .level4 {
-            transform: translateZ(4500px) scale(0.7);
+            transform: translateZ(6000px) scale(1);
+            <!--background:green;-->
         }
 
         .level5 {
-            transform: translateZ(2500px) scale(0.6);
+            transform: translateZ(4000px) scale(1);
+            <!--background:yellow;-->
         }
 
         .level6 {
-            transform: translateZ(500px) scale(0.5);
+            transform: translateZ(2000px) scale(1);
+            <!--background:cyan;-->
         }
 
         .level7 {
@@ -111,77 +115,94 @@
         .rivals:nth-child(2) img {
             float: left;
         }
-        .scrollcls
-        {
-            position: fixed;
-            bottom:0;
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            font-size: 25px;
-            -webkit-animation: jump 1s linear infinite; /* Chrome, Safari, Opera */
-            animation: jump 1s linear infinite;
-        }
-        .scrollcls:before, .scrollcls:after
-        {
-            content: "!!!!!!!";
-        }
-        @-webkit-keyframes jump {
-            0% {transform: translateY(0);}
-            50% {transform: translateY(-10px);}
-            55% {transform: translateY(0);}
-            60% {transform: translateY(-5px);}
-            65% {transform: translateY(0);}
-        }
-        @keyframes jump {
-            0% {transform: translateY(0);}
-            50% {transform: translateY(-10px);}
-            55% {transform: translateY(0);}
-            60% {transform: translateY(-5px);}
-            65% {transform: translateY(0);}
-        }
-        @-moz-keyframes jump {
-            0% {transform: translateY(0);}
-            50% {transform: translateY(-10px);}
-            55% {transform: translateY(0);}
-            60% {transform: translateY(-5px);}
-            65% {transform: translateY(0);}
-        }
-        @-o-keyframes jump {
-            0% {transform: translateY(0);}
-            50% {transform: translateY(-10px);}
-            55% {transform: translateY(0);}
-            60% {transform: translateY(-5px);}
-            65% {transform: translateY(0);}
-        }
+
+
+        <!--.scrollcls-->
+        <!--{-->
+            <!--position: fixed;-->
+            <!--bottom:0;-->
+            <!--width: 100%;-->
+            <!--text-align: center;-->
+            <!--color: #fff;-->
+            <!--font-size: 25px;-->
+             <!-- -webkit-animation: jump 1s linear infinite; /* Chrome, Safari, Opera */-->
+            <!--animation: jump 1s linear infinite;-->
+        <!--}-->
+        <!--.scrollcls:before, .scrollcls:after-->
+        <!--{-->
+            <!--content: "!!!!!!!";-->
+        <!--}-->
+        <!--@-webkit-keyframes jump {-->
+            <!--0% {transform: translateY(0);}-->
+            <!--50% {transform: translateY(-10px);}-->
+            <!--55% {transform: translateY(0);}-->
+            <!--60% {transform: translateY(-5px);}-->
+            <!--65% {transform: translateY(0);}-->
+        <!--}-->
+        <!--@keyframes jump {-->
+            <!--0% {transform: translateY(0);}-->
+            <!--50% {transform: translateY(-10px);}-->
+            <!--55% {transform: translateY(0);}-->
+            <!--60% {transform: translateY(-5px);}-->
+            <!--65% {transform: translateY(0);}-->
+        <!--}-->
+        <!--@-moz-keyframes jump {-->
+            <!--0% {transform: translateY(0);}-->
+            <!--50% {transform: translateY(-10px);}-->
+            <!--55% {transform: translateY(0);}-->
+            <!--60% {transform: translateY(-5px);}-->
+            <!--65% {transform: translateY(0);}-->
+        <!--}-->
+        <!--@-o-keyframes jump {-->
+            <!--0% {transform: translateY(0);}-->
+            <!--50% {transform: translateY(-10px);}-->
+            <!--55% {transform: translateY(0);}-->
+            <!--60% {transform: translateY(-5px);}-->
+            <!--65% {transform: translateY(0);}-->
+        <!--}-->
     </style>
     <script>
+    	//first=$(".main").css("perspective").replace("px", "");
         $(document).bind('mousewheel keydown', function(e) {
-            if (e.originalEvent.wheelDelta / 120 > 0 || e.which == 38) {
-                $(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 - 500);
-            } else if (e.originalEvent.wheelDelta / 120 < 0 || e.which == 40) {
+
+			console.log($(".main").css("perspective").replace("px", "") );
+            if ((e.originalEvent.wheelDelta  > 0 || e.which == 38)&& $(".main").css("perspective").replace("px", "")-900>=500) {
+
+                $(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 - 900);
+            } else if (e.originalEvent.wheelDelta  < 0 || e.which == 40) {
+
                 if ($(".main").css("perspective").replace("px", "") < 50000)
-                    $(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 + 500);
+                    $(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 + 900);
             }
-            if ($(".main").css("perspective").replace("px", "") > 500)
+            if ($(".main").css("perspective").replace("px", "") > 900)
                 $(".level7").removeClass("logo_center");
             else
                 $(".level7").addClass("logo_center");
+			//detect($(".main").css("perspective").replace("px", ""));
         });
+		/*function detect(perspective){
+			if(perspective<1656.19){
+
+			}
+			else if (perspective<1800 && perspective>=1656.19)
+				scroll(1);
+			}
+			else if (perspective<1800 && perspective>=1656.19)
+				scroll(1);
+			}
+
+		}
+        function scroll(level){
+
+        }*/
     </script>
 </head>
 <body>
+
 <div class="main">
 	<div class="bg"></div>
 	<div class="wrap">
-		<div class="level1">
-			<div class="rivals">
-				<img src="https://1.bp.blogspot.com/-Qk37qj4myuo/VvjkntlmCWI/AAAAAAAADyI/TUewmkqPXu4glZ4nI-hR7W5klQYhvrg3w/s640/Captain%2BAmerica.png" alt="Captain America" />
-			</div>
-			<div class="rivals">
-				<img src="http://i.imgbox.com/iOkSwwlD.png" alt="Iron Man" />
-			</div>
-		</div>
+
 		<div class="level2">
 			<div class="rivals">
 				<img src="https://4.bp.blogspot.com/-EiBpzd_vxA4/VgjfT7V07lI/AAAAAAAAkfA/Ccse-jcndc0/s1600/Hawkeye.png" alt="Hawk Eye" />
@@ -223,13 +244,18 @@
 			</div>
 		</div>
 		<div class="level7 logo_center">
-			<img src="http://vignette3.wikia.nocookie.net/marvelmovies/images/d/dd/Captain_America_Civil_War_New_Logo.png/revision/latest?cb=20150612043700">
+				<img src="{% static 'Assets/Images/final_logo.png' %}">
 		</div>
 	</div>
 </div>
 <div class="scrollcls">
 	Scroll
 </div>
+<audio autoplay loop>
+  <!--<source src="{% static 'audio/bg.mp3' %}" type="audio/mp3">-->
+  <source src="{% static 'audio/bg.mp3' %}" type="audio/ogg">
+</audio>
+
 <script src='https://production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 </body>
 </html>
