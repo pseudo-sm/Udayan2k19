@@ -17,8 +17,17 @@ auth = firebase.auth()
 storage = firebase.storage()
 def index(request):
 
-    return render(request,"comingsoon.html")
+    return render(request,"index.html")
+def login(request):
+    return render(request,"login.html")
+def post_login(request):
 
+    print(request)
+    email = request.POST.get("email")
+    password = request.POST.get("password")
+    print(email,password)
+    all = False
+    return HttpResponse(json.dumps(all),content_type="application/json")
 def admin(request):
 
     return render(request,"dashboard.html")
@@ -34,6 +43,10 @@ def photo_upload(request):
 def events(request):
 
     return render(request,"events.html")
+
+def committee(request):
+
+    return render(request,"committee.html")
 
 def add_events(request):
 

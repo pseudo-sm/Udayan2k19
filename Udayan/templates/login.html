@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" language="JavaScript"></script>
+</head>
+<body style="background-color:gainsboro;padding:7%;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" >
+        <div class="card card-signin my-5"  style="border-radius:15px;">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <div class="form-signin">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email"  required autofocus><br>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" id="signin" type="submit">Sign in</button>
+              <hr class="my-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+    $("#signin").click(function() {
+        email = $("#inputEmail").val();
+        password = $("#inputPassword").val();
+        var csrf = '{{ csrf_token }}';
+            $.ajax({
+              type: 'POST',
+              url: "{% url 'post_login' %}",
+              data : {
+                'email' : email,
+                'password' : password,
+                'csrfmiddlewaretoken':csrf
+              },
+              success: function(all) {
+                alert('success');
+              }
+      });
+    });
+</script>
+</body>
+</html>

@@ -21,12 +21,15 @@ from . import views
 urlpatterns = [
 
     url(r'admin/',views.admin,name="admin"),
+    url(r'login/',views.login,name="login"),
+    url(r'post-login/',views.post_login,name="post_login"),
     url(r'photo-upload/',views.photo_upload,name="photo_upload"),
     url(r'photographers/',views.photographers,name="photographers"),
     url(r'upload/',views.photographer_upload,name="photographer_upload"),
-    url(r'upload/',views.photographer_upload,name="photographer_upload"),
+    url(r'events/',views.events,name="events"),
     url(r'photographer-upload/',views.photographer_upload,name="photographer_upload"),
     url(r'^add-event/',views.add_events,name="addevent"),
+    url(r'^committee/',views.committee,name="committee"),
     url(r'',views.index,name="index"),
 
 
