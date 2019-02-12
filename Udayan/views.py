@@ -30,11 +30,28 @@ def post_login(request):
     return HttpResponse(json.dumps(all),content_type="application/json")
 def admin(request):
 
+    auth.sign_in_with_email_and_password("photographer@gmail.com","password")
     return render(request,"dashboard.html")
 
 def photographers(request):
-
-    return render(request,"photographers.html")
+    user = auth.current_user
+    print(user)
+    images = []
+    dates = []
+    uids = []
+    photographers = []
+    all_photographers = db.child("photographers").get().val()
+    for photographer in all_photographers:
+        for date in all_photographers[photographer]:
+            no = all_photographers[photographer][date]["no"]
+            for i in range(int(no)+1):
+                print(storage.child("photographers").child(photographer).child(date).child(str(i)).get_url(user['idToken']))
+                images.append(storage.child("photographers").child(photographer).child(date).child(str(i)).get_url(user['idToken']))
+                dates.append(date)
+                photographers.append(photographer)
+    count = len(images)
+    context = zip(photographers,dates,images,range(1,count+1))
+    return render(request,"photographers.html",{"context":context})
 
 def photo_upload(request):
 
@@ -60,12 +77,13 @@ def add_events(request):
     branch = request.POST.get("branch")
     image = form["image"]
     prize1 = request.POST.get("prize1")
+    setup_cost = request.POST.get("setup_cost")
     prize2 = request.POST.get("prize2",None)
     prize3 = request.POST.get("prize3",None)
     print(name,phone,email,branch,role,title,about,image,prize1,prize2,prize3)
     for i in range(len(name)):
         db.child("events").child(branch).child(title).child("committee").child(name[i]).update({"email":email[i],"phone":phone[i],"role":role[i]})
-    db.child("events").child(branch).child(title).update({"about":about,"prize1":prize1,"prize2":prize2,"prize3":prize3})
+    db.child("events").child(branch).child(title).update({"about":about,"prize1":prize1,"prize2":prize2,"prize3":prize3,"setup cost":setup_costx})
     storage.child("events").child(title).child(title).put(image)
     return HttpResponseRedirect('/events/')
 def photographer_upload(request):
@@ -77,6 +95,7 @@ def photographer_upload(request):
     i = 0
     for image in files:
         print(image)
+        db.child("photographers").child(uid).child(date).update({"no":i})
         storage.child("photographers").child(uid).child(date).child(str(i)).put(image)
         i+=1
     return HttpResponseRedirect('/photo-upload/')
