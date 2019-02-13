@@ -447,7 +447,7 @@
 
 		}
         function scroll(level){
-        console.log("console mila "+level);
+       // console.log("console mila "+level);
             if(level==0){
 					if(current7==0){
                         current7=1;
@@ -496,12 +496,12 @@
 
                    if(current6==0){
                         current6=1;
-                        console.log("aya");
+                       // console.log("aya");
                	        show6();
                     }
                     if(current7==1){
                             current7=0;
-                            $('.level7').hide({effect:'fade',duration:1500});
+                            $('.level7').hide({effect:'fade',duration:600});
                     }
             }else if(level==2){
                      if(current2==1){
@@ -842,12 +842,21 @@ color: white;
     font-size: 36px;
     cursor:pointer;
 	}
+
+	#eventframe{
+		background: #36454ffa;
+		opacity:0;
+		height:0;
+		width:0;
+		position: absolute;
+	}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/CreateJS/sandbox@bfcfb5afaaed512c983159285a582dd8c0bbb6ab/Kaleidoscope/Kaleidoscope.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/CreateJS/TweenJS@ad33975f09949e456d579defbbe425f750966b21/src/tweenjs/plugins/ColorPlugin.js"></script>
 	<script src="https://lab.gskinner.com/content/assets/template.min.js"></script>
+
 	<script>
 		var canvas, stage;
 
@@ -961,7 +970,38 @@ color: white;
 	<!--EVENT-->
 	<script>
 	function openEvent(ev){
-		alert(ev);
+		if(ev==1){
+			$(".stone1").css('box-shadow', 'inset 0 0 4px 1px #fff, 0 0 11px 3px #ffffff');
+
+			$("#eventframe").attr("src", "/viewevent/");
+			$("#eventframe").css({'left':$('.stone1').offset().left,'top':$('.stone1').offset().top});
+			$('#eventframe').stop().animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
+		}else if(ev==2){
+			$(".stone2").css('box-shadow', 'inset 0 0 4px 1px #fff, 0 0 7px 4px #ff764b');
+			$("#eventframe").attr("src", "/viewevent/");
+			$("#eventframe").css({'left':$('.stone2').offset().left,'top':$('.stone2').offset().top});
+			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
+		}else if(ev==3){
+			$("#eventframe").attr("src", "http://www.example.com/");
+			$("#eventframe").css({'left':$('.stone3').offset().left,'top':$('.stone3').offset().top});
+			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
+		}else if(ev==4){
+			$("#eventframe").attr("src", "http://www.example.com/");
+			$("#eventframe").css({'left':$('.stone4').offset().left,'top':$('.stone4').offset().top});
+			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
+		}else if(ev==5){
+			$("#eventframe").attr("src", "http://www.example.com/");
+			$("#eventframe").css({'left':$('.stone5').offset().left,'top':$('.stone5').offset().top});
+			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
+		}else if(ev==6){
+			$("#eventframe").attr("src", "http://www.example.com/");
+			$("#eventframe").css({'left':$('.stone6').offset().left,'top':$('.stone6').offset().top});
+			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
+		}
+	}
+	function closeIFrame(){
+		 $(".stone").delay(1000).css('box-shadow', '')
+		 $('#eventframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
 	}
 	</script>
 
@@ -1009,16 +1049,18 @@ color: white;
 					<span class="branch6" onclick="openEvent(6)">CIVIL</span>
 				</div>
 				<div class="gauntlet">
-					<div class="stone stone1" onclick="openEvent(1)"></div>
+					<div class="stone stone1 " onclick="openEvent(1)"></div>
 					<div class="stone stone2" onclick="openEvent(2)"></div>
 					<div class="stone stone3" onclick="openEvent(3)"></div>
 					<div class="stone stone4" onclick="openEvent(4)"></div>
 					<div class="stone stone5" onclick="openEvent(5)"></div>
 					<div class="stoneMid stone6" onclick="openEvent(6)"></div>
+
 				</div>
 
 			</div>
 		</div>
+		<iframe name="eventframe" id="eventframe"></iframe>
 		<div class="level6">
 			<div class="intro" id="hud1">
 				   <div class="hud">

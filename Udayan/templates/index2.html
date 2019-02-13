@@ -50,11 +50,16 @@
     <!--hide scrollbar-->
 
     </style>
+    <script>
+        function close(){
+        alert();
 
+        }
+    </script>
 </head>
 <body>
 <div class="container">
-    <div class="close"></div>
+    <input type="button" class="close"  onclick="parent.closeIFrame()" value="X">
     <div class="eventlist">
         <div class="event event1"><a href="http://google.com" target="view">event 1</a></div>
         <div class="event event2"><a href="#" target="view">event 2</a></div>

@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'upload/',views.photographer_upload,name="photographer_upload"),
     url(r'events/',views.events,name="events"),
     url(r'photographer-upload/',views.photographer_upload,name="photographer_upload"),
+    url(r'viewevent/',views.viewevents,name="viewevents"),
     url(r'^add-event/',views.add_events,name="addevent"),
     url(r'^committee/',views.committee,name="committee"),
     url(r'^core-committee/',views.core_committee,name="core_committee"),
