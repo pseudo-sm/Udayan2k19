@@ -21,7 +21,6 @@ from . import views
 urlpatterns = [
 
     url(r'admin/',views.admin,name="admin"),
-    url(r'approve-image/',views.approve_image,name="approve_image"),
     url(r'login/',views.login,name="login"),
     url(r'post-login/',views.post_login,name="post_login"),
     url(r'photo-upload/',views.photo_upload,name="photo_upload"),
@@ -30,7 +29,6 @@ urlpatterns = [
     url(r'events/',views.events,name="events"),
     url(r'photographer-upload/',views.photographer_upload,name="photographer_upload"),
     url(r'^add-event/',views.add_events,name="addevent"),
-    url(r'^add-committee/',views.add_committee,name="addcommittee"),
     url(r'^committee/',views.committee,name="committee"),
     url(r'',views.index,name="index"),
 
