@@ -17,7 +17,7 @@ auth = firebase.auth()
 storage = firebase.storage()
 def index(request):
 
-    return render(request,"index.html")
+    return render(request,"index3.html")
 def login(request):
     return render(request,"login.html")
 def post_login(request):

@@ -49,13 +49,13 @@
             width: 40vw;
             margin: 0 30vw;
             position: absolute;
-            transform: translateZ(20000px) scale(1);
+            transform:  scale(1);
             text-align: center;
             display:none;
         }
 
         .level2 {
-            transform: translateZ(10000px) scale(1);
+            transform: scale(1);
 
         }
         .level2 .rivals:first-child img
@@ -63,26 +63,25 @@
             transform: rotateY(180deg);
         }
         .level3 {
-            transform: translateZ(8000px) scale(1);
+            transform: scale(1);
         }
 
         .level4 {
-            transform: translateZ(6000px) scale(1);
+            transform: scale(1);
             background:green;
         }
 
         .level5 {
-            transform: translateZ(4000px) scale(1);
+            transform:  scale(1);
 
         }
 
         .level6 {
-            transform: translateZ(2000px) scale(1);
+            transform:scale(1);
 
         }
 
         .level7 {
-            transform: translateZ(30px);
             display:block;
         }
 
@@ -348,27 +347,78 @@
     	current4=0;
     	current5=0;
     	current6=0;
-
-
+        statuscode=0;
+        detectthreshold=5;
+        currentthreshold=0;
     	//first=$(".main").css("perspective").replace("px", "");
         $(document).bind('mousewheel keydown', function(e) {
-
+          if(currentthreshold++>detectthreshold){
+                currentthreshold=0;
+                console.log('scrolled');
+           }else{
+                return;
+                }
 			console.log($(".main").css("perspective").replace("px", "") );
             if (e.originalEvent.wheelDelta  > 0 || e.which == 38) {
-            	if($(".main").css("perspective").replace("px", "")-800>=500)
-                	$(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 - 900);
-                else
-                	$(".main").css("perspective", 500);
-            } else if (e.originalEvent.wheelDelta  < 0 || e.which == 40) {
 
-                if ($(".main").css("perspective").replace("px", "") < 50000)
-                    $(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 + 900);
+            	//if($(".main").css("perspective").replace("px", "")-800>=500)
+                	//$(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 - 900);
+                //else
+                	//$(".main").css("perspective", 500);
+                 if(statuscode==0){
+                    statuscode=0;
+
+                }else if(statuscode==1){
+                    statuscode=0;
+                    scroll(0);
+                }else if(statuscode==2){
+                    statuscode=1;
+                    scroll(1);
+                }else if(statuscode==3){
+                    statuscode=2;
+                    scroll(2);
+                }else if(statuscode==4){
+                    statuscode=3;
+                    scroll(3);
+                }else if(statuscode==5){
+                    statuscode=4;
+                    scroll(4);
+                }else if(statuscode==6){
+                    statuscode=5;
+                    scroll(5);
+                }
+            } else if (e.originalEvent.wheelDelta  < 0 || e.which == 40) {
+                console.log(statuscode);
+                if(statuscode==0){
+                    statuscode=1;
+                    scroll(1);
+                }else if(statuscode==1){
+                    statuscode=2;
+                    scroll(2);
+                }else if(statuscode==2){
+                    statuscode=3;
+                    scroll(3);
+                }else if(statuscode==3){
+                    statuscode=4;
+                    scroll(4);
+                }else if(statuscode==4){
+                    statuscode=5;
+                    scroll(5);
+                }else if(statuscode==5){
+                    statuscode=6;
+                    scroll(6);
+                }else if(statuscode==6){
+                    statuscode=6;
+
+                }
+                if ($(".main").css("perspective").replace("px", "") < 50000);
+                    //$(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 + 900);
             }
             if ($(".main").css("perspective").replace("px", "") > 10000000)
                 $(".level7").removeClass("logo_center");
             else
                 $(".level7").addClass("logo_center");
-			detect($(".main").css("perspective").replace("px", ""));
+			//detect($(".main").css("perspective").replace("px", ""));
         });
 		function detect(perspective){
 			if(perspective<1400){
@@ -390,6 +440,7 @@
 
 		}
         function scroll(level){
+        console.log("console mila "+level);
             if(level==0){
 					if(current7==0){
                         current7=1;
@@ -438,6 +489,7 @@
 
                    if(current6==0){
                         current6=1;
+                        console.log("aya");
                	        show6();
                     }
                     if(current7==1){
