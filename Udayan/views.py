@@ -99,3 +99,8 @@ def photographer_upload(request):
         storage.child("photographers").child(uid).child(date).child(str(i)).put(image)
         i+=1
     return HttpResponseRedirect('/photo-upload/')
+
+def core_committee(request):
+
+
+    return render(request,"core.html")
