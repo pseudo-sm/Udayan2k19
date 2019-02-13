@@ -22,7 +22,6 @@ def login(request):
     return render(request,"login.html")
 def post_login(request):
 
-    print(request)
     email = request.POST.get("email")
     password = request.POST.get("password")
     print(email,password)
@@ -35,22 +34,22 @@ def admin(request):
 
 def photographers(request):
     user = auth.current_user
-    print(user)
     images = []
     dates = []
     uids = []
     photographers = []
+    alt = []
     all_photographers = db.child("photographers").get().val()
     for photographer in all_photographers:
         for date in all_photographers[photographer]:
             no = all_photographers[photographer][date]["no"]
             for i in range(int(no)+1):
-                print(storage.child("photographers").child(photographer).child(date).child(str(i)).get_url(user['idToken']))
                 images.append(storage.child("photographers").child(photographer).child(date).child(str(i)).get_url(user['idToken']))
                 dates.append(date)
                 photographers.append(photographer)
+                alt.append(str(i))
     count = len(images)
-    context = zip(photographers,dates,images,range(1,count+1))
+    context = zip(photographers,dates,images,range(1,count+1),alt)
     return render(request,"photographers.html",{"context":context})
 
 def photo_upload(request):
@@ -80,7 +79,6 @@ def add_events(request):
     setup_cost = request.POST.get("setup_cost")
     prize2 = request.POST.get("prize2",None)
     prize3 = request.POST.get("prize3",None)
-    print(name,phone,email,branch,role,title,about,image,prize1,prize2,prize3)
     for i in range(len(name)):
         db.child("events").child(branch).child(title).child("committee").child(name[i]).update({"email":email[i],"phone":phone[i],"role":role[i]})
     db.child("events").child(branch).child(title).update({"about":about,"prize1":prize1,"prize2":prize2,"prize3":prize3,"setup cost":setup_costx})
@@ -94,8 +92,28 @@ def photographer_upload(request):
     date = str(datetime.now().date())
     i = 0
     for image in files:
-        print(image)
         db.child("photographers").child(uid).child(date).update({"no":i})
         storage.child("photographers").child(uid).child(date).child(str(i)).put(image)
         i+=1
     return HttpResponseRedirect('/photo-upload/')
+
+def add_committee(request):
+
+    names = request.POST.getlist("name[]")
+    reg = request.POST.getlist("reg[]")
+    email = request.POST.getlist("email[]")
+    contact = request.POST.getlist("contact[]")
+    branch = request.POST.getlist("Branch[]")
+    for i in range(len(names)):
+        db.child("Core Committee").child(str(reg[i])).update({"name":names[i],"email":email[i],"contact":contact[i],"branch":branch[i]})
+    return HttpResponseRedirect('/committee/')
+
+def approve_image(request):
+
+    uid = request.GET.get("uid")
+    date = request.GET.get("date")
+    image = request.GET.get("image")
+    db.child("approved").child(uid).child(date).update({image:0})
+    all = True
+    return HttpResponse(json.dumps(all),content_type="json/application")
+
