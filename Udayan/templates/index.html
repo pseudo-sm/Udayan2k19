@@ -56,7 +56,7 @@
 
         .level2 {
             transform: translateZ(10000px) scale(1);
-            background: red;
+
         }
         .level2 .rivals:first-child img
         {
@@ -78,7 +78,7 @@
 
         .level6 {
             transform: translateZ(2000px) scale(1);
-            background:cyan;
+
         }
 
         .level7 {
@@ -88,7 +88,7 @@
 
         .level7 img {
             width: 50%;
-            transition: linear 0.2s;
+            transition: linear 1s;
         }
 
         .logo_center img {
@@ -168,13 +168,182 @@
         .intro{
                 padding: 130px 0;
                 position: relative;
-                background: red;
+
                 width: 110%;
                 height: 100vh;
                 left: -5%;
         }
+
+
+		@keyframes hud {
+		  0% {
+			height: 1px;
+			top: 250px;
+			width: 1px;
+			font-size : 0em;
+		  }
+		  50% {
+			height: 1px;
+			top: 50vh;
+			width: 100%;
+			font-size : 0em;
+		  }
+		  53% {
+			height: 1px;
+			top: 50vh;
+			width: 100%;
+			font-size : 0em;
+		  }
+		  100% {
+
+			height: 31vh;
+			top: 5px;
+			width: 100%;
+			font-size : 1em;
+		  }
+		}
+		@-webkit-keyframes hud {
+		  0% {
+			height: 1px;
+			top: 250px;
+			width: 1px;
+			font-size : 0em;
+		  }
+		  50% {
+			height: 1px;
+			top: 50vh;
+			width: 100%;
+			font-size : 0em;
+		  }
+		  53% {
+			height: 1px;
+			top: 50vh;
+			width: 100%;
+			font-size : 0em;
+		  }
+		  100% {
+
+			height: 31vh;
+			top: 5px;
+			width: 100%;
+			font-size : 1em;
+		  }
+		}
+
+
+	.hud {
+	  -webkit-animation-name: hud;
+	  animation-name: hud;
+	  -webkit-animation-delay: 1s;
+	  animation-delay: 1s;
+	  -webkit-animation-duration: 1500ms;
+	  animation-duration: 1500ms;
+	  -webkit-animation-timing-function: cubic-bezier(0.24, 0.86, 0.59, 0.99);
+	  animation-timing-function: cubic-bezier(0.24, 0.86, 0.59, 0.99);
+	  -webkit-animation-fill-mode: forwards;
+	  animation-fill-mode: forwards;
+	  margin: 0 auto;
+	  position: relative;
+	  background-color: rgba(33, 150, 243, 0.4);
+	  border: 2px solid rgb(56, 75, 183);
+	  -moz-border-radius: 10px;
+	  -webkit-border-radius: 10px;
+	  border-radius: 10px;
+	  box-sizing: border-box;
+	  overflow: hidden;
+			font-size : 0em;
+	}
+
+	.complete {
+	  top: 5px;
+	  height: 500px;
+	  width: 75%;
+	}
+
+	.animate {
+	  display: block;
+	}
+
+	.message {
+	  position: relative;
+	  float: left;
+	  margin: 0;
+	  font-size: 2rem;
+	  letter-spacing: 0px;
+	  display: none;
+	}
+
+	.message span {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  width: 0;
+	  <!--background: #413663;-->
+	  border-left: 4px solid rgba(0, 0, 0, 0.3);
+	  -webkit-animation-name: typing, blinking;
+	  -webkit-animation-duration: 3s, 1s;
+	  -webkit-animation-iteration-count: 1, infinite;
+	  -webkit-animation-timing-function: steps(21, end), steps(1, end);
+	}
+
+	@-webkit-keyframes typing {
+	  0% {
+		width: 100%;
+	  }
+	  100% {
+		width: 0;
+	  }
+	}
+	@-webkit-keyframes blinking {
+	  0% {
+		border-color: transparent;
+	  }
+	  50% {
+		border-color: #167ff0;
+	  }
+	  100% {
+    border-color: transparent;
+  }
+}
+		.tech-slideshow {
+		  height: 120px;
+		  max-width: 800px;
+		  margin: 14px auto;
+		  position: relative;
+		  overflow: hidden;
+		  transform: translate3d(0, 0, 0);
+		  display:none;
+		}
+
+.tech-slideshow > div {
+  height: 120px;
+  width: 2526px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120px;
+  transform: translate3d(0, 0, 0);
+}
+.tech-slideshow .mover-1 {
+  animation: moveSlideshow 12s linear infinite;
+}
+
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-66.6666%);
+  }
+}
+#hud1{
+	box-sizing: border-box;
+    overflow: hidden;
+}
     </style>
+
+
     <script>
+    	current7=1;
     	current2=0;
     	current3=0;
     	current4=0;
@@ -196,7 +365,7 @@
                 if ($(".main").css("perspective").replace("px", "") < 50000)
                     $(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 + 900);
             }
-            if ($(".main").css("perspective").replace("px", "") > 900)
+            if ($(".main").css("perspective").replace("px", "") > 10000000)
                 $(".level7").removeClass("logo_center");
             else
                 $(".level7").addClass("logo_center");
@@ -204,7 +373,7 @@
         });
 		function detect(perspective){
 			if(perspective<1400){
-
+				scroll(0);
 			}
 			else if (perspective<7398.49 && perspective>=1400 ){
 
@@ -222,7 +391,34 @@
 
 		}
         function scroll(level){
-            if(level==1){
+            if(level==0){
+					if(current7==0){
+                        current7=1;
+               	        $('.level7').show('puff');
+
+                    }
+                   if(current2==1){
+                            current2=0;
+                            $('.level2').hide();
+                    }
+                   if(current3==1){
+                            current3=0;
+                            $('.level3').hide();
+                    }
+                   if(current4==1){
+                            current4=0;
+                            $('.level4').hide();
+                    }
+                   if(current5==1){
+                        current5=0;
+                        $('.level5').hide();
+                    }
+
+                   if(current6==1){
+                        current6=0;
+               	        hide6()
+                    }
+            }else if(level==1){
 
                    if(current2==1){
                             current2=0;
@@ -243,7 +439,11 @@
 
                    if(current6==0){
                         current6=1;
-               	        $('.level6').show('puff');
+               	        show6();
+                    }
+                    if(current7==1){
+                            current7=0;
+                            $('.level7').hide({effect:'fade',duration:1500});
                     }
             }else if(level==2){
                      if(current2==1){
@@ -260,13 +460,17 @@
                     }
                      if(current6==1){
                         current6=0;
-                        $('.level6').hide();
+                        hide6();
                      }
 
                       if(current5==0){
                         current5=1;
                         $('.level5').show('puff');
                       }
+                      if(current7==1){
+                            current7=0;
+                            $('.level7').hide();
+                    }
             }else if(level==3){
                     if(current2==1){
                             current2=0;
@@ -287,6 +491,10 @@
                     if(current4==0){
                             current4=1;
                             $('.level4').show('puff');
+                    }
+                    if(current7==1){
+                            current7=0;
+                            $('.level7').hide();
                     }
             }else if(level==4){
                           if(current2==1){
@@ -309,6 +517,10 @@
                             current3=1;
                             $('.level3').show('puff');
                         }
+                        if(current7==1){
+                            current7=0;
+                            $('.level7').hide();
+                    }
             }else if(level==5){
                      if(current6==1){
                         current6=0;
@@ -330,7 +542,19 @@
                         current2=1;
                         $('.level2').show('puff');
                     }
+                    if(current7==1){
+                            current7=0;
+                            $('.level7').hide();
+                    }
             }
+        }
+        function show6(){
+        	$('.level6').show('puff');
+            $('.tech-slideshow').delay( 3000 ).show('fade');
+        }
+        function hide6(){
+			 $('.level6').hide();
+             $('.tech-slideshow').hide();
         }
     </script>
 </head>
@@ -373,7 +597,18 @@
 			</div>
 		</div>
 		<div class="level6">
-			<div class="intro">Hello</div>
+			<div class="intro" id="hud1">
+				   <div class="hud">
+						Welcome to Udayan 2k19
+
+					</div>
+				<div class="tech-slideshow">
+ 					 <div class="mover-1"></div>
+
+				</div>
+
+
+			</div>
 		</div>
 		<div class="level7 logo_center">
 				<img src="{% static 'Assets/Images/final_logo.png' %}">
