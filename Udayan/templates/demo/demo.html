@@ -1,14 +1,113 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+  {% load static %}
   <title>Udayan Committee</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="democss.css">
+    <style>
+
+body {
+  /* background:#111;  */
+  font-size:18px;
+  color:#FFF;
+  margin: 0;
+
+}
+h1 {
+  font-size:2em;
+  text-align:center;
+  margin:20px 0 40px;
+  padding:0;
+
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    overflow: auto;
+    padding: 2%;
+    top: 0;
+
+    z-index: 5;
+
+    right: 0;
+    left: 0;
+}
+.right-content, .left-content {
+  float:left;
+  display:block;
+  width:50%;
+  padding:1% 2%;
+}
+.left-content {
+  border-right:45px solid transparent;
+  text-align:right;
+  -webkit-border-image: url({% static 'Assets/Images/circuit.png' %}) 50  round; /* Safari 3.1-5 */
+    -o-border-image: url({% static 'Assets/Images/circuit.png' %}) 50  round; /* Opera 11-12.1 */
+    border-image: url({% static 'Assets/Images/circuit.png' %}) 50  round;
+}
+.left-content div {
+  margin:80px 0 0;
+}
+.right-content div {
+  margin:80px 0 150px;
+}
+.container div {
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7 ease-in-out;
+-ms-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+transition: all 0.7s ease-in-out;
+}
+.left-content .more-padding {
+  padding-right:100px;
+}
+.right-content .more-padding {
+  padding-left:100px;
+}
+.imgl
+{
+
+  height: 117px;
+    top: 62px;
+    width: 98px;
+    /* float: left; */
+    position: relative;
+    right: 71px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.46);
+
+}
+.imgr
+{
+  /* height: 200px;
+  width: 200px;
+  float: right; */
+     height: 117px;
+    top: 62px;
+    width: 98px;
+    /* float: left; */
+    position: relative;
+    right: -71px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.46);
+}
+.box>span{
+  bottom:52px;
+}
+.boxr>span{
+   bottom:52px;
+}
+.join>span{
+   bottom:52px;
+}
+
+
+    </style>
 <!--<link href="../fontawesome-free-5.0.4/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">-->
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="./demojs.js"></script>
+
   <script type="text/javascript">
     $(window).scroll(function(){
   $('.container div ').each(function(){
@@ -167,9 +266,7 @@
 
 	</script>
     <script>
-    $(function(){
-        setTimeout(doit,1000);
-    });
+
         function doit(){
             $('#aa_particles').css('position','fixed');
          }
@@ -260,7 +357,7 @@ canvas {
   </style>
 </head>
 
-<body  style=" overflow: auto; overflow-x: hidden;">
+<body onload="doit()" style=" overflow: auto; overflow-x: hidden;">
     <!--<video autoplay muted loop id="myVideo">-->
         <!--<source src="../assets/video/new1.mp4" type="video/mp4">-->
       <!--</video> -->
