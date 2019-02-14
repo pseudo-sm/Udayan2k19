@@ -1043,8 +1043,11 @@ color: white;
 	}
 	function closeFeed(){
 	 	$('#feedframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
+	 	$('.feedEntry').css({height: (feedEntryHeight), width: feedEntryHeight});
 	}
 	$(function(){
+	    feedEntryHeight=$('.feedEntry').height();
+
 		var windH=window.innerHeight/2;
 		var imgl=(window.innerHeight/100)*36/2;
 		imgl=windH-imgl;
@@ -1057,7 +1060,7 @@ color: white;
 		console.log('clicked');
 			$('.feedEntry').css({height: ($(this).height()*50.5), width: ($(this).width()*50.5)});
 
-			$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})
+			$('#feedframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})
 		});
 	});
 
