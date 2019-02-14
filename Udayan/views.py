@@ -20,6 +20,7 @@ def index(request):
     return render(request,"index3.html")
 def login(request):
     return render(request,"login.html")
+
 def post_login(request):
 
     print(request)
@@ -64,6 +65,9 @@ def events(request):
 def committee(request):
 
     return render(request,"committee.html")
+
+def viewevents(request):
+    return render(request,"index2.html")
 
 def add_events(request):
 
