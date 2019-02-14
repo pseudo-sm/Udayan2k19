@@ -69,6 +69,9 @@ def committee(request):
 def viewevents(request):
     return render(request,"index2.html")
 
+def cse(request):
+    return render(request,"cse.html")
+
 def add_events(request):
 
     form = request.FILES
