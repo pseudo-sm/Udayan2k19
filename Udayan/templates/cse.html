@@ -36,7 +36,7 @@
                 updateProps();
                 updateOffset();
                 });
-    </script>
+s    </script>
 </head>
 <body>
 
@@ -67,24 +67,24 @@
                 </p>
 
                 <h2 class="head-small head-centered">Student Coordinators</h2>
-                 {% for name in names %}
+                 {% for i in students %}
                 <p class="copy copy-white">
-                   {{i}}<br>
-                    BARNALEE MISHRA (3rd Year)<br><br>
-                    <strong style="font-size:1.3em; letter-spacing:2px;">Contact</strong> <br> +91-8337967427<br>
-                    umapradhan44@gmail.com
+                   <br>
+                    {{i.name}}<br><br>
+                    <strong style="font-size:1.3em; letter-spacing:2px;">Contact</strong> <br> {{i.phone}}<br>
+                    {{i.email}}
                 </p>
                  {% endfor %}
 
                 <h2 class="head-small head-centered">Faculty Coordinators</h2>
+                {% for i in faculty %}
                 <p class="copy copy-white">
-                   PADMABATI CHAND<br>SASMITA MISHRA<br>
                    <br>
-                    <strong style="font-size:1.3em; letter-spacing:2px;">Contact</strong> <br>+91-9437961032<br>
-                    +91-9437036496<br>
-                    padmabati.chand@tat.ac.in <br>
-                    sasmita.mishra@tat.ac.in
+                    {{i.name}}<br><br>
+                    <strong style="font-size:1.3em; letter-spacing:2px;">Contact</strong> <br> {{i.phone}}<br>
+                    {{i.email}}
                 </p>
+                 {% endfor %}
                   <br><br><br>
                 <div class='container'>
                   <span class='pulse-button'>Register</span>

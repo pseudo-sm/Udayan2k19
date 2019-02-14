@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'events/',views.events,name="events"),
     url(r'^cse/(?P<event_name>\w+)/', views.cse, name="cse"),
     url(r'photographer-upload/',views.photographer_upload,name="photographer_upload"),
+     url(r'feed/',views.feed,name="feed"),
     url(r'viewevent/',views.viewevents,name="viewevents"),
     url(r'^add-event/',views.add_events,name="addevent"),
     url(r'^committee/',views.committee,name="committee"),

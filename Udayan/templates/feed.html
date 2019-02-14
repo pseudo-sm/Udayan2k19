@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  {% load static %}
+      <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <style>
+        *,
+        *:before,
+        *:after {
+          box-sizing: border-box;
+        }
+
+        body {
+
+          overflow-x: hidden;
+        }
+
+        @media screen and (min-width: 801px) {
+          .gallery {
+            position: relative;
+            width: 90%;
+
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%)  scale(0.8);
+                    transform: translate(-50%, -50%)  scale(0.8);
+          }
+        }
+
+        .photo {
+          width: 20%;
+          position: relative;
+          background: white;
+          box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.25);
+          float: left;
+          margin-top: 0;
+          margin-right: 0;
+          margin-bottom: 0;
+          margin-left: 0;
+          border-radius: 3px;
+          padding: 10px 10px 10px 10px;
+          transition: all 100ms ease-out;
+          -webkit-transform: translateZ(0);
+                  transform: translateZ(0);
+        }
+        .photo img {
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        .photo figcaption {
+          margin-top: 10px;
+          font-family: 'Indie Flower', cursive;
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+          line-height: 1;
+          color: black;
+        }
+        @media screen and (max-width: 400px) {
+          .photo {
+            width: 90%;
+            -webkit-transform: rotateZ(0deg) !important;
+                    transform: rotateZ(0deg) !important;
+            margin: 20px auto 0 auto;
+            float: none;
+          }
+        }
+        @media screen and (min-width: 401px) {
+          .photo:hover {
+            -webkit-transform: rotateZ(0deg) scale(1.2) !important;
+                    transform: rotateZ(0deg) scale(1.2) !important;
+            z-index: 257 !important;
+            box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.1), 0px 0px 29px rgba(0, 0, 0, 0.2);
+          }
+        }
+        @media screen and (min-width: 401px) and (max-width: 600px) {
+          .photo {
+            width: 50%;
+          }
+        }
+        @media screen and (min-width: 601px) and (max-width: 800px) {
+          .photo {
+            width: 33.3333%;
+          }
+        }
+        @media screen and (min-width: 801px) and (max-width: 1000px) {
+          .photo {
+            width: 25%;
+          }
+        }
+        @media screen and (min-width: 1001px) {
+          .photo {
+            width: 20%;
+          }
+        }
+        .heading{
+            position:relative;
+            margin-top: 109px;
+            height: 20%;
+            margin-bottom: 100px;
+        }
+
+
+
+
+
+        body,
+        html {
+          width: 100%;
+          height: 100%;
+
+          background-color: #141e30;
+          margin: 0;
+          font-family: monospace;
+          background: linear-gradient(45deg, #141823 0%, #292e49 100%);
+          font-weight: lighter;
+          color: #fff8f0;
+        }
+        .f {
+          position: fixed;
+          bottom: 5px;
+          right: 15px;
+          font-family: 'Arial';
+          font-size: 0.7rem;
+          color: #d7b8f3;
+          text-align: center;
+        }
+        .f a {
+          font-size: 0.8rem;
+          color: #fff;
+        }
+        #wrapper {
+          width: 518px;
+          height: 165px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        #wrapper span,
+        #wrapper p {
+          margin: 0;
+          font-size: 1.2em;
+          line-height: 0.8em;
+        }
+        #wrapper span {
+          position: relative;
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          text-align: center;
+          color: #fff;
+        }
+        #wrapper span:after {
+          content: '';
+          background-color: #fff;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          opacity: 0;
+        }
+        #wrapper span:hover:after {
+          opacity: 1;
+        }
+        #wrapper span.purple {
+          color: #d7b8f3;
+        }
+        #wrapper span.purple:hover:after {
+          background-color: #d7b8f3;
+        }
+
+    </style>
+    <script>
+        // this will be called onload
+        jQuery(function($) {
+            // changed .hover to .each
+            $('.photo').each(function() {
+                var rotation = Math.random() * 41 - 10;
+                var depth = Math.floor(Math.random() * 256);
+                $(this).css({
+                  'transform' : 'rotateZ(' + rotation + 'deg)',
+                  'z-index' : depth
+                });
+            });
+
+
+            class Loop {
+          constructor() {
+            this._idRAF = -1;
+            this._count = 0;
+            this._listeners = [];
+            this._binds = {};
+            this._binds.update = this._update.bind(this);
+          }
+          _update() {
+            let listener = null;
+            let i = this._count;
+            while (--i >= 0) {
+              listener = this._listeners[i];
+              if (listener) {
+                listener.apply(this, null);
+              }
+            }
+            this._idRAF = requestAnimationFrame(this._binds.update);
+          }
+          start() { this._update(); }
+          stop() {
+            cancelAnimationFrame(this._idRAF);
+          }
+          add(listener) {
+            const idx = this._listeners.indexOf(listener);
+            if (idx >= 0) {
+              return;
+            }
+            this._listeners.push(listener);
+            this._count++;
+          }
+          remove(listener) {
+            const idx = this._listeners.indexOf(listener);
+            if (idx < 0) {
+              return;
+            }
+            this._listeners.splice(idx, 1);
+            this._count--;
+          }
+        }
+        const loop = new Loop();
+        loop.start()
+
+        /**
+         * Word Shuffler
+         * Get a word into a div element and animate him to shuffling wheres letters
+         * @type {[type]}
+         */
+        class LetterShuffler {
+          constructor(wrapper, letter, { duration = 30 } = {}) {
+            this.SHUFFLING_VALUES = [
+              '!', '§', '$', '%',
+              '&', '/', '(', ')',
+              '=', '?', '_', '<',
+              '>', '^', '°', '*',
+              '#', '-', ':', ';', '~',
+            ];
+            this.id = Math.random()
+            this.animate = false;
+
+            this.wrapper = wrapper;
+            this.letter = letter;
+            this.letterToShown = this.letter;
+            this.wrapper.innerHTML = '';
+            this.timer = 0;
+            this.duration = 30;
+            this.scaleTargeted = 2;
+
+            this.show = this.show.bind(this);
+            this.update = this.update.bind(this);
+
+
+            // Regex Thank to @milesmanners !
+            // https://codepen.io/milesmanners/
+            if (/[+\-| ]/.test(letter)) {
+              this.wrapper.classList.add('purple')
+            } else {
+              this.duration *= 2.1;
+            }
+          }
+
+          show(letter = this.letter) {
+            this.animate = true;
+            this.timer = 0;
+            this.letterToShown = letter;
+            loop.add(this.update)
+          }
+
+          hide() {
+            this.show('')
+          }
+
+          update() {
+            if (this.animate) {
+              this.timer++;
+              if (this.timer < this.duration) {
+                this.wrapper.innerHTML = this.SHUFFLING_VALUES[Math.floor(Math.random() * this.SHUFFLING_VALUES.length)];
+                this.wrapper.style.transform = `scale(${(this.timer / this.duration) * 0.9})`
+              } else {
+                this.wrapper.innerHTML = this.letterToShown;
+                loop.remove(this.update)
+              }
+            }
+          }
+        }
+
+        /**
+         *
+         */
+        class WordShuffler {
+          constructor(wrapper, words, { duration = 0.2 } = {}) {
+            this.wrapper = wrapper;
+            this.wrapper.innerHTML = '';
+
+            this.timer = 0;
+            this.lettersShown = 0;
+            this.letterDuration = duration * 60;
+            this.lettersShuffler = [];
+            this.arrayOfLetters = [...words];
+            this.duration = this.letterDuration * this.arrayOfLetters.length;
+
+            this.arrayOfLetters.forEach((letter) => {
+              const letterWrapper = document.createElement('span');
+              this.wrapper.appendChild(letterWrapper);
+              const letterShuffler = new LetterShuffler(letterWrapper, letter, {
+                duration: this.letterDuration,
+              });
+              this.lettersShuffler.push(letterShuffler);
+            });
+
+            this.update = this.update.bind(this);
+            this.timer = 0;
+          }
+
+          show() {
+            this.timer = 0;
+            this.lettersShown = 0;
+            loop.add(this.update);
+          }
+
+          update() {
+            this.timer += 1;
+            if (this.timer > (this.letterDuration * this.lettersShown)) {
+              this.lettersShuffler[this.lettersShown].show();
+              this.lettersShown += 1
+            }
+
+            if (this.timer >= this.duration) {
+              loop.remove(this.update)
+            }
+          }
+        }
+
+        const WORDS = [
+          '+  -                             -  +',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '|          Udayan2k19 Day 1         |',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '+  -                             -  +',
+        ];
+
+        class TextShuffler {
+          constructor(wrapper, lines) {
+            this.i = 0;
+            this.lines = [];
+            this.durationInterval = 50;
+            this.wrapper = wrapper;
+            for (let i = 0; i < lines.length; i++) {
+              this.lines.push(this._addLine(lines[i]));
+            }
+          }
+
+          _addLine(line) {
+            const lineElm = document.createElement('p')
+            this.wrapper.appendChild(lineElm)
+            const word = new WordShuffler(lineElm, line, { duration: 0.05 })
+            return word;
+          }
+
+          show() {
+            this.i = 0;
+            const interval = setInterval(() => {
+              this.lines[this.i].show();
+              this.i += 1;
+
+              if (this.i === this.lines.length) {
+                clearInterval(interval)
+              }
+            }, this.durationInterval);
+          }
+
+          hide() {
+
+          }
+        }
+
+
+        // START
+        const wrapper = document.getElementById('wrapper')
+        const text = new TextShuffler(wrapper, WORDS)
+        text.show();
+
+        let show = true;
+        setInterval(() => {
+          text.show();
+          show = !show;
+        }, 4000);
+        });
+    </script>
+    <script>
+
+
+        // Random text shuffle: https://codepen.io/SaschaSigl/pen/woGYKJ?q=shuffle&order=popularity&depth=everything&show_forks=false
+        // Tuto shuffle letters effect: https://tutorialzine.com/2011/09/shuffle-letters-effect-jquery
+        // Check wave: http://lab.hakim.se/checkwave/
+    </script>
+</head>
+<body>
+   <div class="heading">
+        <div id="wrapper"></div>
+   </div>
+<div class="gallery">
+  <figure class="photo">
+
+    <img src ="http://lorempixel.com/300/300/animals/1" alt="Hippo" />
+    <figcaption>Heinrich</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/2" alt="Garth" />
+    <figcaption>Garth</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/3" alt="Timothy" />
+    <figcaption>Timothy</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/4" alt="Gerald" />
+    <figcaption>Gerald</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/5" alt="Diana" />
+    <figcaption>Diana</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/6" alt="Pamela" />
+    <figcaption>Pamela</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/7" alt="Cathrine" />
+    <figcaption>Cathrine</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/8" alt="Pomeroy" />
+    <figcaption>Pomeroy</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/9" alt="Dwayne" />
+    <figcaption>Dwayne</figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
+    <figcaption>Henry</figcaption>
+  </figure>
+    <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
+    <figcaption>Henry</figcaption>
+  </figure>
+    <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
+    <figcaption>Henry</figcaption>
+  </figure>
+    <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
+    <figcaption>Henry</figcaption>
+  </figure>
+    <figure class="photo">
+    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
+    <figcaption>Henry</figcaption>
+  </figure>
+
+</div>
+</body>
+</html>
