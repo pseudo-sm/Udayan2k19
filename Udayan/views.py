@@ -72,27 +72,18 @@ def viewevents(request):
     print(cse_event_list)
     return render(request,"index2.html",{"cse_event_list":cse_event_list})
 
-def cse(request):
+def cse(request,event_name):
 
-    about = []
-    prize1 = []
-    prize2= []
+
     names = []
-    event_member_names = []
     cse_events = dict(db.child("events").child("Computer Science & IT").get().val())
-    for event in cse_events:
-        about.append(cse_events[event]["about"])
-        prize1.append(cse_events[event]["prize1"])
-        prize2.append(cse_events[event]["prize2"])
-        committee_members = list(cse_events[event]["committee"])
-        for name in committee_members:
-            names.append(name)
-        event_member_names.append(names)
-        names = []
-    cse_event_list = list(cse_events.keys())
-    print(cse_event_list)
-    context = zip(cse_event_list,about,prize1,prize2,event_member_names)
-    return render(request,"cse.html",{"cse_event_list":cse_event_list})
+    about = (cse_events[event_name]["about"])
+    prize1 = (cse_events[event_name]["prize1"])
+    prize2 = (cse_events[event_name]["prize2"])
+    committee_members = list(cse_events[event_name]["committee"])
+    for name in committee_members:
+        names.append(name)
+    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"names":names,"event_name":event_name})
 
 def add_events(request):
 
