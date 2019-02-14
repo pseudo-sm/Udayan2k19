@@ -202,7 +202,7 @@
 			height: 46vh;
 			top: 5px;
 			width: 100%;
-			font-size : 1em;
+			font-size : 1.2em;
 		  }
 		}
 		@-webkit-keyframes hud {
@@ -232,12 +232,13 @@
 			height: 46vh;
 			top: 5px;
 			width: 100%;
-			font-size : 1em;
+			font-size : 1.2em;
 		  }
 		}
 
 
 	.hud {
+	font-family: 'Bebas-Neue-Book';
 	  -webkit-animation-name: hud;
 	  animation-name: hud;
 	  -webkit-animation-delay: 1s;
@@ -259,6 +260,14 @@
 	  overflow: hidden;
 			font-size : 0em;
 	opacity:0;
+	    padding: 10px;
+    text-align: -webkit-center;
+    text-shadow: 1px 1px #0000008c;
+    font-size: 90px;
+    color: #000000;
+    line-height: 25.7px;
+    font-size: 10px;
+
 	}
 
 	.complete {
@@ -851,6 +860,15 @@ color: white;
 		width:0;
 		position: absolute;
 	}
+	#committeeframe{
+		position:absolute;
+		opacity:0;
+		left:50%;
+		top:50%;
+		width:0;
+		height:0;
+		transition:ease 1s;
+	}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
@@ -1004,6 +1022,9 @@ color: white;
 		 $(".stone").delay(1000).css('box-shadow', '')
 		 $('#eventframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
 	}
+	function closeCore(){
+	 	$('#committeeframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
+	}
 	</script>
 
 </head>
@@ -1030,16 +1051,17 @@ color: white;
 			</div>
 		</div>
 			<div class="level4">
-			<div class="rivals">
-				<img src="{% static 'Assets/Images/Ironman.png' %}" alt="Falcon" />
+			<div class="rivals" onclick="$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+				<img src="{% static 'Assets/Images/ai2.png' %}" style="    width: 29vw;    height: 22vw;" alt="Falcon" />
 			</div>
-			<iframe src="{% url 'core_committee' %}">
 
-			</iframe>
-			<div class="rivals">
-				<img src="{% static 'Assets/Images/Ironman.png' %}" alt="Falcon" />
+			<div class="rivals" onclick="$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',});">
+				<img src="{% static 'Assets/Images/ai5.png' %}" alt="Falcon" style="    width: 29vw;    height: 22vw;" />
 			</div>
 		</div>
+		<iframe id="committeeframe" src="{% url 'core_committee' %}">
+
+			</iframe>
 		<div class="level5">
 			<div class="event" >
 				<canvas id="testCanvas" ></canvas>
@@ -1068,7 +1090,8 @@ color: white;
 		<div class="level6">
 			<div class="intro" id="hud1">
 				   <div class="hud">
-						Welcome to Udayan 2k19
+					   <h1>Udayan 2k19</h1>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum i
 
 					</div>
 				<div class="tech-slideshow">
