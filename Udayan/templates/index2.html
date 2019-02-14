@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-
+  {% load static %}
       <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <style>
+    @font-face {
+		font-family: 'Bebas-Neue-Book';
+		src:url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.woff' %}') format('woff'),
+			url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.svg#Bebas-Neue-Book' %}') format('svg'),
+			url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.eot' %}'),
+			url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.eot?#iefix' %}') format('embedded-opentype');
+		font-weight: normal;
+		font-style: normal;
+		font-size: 21px;
+		font-family: 'Bebas-Neue-Book';
+
+	}
     body{
+
     margin:0;
     padding:10;
     }
@@ -17,14 +30,20 @@
         position:absolute;
         width:100%;
     }
-        .close{
-            position: fixed;
-    right: 10px;
-    top: 10px;
-    width: 25px;
-    height: 25px;
-    background: red;
-    z-index: 1;}
+    .close{
+    position: fixed;
+    right: 30px;
+    top: 14px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    z-index: 1;
+    border-radius: 50%;
+    box-shadow: none;
+    border: 0;
+    font-size: 1.3em;
+    cursor:pointer;
+    }
     .eventlist{
         position: relative;
         float: left;
@@ -46,6 +65,12 @@
         line-height: 200px;
         border-bottom: 4px solid black;
 
+    }
+    a{
+        font-family: 'Bebas-Neue-Book','serif';
+        text-decoration:none;
+        color:white;
+            font-size: 1.8em;
     }
     <!--hide scrollbar-->
 
