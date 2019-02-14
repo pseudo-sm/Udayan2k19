@@ -124,3 +124,7 @@ def core_committee(request):
 
 
     return render(request,"core.html")
+
+def demo(request):
+
+    return render(request,"demo/demo.html")

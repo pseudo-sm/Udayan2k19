@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Udayan Committee</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="democss.css">
+<!--<link href="../fontawesome-free-5.0.4/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">-->
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="./demojs.js"></script>
+  <script type="text/javascript">
+    $(window).scroll(function(){
+  $('.container div ').each(function(){
+      var scrollTop     = $(window).scrollTop(),
+          elementOffset = $(this).offset().top,
+          distance      = (elementOffset - scrollTop),
+          windowHeight  = $(window).height(),
+          breakPoint    = windowHeight*0.7;
+      if(distance > breakPoint) {
+        $(this).addClass("more-padding");
+      }  if(distance < breakPoint) {
+        $(this).removeClass("more-padding");
+      }
+  });
+});
+  </script>
+
+	<script>
+		$(function(){
+
+                    /* ---- particles.js config ---- */
+
+        particlesJS("aa_particles", {
+          "particles": {
+            "number": {
+              "value": 80,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": false,
+              "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 6,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "grab"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 140,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 200,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+        });
+
+
+        /* ---- stats.js config ---- */
+
+        var count_particles, stats, update;
+        stats = new Stats;
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+        count_particles = document.querySelector('.js-count-particles');
+        update = function() {
+          stats.begin();
+          stats.end();
+          if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+          }
+          requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+
+		});
+
+	</script>
+    <script>
+    $(function(){
+        setTimeout(doit,1000);
+    });
+        function doit(){
+            $('#aa_particles').css('position','fixed');
+         }
+    </script>
+  <style>
+    .box{
+         background: url(./display.png) no-repeat;
+    background-size: 289px;
+    height: 250px;
+    padding: 24px;
+    background-position: center;
+    background-position-x: 100%;
+    background-position-y: 0px;
+    position: relative;
+    }
+    .boxr{
+       background: url(./display.png) no-repeat;
+       background-size: 289px;
+    height: 250px;
+    padding: 24px;
+    background-position: center;
+    background-position-x: 0%;
+    background-position-y: 0px;
+    position: relative;
+    }
+        .join{
+       background: url(./web.png) no-repeat;
+       background-size: 289px;
+    height: 250px;
+    padding: 24px;
+    background-position: center;
+    background-position-x: 0%;
+    background-position-y: 0px;
+    position: relative;
+    z-index: 100;
+    }
+    video{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  object-fit: fill;
+}
+
+
+
+
+
+@font-face {
+		font-family: 'Bebas-Neue-Book';
+		src:url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.woff' %}') format('woff'),
+			url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.svg#Bebas-Neue-Book' %}') format('svg'),
+			url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.eot' %}'),
+			url('{% static 'Assets/Fonts/Bebas-Neue-Book.ttf.eot?#iefix' %}') format('embedded-opentype');
+		font-weight: normal;
+		font-style: normal;
+		font-size: 21px;
+		font-family: 'Bebas-Neue-Book';
+
+	}
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+* {
+  box-sizing: border-box;
+  font-family:'Bebas-Neue-Book','Roboto';
+}
+
+html,
+body {
+  margin: 0;
+
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#aa_particles {
+  z-index: 4;
+  height: 100%;
+  height: 100vh;
+  background: #0b2235;
+
+}
+
+
+  </style>
+</head>
+
+<body  style=" overflow: auto; overflow-x: hidden;">
+    <!--<video autoplay muted loop id="myVideo">-->
+        <!--<source src="../assets/video/new1.mp4" type="video/mp4">-->
+      <!--</video> -->
+  <!--Nav start-->
+	<!--<div id="nav_space">-->
+       <!---->
+    <!--</div>-->
+      <!--Nav end-->
+      <!--<script>-->
+      <!--$(function(){-->
+            <!--$("#nav_space").load("http://udayan2k18.com/nav/nav.html"); -->
+         <!--});-->
+      <!--</script>-->
+
+<div id="aa_particles" ></div>
+
+<script src="https://vincentgarreau.com/particles.js/particles.js"></script>
+<div class="container" id="particles-js">
+  <h1>Udayan Core Committee Members</h1>
+   <div class="left-content">
+      <div><div class="box"><img src="../assets/images/corecommittee/154.JPG" class="imgl"><div class="namediv">Prof.(Dr.) M.N. Dwibedi<br>Principal, TAT<br><b style="font-size: 1.2em;">Advisor</b></div>
+  </div></div>
+     <div><div class="box" style="opacity: 0;"><img src="../assets/images/corecommittee/110.JPG" class="imgl"><div class="namediv">Ms. Millee Panigrahi<br>(ETC)</div></div></div>
+     <div><div class="box"><img src="../assets/images/corecommittee/110.JPG" class="imgl"><div class="namediv">Ms. Millee Panigrahi<br>(ETC)<br><b style="font-size: 1.2em;">Convener</b></div></div></div>
+     <div><div class="box"><img src="../assets/images/corecommittee/132.JPG" class="imgl"><div class="namediv">Prof. A.K. Sahoo<br>(HOD MECH)</div></div></div>
+     <div><div class="box"><img src="../assets/images/corecommittee/183.jpg" class="imgl"><div class="namediv">Ms.Sasmita Mishra<br>(IT)</div></div></div>
+     <div><div class="box"><img src="../assets/images/corecommittee/149.JPG" class="imgl"><div class="namediv">Mr.Aditya Narayan Das<br>(CSE)</div></div></div>
+     <div><div class="box"><img src="../assets/images/corecommittee/176.jpg" class="imgl"><div class="namediv">Mr.Lohit Kumar Sahoo<br>(EEE)</div></div></div>
+     <div><div class="box"><img src="../assets/images/corecommittee/" class="imgl"><div class="namediv">Ms.Sagarika Swain<br>(Civil)</div></div></div>
+    </div>
+   <div class="right-content">
+      <div><div class="boxr"><img src="../assets/images/corecommittee/299.JPG" class="imgr"><div class="namediv">Prof. (Dr.) R.N. Satapathy<br>E.D (S&D),TGI<br><b style="font-size: 1.2em;">Advisor</b></div></div></div>
+     <div><div class="boxr"><img src="../assets/images/corecommittee/106.jpg" class="imgr"><div class="namediv">Dr. Sakuntala Mahapatra<br>(HOD ETC)<br><b style="font-size: 1.2em;">Chairperson</b></div></div></div>
+     <div><div class="boxr"><img src="../assets/images/corecommittee/144.JPG" class="imgr"><div class="namediv">Prof. N.G. Das<br>(Head Training & Placement)</div></div></div>
+     <div><div class="boxr"><img src="../assets/images/corecommittee/121.JPG" class="imgr"><div class="namediv">Prof. P.K. Sahoo<br>(HOD EEE)</div></div></div>
+     <div><div class="boxr"><img src="../assets/images/corecommittee/142.jpg" class="imgr"><div class="namediv">Ms.Rina Mahakud<br>(ETC)</div></div></div>
+     <div><div class="boxr"><img src="../assets/images/corecommittee/1.jpg" class="imgr"><div class="namediv">Mr.Sumant Sahoo<br>(System Administrator)</div></div></div>
+     </div>
+</div>
+
+</body>
+</html>
