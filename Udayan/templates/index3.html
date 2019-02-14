@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" />
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="{% static 'css/core.css' %}" rel="stylesheet">
     <style>
+
         body {
             margin: 0;
             height: 60vh;
@@ -68,7 +70,6 @@
 
         .level4 {
             transform: scale(1);
-            background:green;
         }
 
         .level5 {
@@ -1028,12 +1029,15 @@ color: white;
 				<img src="http://vignette3.wikia.nocookie.net/marvelcinematicuniverse/images/d/d3/AOU_Wall_Decor_14.png/revision/latest?cb=20150210025716" alt="The Vision" />
 			</div>
 		</div>
-		<div class="level4">
+			<div class="level4">
 			<div class="rivals">
-				<img src="https://vignette1.wikia.nocookie.net/marvelcrossroads/images/f/f6/Falcon_%28Earth-5171%29.png/revision/latest?cb=20160324230911" alt="Falcon" />
+				<img src="{% static 'Assets/Images/Ironman.png' %}" alt="Falcon" />
 			</div>
+			<iframe src="{% url 'core_committee' %}">
+
+			</iframe>
 			<div class="rivals">
-				<img src="http://vignette2.wikia.nocookie.net/ironman/images/7/75/War_Machine_2.png/revision/latest?cb=20140625184902" alt="War Machine" />
+				<img src="{% static 'Assets/Images/Ironman.png' %}" alt="Falcon" />
 			</div>
 		</div>
 		<div class="level5">
