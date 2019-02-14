@@ -7,6 +7,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
     <link href="{% static 'css/core.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <style>
 		.scrollcls{
 			display:none;
@@ -72,6 +73,9 @@
 
         .level4 {
             -webkit-transform: scale(1);
+            margin:0;
+            height:100vh;
+            width:100%;
         }
 
         .level5 {
@@ -200,8 +204,7 @@
 	font-family: 'Bebas-Neue-Book';
 	  -webkit-animation-name: hud;
 	  animation-name: hud;
-	  -webkit-animation-delay: 1s;
-	  animation-delay: 1s;
+
 	  -webkit-animation-duration: 1500ms;
 	  animation-duration: 1500ms;
 	  -webkit-animation-timing-function: cubic-bezier(0.24, 0.86, 0.59, 0.99);
@@ -215,13 +218,13 @@
 	  -moz-border-radius: 10px;
 	  -webkit-border-radius: 10px;
 	  border-radius: 10px;
-	  box-sizing: border-box;
-	  overflow: hidden;
-			font-size : 0em;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-size : 0em;
 	opacity:0;
-	    padding: 10px;
-    text-align: -webkit-center;
-    text-shadow: 1px 1px #0000008c;
+	padding: 10px;
+	text-align: -webkit-center;
+	text-shadow: 1px 1px #0000008c;
     font-size: 90px;
     color: #000000;
     line-height: 25.7px;
@@ -291,29 +294,39 @@
 		  display:none;
 		}
 
-.tech-slideshow > div {
-  height: 120px;
-  width: 2526px;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 120px;
-  -webkit-transform: translate3d(0, 0, 0);
-}
-.tech-slideshow .mover-1 {
-  animation: moveSlideshow 12s linear infinite;
-}
+		.tech-slideshow > div {
+		  height: 120px;
+		  width: 2526px;
+		  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg);
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  height: 120px;
+		  -webkit-transform: translate3d(0, 0, 0);
+		}
+		.tech-slideshow .mover-1 {
+		  animation: moveSlideshow 12s linear infinite;
+		}
 
-@keyframes moveSlideshow {
-  100% {
-    -webkit-transform: translateX(-66.6666%);
-  }
-}
-#hud1{
-	box-sizing: border-box;
-    overflow: hidden;
-}
+		@keyframes moveSlideshow {
+		  100% {
+			-webkit-transform: translateX(-66.6666%);
+		  }
+		}
+		#hud1{
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+
+		@-webkit-keyframes spin {
+			from {
+				-webkit-transform:rotate(0deg);
+			}
+			to {
+				-webkit-transform:rotate(360deg);
+			}
+		}
+
     </style>
 
     <script>
@@ -577,7 +590,9 @@
         }
         function show6(){
         	$('.level6').show('puff');
-            $('.tech-slideshow').delay( 3000 ).show('fade');
+            $('.tech-slideshow').delay( 2000 ).show('fade');
+            $('.slide1L').delay( 2000 ).show('slide');
+            $('.slide1R').delay( 2000 ).show({effect:'slide',direction:'right'});
         }
         function hide6(){
 			 $('.level6').hide();
@@ -828,6 +843,48 @@ color: white;
 		height:0;
 		transition:ease 1s;
 	}
+	#feedframe{
+		position:absolute;
+		opacity:0;
+		left:50%;
+		top:50%;
+		width:0;
+		height:0;
+		transition:ease 1s;
+	}
+	.slide1L{
+		position: absolute;
+		left: -68%;
+		top: 50%;
+		transform: translateY(-50%);
+		width: auto;
+		height: 36vh;
+
+	}
+	.slide1R{
+		position: absolute;
+		right: -68%;
+		top: 50%;
+		transform: translateY(-50%);
+		width: auto;
+		height: 36vh;
+
+	}
+
+	.feedEntry{
+		height: 47vh;
+		width: 47vh;
+		left: 50%;
+		top: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		transition:ease 1.5s;
+	}
+	.feedEntry>img{
+		width:100%;
+		height:auto;
+		-webkit-animation:spin linear infinite 5s;
+	}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
@@ -984,6 +1041,27 @@ color: white;
 	function closeCore(){
 	 	$('#committeeframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
 	}
+	function closeFeed(){
+	 	$('#feedframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
+	}
+	$(function(){
+		var windH=window.innerHeight/2;
+		var imgl=(window.innerHeight/100)*36/2;
+		imgl=windH-imgl;
+		$('.slide1L').css('top',imgl);
+		$('.slide1R').css('top',imgl);
+		$('.slide1L').css('display','none');
+		$('.slide1R').css('display','none');
+
+		$('.feedEntry').bind("click",function(){
+		console.log('clicked');
+			$('.feedEntry').css({height: ($(this).height()*50.5), width: ($(this).width()*50.5)});
+
+			$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})
+		});
+	});
+
+
 	</script>
 
 </head>
@@ -1002,14 +1080,6 @@ color: white;
 			</div>
 		</div>
 		<div class="level3">
-			<div class="rivals">
-				<img src="http://media.popcultcha.com.au/media/catalog/product/a/v/avengers-scarletwitchsixthscalehottoysactionfigure.png" alt="Scarlet Witch" />
-			</div>
-			<div class="rivals">
-				<img src="http://vignette3.wikia.nocookie.net/marvelcinematicuniverse/images/d/d3/AOU_Wall_Decor_14.png/revision/latest?cb=20150210025716" alt="The Vision" />
-			</div>
-		</div>
-			<div class="level4">
 			<div class="rivals" onclick="$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
 				<img src="{% static 'Assets/Images/ai2.png' %}" style="    width: 29vw;    height: 22vw;" alt="Falcon" />
 			</div>
@@ -1018,7 +1088,16 @@ color: white;
 				<img src="{% static 'Assets/Images/ai5.png' %}" alt="Falcon" style="    width: 29vw;    height: 22vw;" />
 			</div>
 		</div>
+		<div class="level4">
+			<div class="feedEntry">
+				<img src="{% static 'Assets/Images/strange1.png' %}"  alt="Scarlet Witch" />
+			</div>
+
+		</div>
 		<iframe id="committeeframe" src="{% url 'core_committee' %}">
+
+			</iframe>
+		<iframe id="feedframe" src="{% url 'feed' %}">
 
 			</iframe>
 		<div class="level5">
@@ -1047,6 +1126,8 @@ color: white;
 		</div>
 		<iframe name="eventframe" id="eventframe"></iframe>
 		<div class="level6">
+			<img class="slide1L animated infinite pulse delay-2s" src="{% static 'Assets/Images/ai1.png' %}" alt="slide1L">
+			<img class="slide1R animated infinite pulse delay-2s" src="{% static 'Assets/Images/ai4.png' %}" alt="slide1R">
 			<div class="intro" id="hud1">
 				   <div class="hud">
 					   <h1>Udayan 2k19</h1>

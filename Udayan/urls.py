@@ -21,6 +21,7 @@ from . import views
 urlpatterns = [
 
     url(r'admin/',views.admin,name="admin"),
+    url(r'feed/',views.feed,name="feed"),
     url(r'demo/',views.demo,name="demo"),
     url(r'login/',views.login,name="login"),
     url(r'post-login/',views.post_login,name="post_login"),

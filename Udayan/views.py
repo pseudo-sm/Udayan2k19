@@ -128,3 +128,6 @@ def core_committee(request):
 def demo(request):
 
     return render(request,"demo/demo.html")
+def feed(request):
+
+    return render(request,"feed.html")
