@@ -8,7 +8,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
     <link href="{% static 'css/core.css' %}" rel="stylesheet">
     <style>
-
+		.scrollcls{
+			display:none;
+		}
         body {
             margin: 0;
             height: 60vh;
@@ -51,34 +53,34 @@
             width: 40vw;
             margin: 0 30vw;
             position: absolute;
-            transform:  scale(1);
+            -webkit-transform:  scale(1);
             text-align: center;
             display:none;
         }
 
         .level2 {
-            transform: scale(1);
+            -webkit-transform: scale(1);
 
         }
         .level2 .rivals:first-child img
         {
-            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
         }
         .level3 {
-            transform: scale(1);
+            -webkit-transform: scale(1);
         }
 
         .level4 {
-            transform: scale(1);
+            -webkit-transform: scale(1);
         }
 
         .level5 {
-            transform:  scale(1);
+            -webkit-transform:  scale(1);
 
         }
 
         .level6 {
-            transform:scale(1);
+            -webkit-transform:scale(1);
 
         }
 
@@ -121,49 +123,6 @@
         }
 
 
-        <!--.scrollcls-->
-        <!--{-->
-            <!--position: fixed;-->
-            <!--bottom:0;-->
-            <!--width: 100%;-->
-            <!--text-align: center;-->
-            <!--color: #fff;-->
-            <!--font-size: 25px;-->
-             <!-- -webkit-animation: jump 1s linear infinite; /* Chrome, Safari, Opera */-->
-            <!--animation: jump 1s linear infinite;-->
-        <!--}-->
-        <!--.scrollcls:before, .scrollcls:after-->
-        <!--{-->
-            <!--content: "!!!!!!!";-->
-        <!--}-->
-        <!--@-webkit-keyframes jump {-->
-            <!--0% {transform: translateY(0);}-->
-            <!--50% {transform: translateY(-10px);}-->
-            <!--55% {transform: translateY(0);}-->
-            <!--60% {transform: translateY(-5px);}-->
-            <!--65% {transform: translateY(0);}-->
-        <!--}-->
-        <!--@keyframes jump {-->
-            <!--0% {transform: translateY(0);}-->
-            <!--50% {transform: translateY(-10px);}-->
-            <!--55% {transform: translateY(0);}-->
-            <!--60% {transform: translateY(-5px);}-->
-            <!--65% {transform: translateY(0);}-->
-        <!--}-->
-        <!--@-moz-keyframes jump {-->
-            <!--0% {transform: translateY(0);}-->
-            <!--50% {transform: translateY(-10px);}-->
-            <!--55% {transform: translateY(0);}-->
-            <!--60% {transform: translateY(-5px);}-->
-            <!--65% {transform: translateY(0);}-->
-        <!--}-->
-        <!--@-o-keyframes jump {-->
-            <!--0% {transform: translateY(0);}-->
-            <!--50% {transform: translateY(-10px);}-->
-            <!--55% {transform: translateY(0);}-->
-            <!--60% {transform: translateY(-5px);}-->
-            <!--65% {transform: translateY(0);}-->
-        <!--}-->
 
         .intro{
                 padding: 130px 0;
@@ -328,7 +287,7 @@
 		  margin: 14px auto;
 		  position: relative;
 		  overflow: hidden;
-		  transform: translate3d(0, 0, 0);
+		  -webkit-transform: translate3d(0, 0, 0);
 		  display:none;
 		}
 
@@ -340,7 +299,7 @@
   top: 0;
   left: 0;
   height: 120px;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 .tech-slideshow .mover-1 {
   animation: moveSlideshow 12s linear infinite;
@@ -348,7 +307,7 @@
 
 @keyframes moveSlideshow {
   100% {
-    transform: translateX(-66.6666%);
+    -webkit-transform: translateX(-66.6666%);
   }
 }
 #hud1{
@@ -368,7 +327,7 @@
         detectthreshold=5;
         currentthreshold=0;
     	//first=$(".main").css("perspective").replace("px", "");
-        $(document).bind('mousewheel keydown', function(e) {
+        $(document).bind('mousewheel keydown MozMousePixelScroll ', function(e) {
           if(currentthreshold++>detectthreshold){
                 currentthreshold=0;
                 console.log('scrolled');
@@ -376,7 +335,7 @@
                 return;
                 }
 			console.log($(".main").css("perspective").replace("px", "") );
-            if (e.originalEvent.wheelDelta  > 0 || e.which == 38) {
+            if (e.originalEvent.wheelDelta  > 0  ||e.originalEvent.detail  < 0 || e.which == 38) {
 
             	//if($(".main").css("perspective").replace("px", "")-800>=500)
                 	//$(".main").css("perspective", $(".main").css("perspective").replace("px", "") * 1 - 900);
@@ -404,7 +363,7 @@
                     statuscode=5;
                     scroll(5);
                 }
-            } else if (e.originalEvent.wheelDelta  < 0 || e.which == 40) {
+            } else if (e.originalEvent.wheelDelta  < 0 ||e.originalEvent.detail  > 0  || e.which == 40) {
                 console.log(statuscode);
                 if(statuscode==0){
                     statuscode=1;
@@ -636,7 +595,7 @@
         	 $('.gauntlet').hide()
         }
     </script>
-	<!--Gauntlet background effect start-->
+
 	<style>
 	.event{
 	    box-sizing: border-box;
@@ -986,7 +945,7 @@ color: white;
 		LabTemplate.loadComplete();
 	</script>
 
-	<!--EVENT-->
+
 	<script>
 	function openEvent(ev){
 		if(ev==1){
