@@ -72,18 +72,164 @@ def viewevents(request):
     print(cse_event_list)
     return render(request,"index2.html",{"cse_event_list":cse_event_list})
 
+def vieweventsetc(request):
+    etc_events = dict(db.child("events").child("Electronics & Telecommunication").get().val())
+    etc_event_list = list(etc_events.keys())
+    print(etc_event_list)
+    return render(request,"index2etc.html",{"etc_event_list":etc_event_list})
+def vieweventseee(request):
+    etc_events = dict(db.child("events").child("Electrical & Electronics").get().val())
+    etc_event_list = list(etc_events.keys())
+    print(etc_event_list)
+    return render(request,"index2etc.html",{"etc_event_list":etc_event_list})
+
+def vieweventsee(request):
+    etc_events = dict(db.child("events").child("Electrical").get().val())
+    etc_event_list = list(etc_events.keys())
+    print(etc_event_list)
+    return render(request,"index2etc.html",{"etc_event_list":etc_event_list})
+def vieweventsmech(request):
+    etc_events = dict(db.child("events").child("Mechanical").get().val())
+    etc_event_list = list(etc_events.keys())
+    print(etc_event_list)
+    return render(request,"index2etc.html",{"etc_event_list":etc_event_list})
+def vieweventscivil(request):
+    etc_events = dict(db.child("events").child("Civil").get().val())
+    etc_event_list = list(etc_events.keys())
+    print(etc_event_list)
+    return render(request,"index2etc.html",{"etc_event_list":etc_event_list})
 def cse(request,event_name):
 
 
-    names = []
+    faculty = []
+    students = []
     cse_events = dict(db.child("events").child("Computer Science & IT").get().val())
     about = (cse_events[event_name]["about"])
     prize1 = (cse_events[event_name]["prize1"])
     prize2 = (cse_events[event_name]["prize2"])
-    committee_members = list(cse_events[event_name]["committee"])
+    committee_members = dict(cse_events[event_name]["committee"])
+
     for name in committee_members:
-        names.append(name)
-    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"names":names,"event_name":event_name})
+        if committee_members[name]["role"] == "Faculty":
+            faculty.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+        else:
+            students.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+    print(faculty)
+    print(students)
+    cse_event_list = list(cse_events.keys())
+    print(cse_event_list)
+    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"faculty":faculty,"students":students,"event_name":event_name})
+
+def etc(request,event_name):
+
+
+    faculty = []
+    students = []
+    cse_events = dict(db.child("events").child("Electronics & Telecommunication").get().val())
+    about = (cse_events[event_name]["about"])
+    prize1 = (cse_events[event_name]["prize1"])
+    prize2 = (cse_events[event_name]["prize2"])
+    committee_members = dict(cse_events[event_name]["committee"])
+
+    for name in committee_members:
+        if committee_members[name]["role"] == "Faculty":
+            faculty.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+        else:
+            students.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+    print(faculty)
+    print(students)
+    cse_event_list = list(cse_events.keys())
+    print(cse_event_list)
+    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"faculty":faculty,"students":students,"event_name":event_name})
+
+def eee(request,event_name):
+
+
+    faculty = []
+    students = []
+    cse_events = dict(db.child("events").child("Electrical & Electronics").get().val())
+    about = (cse_events[event_name]["about"])
+    prize1 = (cse_events[event_name]["prize1"])
+    prize2 = (cse_events[event_name]["prize2"])
+    committee_members = dict(cse_events[event_name]["committee"])
+
+    for name in committee_members:
+        if committee_members[name]["role"] == "Faculty":
+            faculty.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+        else:
+            students.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+    print(faculty)
+    print(students)
+    cse_event_list = list(cse_events.keys())
+    print(cse_event_list)
+    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"faculty":faculty,"students":students,"event_name":event_name})
+
+def ee(request,event_name):
+
+
+    faculty = []
+    students = []
+    cse_events = dict(db.child("events").child("Electrical").get().val())
+    about = (cse_events[event_name]["about"])
+    prize1 = (cse_events[event_name]["prize1"])
+    prize2 = (cse_events[event_name]["prize2"])
+    committee_members = dict(cse_events[event_name]["committee"])
+
+    for name in committee_members:
+        if committee_members[name]["role"] == "Faculty":
+            faculty.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+        else:
+            students.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+    print(faculty)
+    print(students)
+    cse_event_list = list(cse_events.keys())
+    print(cse_event_list)
+    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"faculty":faculty,"students":students,"event_name":event_name})
+
+def mech(request,event_name):
+
+
+    faculty = []
+    students = []
+    cse_events = dict(db.child("events").child("Mechanical").get().val())
+    about = (cse_events[event_name]["about"])
+    prize1 = (cse_events[event_name]["prize1"])
+    prize2 = (cse_events[event_name]["prize2"])
+    committee_members = dict(cse_events[event_name]["committee"])
+
+    for name in committee_members:
+        if committee_members[name]["role"] == "Faculty":
+            faculty.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+        else:
+            students.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+    print(faculty)
+    print(students)
+    cse_event_list = list(cse_events.keys())
+    print(cse_event_list)
+    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"faculty":faculty,"students":students,"event_name":event_name})
+
+def civil(request,event_name):
+
+
+    faculty = []
+    students = []
+    cse_events = dict(db.child("events").child("Civil").get().val())
+    about = (cse_events[event_name]["about"])
+    prize1 = (cse_events[event_name]["prize1"])
+    prize2 = (cse_events[event_name]["prize2"])
+    committee_members = dict(cse_events[event_name]["committee"])
+
+    for name in committee_members:
+        if committee_members[name]["role"] == "Faculty":
+            faculty.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+        else:
+            students.append({"email":committee_members[name]["email"],"phone":committee_members[name]["phone"],"name":name})
+    print(faculty)
+    print(students)
+    cse_event_list = list(cse_events.keys())
+    print(cse_event_list)
+    return render(request,"cse.html",{"about":about,"prize1":prize1,"prize2":prize2,"faculty":faculty,"students":students,"event_name":event_name})
+
 
 def add_events(request):
 
@@ -103,7 +249,7 @@ def add_events(request):
     print(name,phone,email,branch,role,title,about,image,prize1,prize2,prize3)
     for i in range(len(name)):
         db.child("events").child(branch).child(title).child("committee").child(name[i]).update({"email":email[i],"phone":phone[i],"role":role[i]})
-    db.child("events").child(branch).child(title).update({"about":about,"prize1":prize1,"prize2":prize2,"prize3":prize3,"setup cost":setup_costx})
+    db.child("events").child(branch).child(title).update({"about":about,"prize1":prize1,"prize2":prize2,"prize3":prize3,"setup cost":setup_cost})
     storage.child("events").child(title).child(title).put(image)
     return HttpResponseRedirect('/events/')
 def photographer_upload(request):
@@ -128,3 +274,7 @@ def core_committee(request):
 def demo(request):
 
     return render(request,"demo/demo.html")
+
+def feed(request):
+
+    return render(request,"feed.html")
