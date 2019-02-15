@@ -174,7 +174,20 @@
         #wrapper span.purple:hover:after {
           background-color: #d7b8f3;
         }
-
+        .close{
+          position: fixed;
+          right: 30px;
+          top: 14px;
+          width: 40px;
+          height: 40px;
+          background: white;
+          z-index: 1;
+          border-radius: 50%;
+          box-shadow: none;
+          border: 0;
+          font-size: 1.3em;
+          cursor:pointer;
+          }
     </style>
     <script>
         // this will be called onload
@@ -343,7 +356,7 @@
           }
         }
 
-        const WORDS = [
+        const WORDS1 = [
           '+  -                             -  +',
           '                                     ',
           '                                     ',
@@ -356,6 +369,20 @@
           '                                     ',
           '                                     ',
           '+  -                             -  +',
+        ];
+        const WORDS = [
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '           Udayan2k19 Day 1          ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
+          '                                     ',
         ];
 
         class TextShuffler {
@@ -415,6 +442,7 @@
     </script>
 </head>
 <body>
+<input type="button" class="close"  onclick="parent.closeFeed()" value="X">
    <div class="heading">
         <div id="wrapper"></div>
    </div>
