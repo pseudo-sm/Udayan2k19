@@ -1,26 +1,9 @@
-runtime: python
+runtime: python36
+api_version: 1
+threadsafe: yes
 
-# the PROJECT-DIRECTORY is the one with settings.py and wsgi.py
-entrypoint: gunicorn -b :80 Udayan2k19.wsgi # specific to a GUnicorn HTTP server deployment
-env: flex # for Google Cloud Flexible App Engine
-
-# any environment variables you want to pass to your application.
-# accessible through os.environ['VARIABLE_NAME']
-env_variables:
-# the secret key used for the Django app (from PROJECT-DIRECTORY/settings.py)
-  SECRET_KEY: '+$ax#g)2+y+h@x@ewcn6o74ua9g9&o08a-ixv24$tc@@0ohx=i''
-  DEBUG: 'False' # always False for deployment
-  
-# everything after /cloudsql/ can be found by entering >> gcloud sql instances describe DATABASE-NAME << in your Terminal
-# the DATABASE-NAME is the name you gave your project's PostgreSQL database
-# the second line from the describe output called connectionName can be copied and pasted after /cloudsql/
-
-  
-  STATIC_URL: 'static/'
-  
 handlers:
 - url: /static
-  static_dir: static
-
-runtime_config:
-  python_version: 3 # enter your Python version BASE ONLY here. Enter 2 for 2.7.9 or 3 for 3.6.4
+  static_dir: static/
+- url: .*
+  script: Udayan2k19.wsgi.application
