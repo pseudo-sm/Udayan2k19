@@ -447,11 +447,11 @@
                     }
                    if(current4==1){
                             current4=0;
-                            $('.level4').hide();
+                            hide4();
                     }
                    if(current5==1){
                         current5=0;
-                        $('.level5').hide();
+                        hide5();
                     }
 
                    if(current6==1){
@@ -470,7 +470,7 @@
                     }
                    if(current4==1){
                             current4=0;
-                            $('.level4').hide();
+                             hide4();
                     }
                    if(current5==1){
                         current5=0;
@@ -497,7 +497,7 @@
                     }
                      if(current4==1){
                             current4=0;
-                            $('.level4').hide();
+                            hide4();
                     }
                      if(current6==1){
                         current6=0;
@@ -531,7 +531,7 @@
                     }
                     if(current4==0){
                             current4=1;
-                            $('.level4').show('puff');
+                           show4();
                     }
                     if(current7==1){
                             current7=0;
@@ -548,7 +548,7 @@
                          }
                         if(current4==1){
                             current4=0;
-                            $('.level4').hide();
+                            hide4();
                         }
                          if(current5==1){
                             current5=0;
@@ -573,7 +573,7 @@
                     }
                      if(current4==1){
                             current4=0;
-                            $('.level4').hide();
+                            hide4();
                     }
                      if(current5==1){
                         current5=0;
@@ -609,12 +609,23 @@
 			 //$('.gauntlet').delay(200).addClass('animateGauntlet');
 			 $('.gauntlet').delay(900).show('fade');
 			 $('.pubg').delay(1500).show({effect:'fade',duration:500});
+			 $('.notice').css({'top':'-100%','left':'50%','transform':'translateX(-50%)'});
+			 $('.notice').css({'opacity':'1','transition':'ease 1s'});
+			 setTimeout(function(){$('.notice').delay(1000).css({'top':'0'});},4000);
 
         }
         function hide5(){
         	 $('.level5').hide();
         	 $('.gauntlet').hide()
         	 $('.pubg').hide();
+        }
+        function show4(){
+			 $('.level4').show('fade');
+
+        }
+        function hide4(){
+        	 $('.level4').hide();
+
         }
     </script>
 
@@ -1092,6 +1103,7 @@ color: white;
     cursor:pointer;
     display:none;
     transition:ease-in 1s;
+    margin: 33px;
 		}
 		.p1{
 		   max-width:100%;
@@ -1177,6 +1189,60 @@ color: white;
   min-height: 100%;
   transform: scale(1.3);
 }
+.pubg1{
+
+    right: 0;
+    margin: 33px;
+}
+
+	.notice{
+		position:absolute;
+		left:-100%;
+		top:50%;
+		transform:translateY(-50%);
+		width: 340px;
+		height: 206px;
+		background: radial-gradient(#0128586e,#265f6700);
+
+		opacity:0;
+		}
+	.n1{
+		max-width:100%;
+		min-height: 100%;
+		height: 100%;
+		width: 20%;
+		position:absolute;
+	}
+	.n2{
+    max-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+	}
+	.n3{
+		max-width:100%;
+		min-height: 100%;
+		height: 100%;
+		width: 20%;
+		transform:rotate(180deg);
+		right:0;
+		position:absolute;
+	}
+	.noticeText{
+		    position: absolute;
+    font-size: 36px;
+    z-index: 1;
+    color: white;
+    text-shadow: 1px 1px 7px black;
+    line-height: 206px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Bebas-Neue-Book';
+	}
 	</style>
 </head>
 <body onload="init()">
@@ -1187,7 +1253,12 @@ color: white;
 <div class="main">
 	<!--<div class="bg"></div>-->
 	<div class="wrap">
-
+		<div class="notice">
+			<div class="noticeText"></div>
+			<img class="n1" src="{% static 'Assets/Images/alert1.png' %}" alt="notice">
+			<img class="n2" src="{% static 'Assets/Images/alert2.png' %}" alt="notice">
+			<img class="n3" src="{% static 'Assets/Images/alert1.png' %}" alt="notice">
+		</div>
 		<div class="level2">
 			<div class="rivals">
 				<img src="https://4.bp.blogspot.com/-EiBpzd_vxA4/VgjfT7V07lI/AAAAAAAAkfA/Ccse-jcndc0/s1600/Hawkeye.png" alt="Hawk Eye" />
@@ -1223,6 +1294,13 @@ color: white;
 		<a href="https://goo.gl/forms/Ni7X2JTUfOqusxV12" target="_blank">
 		<div class="pubg " >
 					<img class="p1" src="{% static 'Assets/Images/pubg.png' %}" alt="">
+					<img class="p2" src="{% static 'Assets/Images/register.png' %}" alt="">
+		</div>
+			</a>
+
+        <a href="https://goo.gl/forms/Ni7X2JTUfOqusxV12" target="_blank">
+		<div class="pubg pubg1 " >
+					<img class="p1" src="{% static 'Assets/Images/drop.png' %}" alt="">
 					<img class="p2" src="{% static 'Assets/Images/register.png' %}" alt="">
 		</div>
 			</a>
