@@ -278,3 +278,7 @@ def demo(request):
 def feed(request):
 
     return render(request,"feed.html")
+
+def sponsors(request):
+
+    return render(request,"sponsors.html")
