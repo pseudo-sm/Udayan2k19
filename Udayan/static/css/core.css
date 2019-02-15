@@ -1,6 +1,6 @@
 .at-section__title {
           margin: 0 0 70px;
-          color: #000;
+          color: white;
           font-family: 'Roboto', sans-serif;
           font-size: 3.5rem;
           font-weight: 300;
@@ -170,7 +170,7 @@
         }
 
         body {
-          background: #FFF;
+       background: #00000091;
           font-family: 'Roboto', sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
