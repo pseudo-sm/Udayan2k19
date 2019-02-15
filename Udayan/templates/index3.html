@@ -77,6 +77,9 @@
             margin:0;
             height:100vh;
             width:100%;
+            left:-100%;
+            transition:ease 1s;
+            display:block;
         }
 
         .level5 {
@@ -116,18 +119,23 @@
         .rivals:nth-child(2) {
             float: right;
         }
-
-        .rivals img {
-            height: 65vh;
+        .rivals:nth-child(4) {
             float: right;
-            margin-top: 22vh;
+        }
+        .rivals img {
+            height: 18vw;
+            float: right;
+            margin-top: 5vh;
+            width:auto;
         }
 
         .rivals:nth-child(2) img {
             float: left;
         }
 
-
+        .rivals:nth-child(4) img {
+            float: left;
+        }
 
         .intro{
                 padding: 130px 0;
@@ -594,7 +602,7 @@
             $('.tech-slideshow').delay( 2000 ).show('fade');
             $('.slide1L').delay( 2000 ).show('slide');
             $('.slide1R').delay( 2000 ).show({effect:'slide',direction:'right'});
-
+            $('.pubg').hide();
         }
         function hide6(){
 			 $('.level6').hide();
@@ -608,24 +616,46 @@
 			 $('#testCanvas').delay(600).show('fade').delay(500).hide('fade');
 			 //$('.gauntlet').delay(200).addClass('animateGauntlet');
 			 $('.gauntlet').delay(900).show('fade');
-			 $('.pubg').delay(1500).show({effect:'fade',duration:500});
+			 $('.pubg').delay(200).show({effect:'fade',duration:500});
 			 $('.notice').css({'top':'-100%','left':'50%','transform':'translateX(-50%)'});
+
 			 $('.notice').css({'opacity':'1','transition':'ease 1s'});
-			 setTimeout(function(){$('.notice').delay(1000).css({'top':'0'});},4000);
+			 $('.noticeText').html('Click on the branch to show the Events');
+			 setTimeout(function(){$('.notice').delay(1000).css({'top':'0'});},2000);
+			 setTimeout(function(){
+			     $('.notice').delay(1000).css({'top':'-100%','opacity':'0'});
+			     $('.noticeText').html(' ');
+			 },7000);
+
 
         }
         function hide5(){
         	 $('.level5').hide();
         	 $('.gauntlet').hide()
         	 $('.pubg').hide();
+        	 setTimeout(function(){
+			     $('.notice').delay(1000).css({'top':'-100%','opacity':'0'});
+
+			 },200);
         }
         function show4(){
-			 $('.level4').show('fade');
-
+			 $('.level4').css({'left':'0','display':'block'});
+             $('.notice').css({'top':'50%','left':'-100%','transform':'translateY(-50%)'});
+             $('.notice').delay(1000).css({'left':'-100%','opacity':'0'});
+			 $('.notice').css({'opacity':'1','transition':'ease 1s'});
+             $('.noticeText').html('Click on the magic to show the daily feed.');
+              setTimeout(function(){$('.notice').delay(1000).css({'left':'0'});},2000);
+              setTimeout(function(){
+			     $('.notice').delay(1000).css({'left':'-100%','opacity':'0'});
+			     $('.noticeText').html(' ');
+			 },7000);
+			  $('.pubg').hide();
         }
         function hide4(){
         	 $('.level4').hide();
-
+        	 $('.level4').css({'left':'-100%','display':'block'});
+                $('.notice').delay(1000).css({'left':'-100%','opacity':'0'});
+			     $('.noticeText').html(' ');
         }
     </script>
 
@@ -846,13 +876,16 @@ color: white;
 	}
 
 	#eventframe{
+	    transform: scale(0.85);
 		background: #36454ffa;
 		opacity:0;
 		height:0;
 		width:0;
 		position: absolute;
+
 	}
 	#committeeframe{
+	    transform: scale(0.85);
 		position:absolute;
 		opacity:0;
 		left:50%;
@@ -862,6 +895,7 @@ color: white;
 		transition:ease 1s;
 	}
 	#feedframe{
+	    transform: scale(0.85);
 		position:absolute;
 		opacity:0;
 		left:50%;
@@ -1237,7 +1271,7 @@ color: white;
     z-index: 1;
     color: white;
     text-shadow: 1px 1px 7px black;
-    line-height: 206px;
+    padding: 19px;
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
@@ -1268,12 +1302,19 @@ color: white;
 			</div>
 		</div>
 		<div class="level3">
-			<div class="rivals" onclick="$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
-				<img src="{% static 'Assets/Images/ai2.png' %}" style="    width: 29vw;    height: 22vw;" alt="Falcon" />
+            <h1 style="color:white; font-family: 'Bebas-Neue-Book';">The Committee</h1>
+			<div class="rivals" onclick=" $('#committeeframe').attr('src','/technical/');  $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+				<img src="{% static 'Assets/Images/bot4.png' %}" style="    width: auto;    height: 18vw;" alt="Falcon" />
 			</div>
 
-			<div class="rivals" onclick="$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',});">
-				<img src="{% static 'Assets/Images/ai5.png' %}" alt="Falcon" style="    width: 29vw;    height: 22vw;" />
+			<div class="rivals" onclick="$('#committeeframe').attr('src','/core-committee/'); $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',});">
+				<img src="{% static 'Assets/Images/bot3.png' %}" alt="Falcon" style="    width: auto;    height: 18vw;" />
+			</div>
+             <div class="rivals" onclick="$('#committeeframe').attr('src','/publicity/');$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+				<img src="{% static 'Assets/Images/bot1.png' %}" style="     width: auto;    height: 18vw;" alt="Falcon" />
+			</div>
+            <div class="rivals" onclick="$('#committeeframe').attr('src','/sponsors/');$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+				<img src="{% static 'Assets/Images/bot2.png' %}" style="     width: auto;    height: 18vw; float:right;" alt="Falcon" />
 			</div>
 		</div>
 		<div class="level4">
@@ -1285,7 +1326,7 @@ color: white;
 			</div>
 
 		</div>
-		<iframe id="committeeframe" src="{% url 'core_committee' %}">
+		<iframe id="committeeframe" src="">
 
 			</iframe>
 		<iframe id="feedframe" src="">

@@ -280,7 +280,7 @@ def feed(request):
     return render(request,"feed.html")
 
 
-def tech_committee(request):
+def technical(request):
 
     regno = ['1501289324','1501289391','1501289419','1501289048','1501289094','1501289125','1501289111','1501289197','1501289278','1501289323']
     name = ['ABHISHEK BHOLA','SWADHIN KUMAR SENAPATI','ARPAN KUMAR SAMANTARAY','PRATIK DASMAHAPATRA','SUVANKAR SAHU','ASHISH KAMANI','AISHWARYA NAYAK','RISHAV KUMAR','SAROJ KUMAR SAHOO','SRIPATI SAGAR PATTNAYAK']
@@ -292,7 +292,7 @@ def tech_committee(request):
     context = zip(regno,name,branch,phone,email,images)
     return render(request,"technical.html",{"context":context})
 
-def sponsor(request):
+def sponsors(request):
 
     names = ['Abhinash Dhal','Bidhu Bhusan Dash','Biswajeet Mangaraj','Adarsh Mohanty','Chinmayee Mekup','Sailesh Mahapatra','Bibhuti Swain','Abhinash Dash','Sk. Fukkaran Ali','Shaswat Sucharit Patnaik']
     branch = ['ETC','ETC','CSE','CSE','CSE & IT','MECH','MECH','CIVIL','EEE','EE']

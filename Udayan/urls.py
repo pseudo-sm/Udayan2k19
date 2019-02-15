@@ -37,8 +37,8 @@ urlpatterns = [
     url(r'^civil/(?P<event_name>\w.*)/', views.civil, name="civil"),
     url(r'photographer-upload/',views.photographer_upload,name="photographer_upload"),
      url(r'feed/',views.feed,name="feed"),
-     url(r'technical/',views.tech_committee,name="technical"),
-     url(r'sponsors/',views.sponsor,name="sponsors"),
+
+     url(r'sponsors/',views.sponsors,name="sponsors"),
      url(r'publicity/',views.publicity,name="publicity"),
     url(r'viewevent/',views.viewevents,name="viewevents"),
     url(r'vieweventetc/',views.vieweventsetc,name="vieweventsetc"),
@@ -50,6 +50,7 @@ urlpatterns = [
     url(r'^committee/',views.committee,name="committee"),
     url(r'^sponsors/',views.sponsors,name="sponsors"),
     url(r'^core-committee/',views.core_committee,name="core_committee"),
+    url(r'^technical/',views.technical,name="technical"),
     url(r'',views.index,name="index"),
 
 
