@@ -188,6 +188,64 @@
           font-size: 1.3em;
           cursor:pointer;
           }
+
+
+          <!--coming soon-->
+          body {
+  background: #222222;
+  font-family: "Helvetica Neue","Helvetica",Arial,"Lucida   Grande",sans-serif;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 100;
+  letter-spacing: 1em;
+  text-shadow: 0px 0px 20px #6EC3EC;
+  color: #6EC3EC;
+  display: inline-block;
+}
+
+.container {
+  font-size: 16px;
+  top: 50%;
+  left: 40%;
+  position: absolute;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.bar {
+  height: .3em;
+  width: 30em;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: inset 0px 0px 8px #323232;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.progress {
+  height: inherit;
+  border-radius: inherit;
+  width: 0;
+  background: #6EC3EC;
+  animation: load 3s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    float: right;
+  }
+}
+
     </style>
     <script>
         // this will be called onload
@@ -376,7 +434,7 @@
           '                                     ',
           '                                     ',
           '                                     ',
-          '           Udayan2k19 Day 1          ',
+          '              Udayan2k19             ',
           '                                     ',
           '                                     ',
           '                                     ',
@@ -446,65 +504,19 @@
    <div class="heading">
         <div id="wrapper"></div>
    </div>
-<div class="gallery">
-  <figure class="photo">
+<!--<div class="gallery">-->
+  <!--<figure class="photo">-->
 
-    <img src ="http://lorempixel.com/300/300/animals/1" alt="Hippo" />
-    <figcaption>Heinrich</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/2" alt="Garth" />
-    <figcaption>Garth</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/3" alt="Timothy" />
-    <figcaption>Timothy</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/4" alt="Gerald" />
-    <figcaption>Gerald</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/5" alt="Diana" />
-    <figcaption>Diana</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/6" alt="Pamela" />
-    <figcaption>Pamela</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/7" alt="Cathrine" />
-    <figcaption>Cathrine</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/8" alt="Pomeroy" />
-    <figcaption>Pomeroy</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/9" alt="Dwayne" />
-    <figcaption>Dwayne</figcaption>
-  </figure>
-  <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
-    <figcaption>Henry</figcaption>
-  </figure>
-    <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
-    <figcaption>Henry</figcaption>
-  </figure>
-    <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
-    <figcaption>Henry</figcaption>
-  </figure>
-    <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
-    <figcaption>Henry</figcaption>
-  </figure>
-    <figure class="photo">
-    <img src="http://lorempixel.com/300/300/animals/10" alt="Henry" />
-    <figcaption>Henry</figcaption>
-  </figure>
-
+    <!--<img src ="http://lorempixel.com/300/300/animals/1" alt="Hippo" />-->
+    <!--<figcaption>Heinrich</figcaption>-->
+  <!--</figure>-->
+  <!---->
+<!--</div>-->
+<div class="container">
+  <h3>COMING SOON</h3>
+  <div class="bar">
+    <div class="progress"></div>
+  </div>
 </div>
 </body>
 </html>
