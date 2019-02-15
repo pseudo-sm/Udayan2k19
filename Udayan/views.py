@@ -278,3 +278,37 @@ def demo(request):
 def feed(request):
 
     return render(request,"feed.html")
+
+
+def tech_committee(request):
+
+    regno = ['1501289324','1501289391','1501289419','1501289048','1501289094','1501289125','1501289111','1501289197','1501289278','1501289323']
+    name = ['ABHISHEK BHOLA','SWADHIN KUMAR SENAPATI','ARPAN KUMAR SAMANTARAY','PRATIK DASMAHAPATRA','SUVANKAR SAHU','ASHISH KAMANI','AISHWARYA NAYAK','RISHAV KUMAR','SAROJ KUMAR SAHOO','SRIPATI SAGAR PATTNAYAK']
+    branch = ['ETC','ETC','MECH-A','MECH-B','CIVIL','CSE','CSE','CSE','EEE','EE']
+    phone = ['7008068053','8908408558','7008352085','7008716401','7381180506','9776448769','8018531094','7008607895','7873900425','9040890544']
+    email = ['abhishekbholatat@gmail.com','kumar.swadhin9777@gmail.com','arpankumarsamantaray7@gmail.com','pratikdasmahapatra71@gmail.com','araj90755@gmail.com','kamaniashis17@gmail.com','aishatat991@gmail.com','rishav74492644@gmail.com','belongstosaroj98@gmail.com','sagarpattnayak10@gmail.com']
+    images = ['https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','../static/Assets/Images/Committee/Arpan Kumar Samantaray.jpg','../static/Assets/Images/Committee/Pratik Dasmahapatra.jpg','../static/Assets/Images/Committee/SUBHANKAR 4-3.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','../static/Assets/Images/Committee/IMG_20190108_123234.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg']
+    print(len(images),len(name))
+    context = zip(regno,name,branch,phone,email,images)
+    return render(request,"technical.html",{"context":context})
+
+def sponsor(request):
+
+    names = ['Abhinash Dhal','Bidhu Bhusan Dash','Biswajeet Mangaraj','Adarsh Mohanty','Chinmayee Mekup','Sailesh Mahapatra','Bibhuti Swain','Abhinash Dash','Sk. Fukkaran Ali','Shaswat Sucharit Patnaik']
+    branch = ['ETC','ETC','CSE','CSE','CSE & IT','MECH','MECH','CIVIL','EEE','EE']
+    phone = ['7609937976','7008412591','9348910702','9090154358','8280474863','7008111430','7978619955','9124457352','8984873440','8658138404']
+    images = []
+    for i in range(len(names)):
+        images.append('https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg')
+    context = zip(names,branch,phone,images)
+    return render(request,"sponsors.html",{"context":context})
+def publicity(request):
+
+    names = ['Shahnawaz','Prasanjeet Behera','Kishan Kumar Sahoo','Satyajit Samal','Suraj Kumar Behera','Sandeep Rana']
+    branch  =['CSE','ETC','CIVIL','MECH','EE','CSE']
+    phone = ['7091500323','750438327','8457043036','8093522413','8917439355','9853437782']
+    images = []
+    for i in range(len(names)):
+        images.append('https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg')
+    context = zip(names,branch,phone,images)
+    return render(request,"publicity.html",{"context":context})
