@@ -311,7 +311,7 @@
 		  position: absolute;
 		  top: 0;
 		  left: 0;
-
+		   background-size: cover;
 		  -webkit-transform: translate3d(0, 0, 0);
 		}
 		.tech-slideshow .mover-1 {
@@ -443,7 +443,7 @@
             if(level==0){
 					if(current7==0){
                         current7=1;
-               	        $('.level7').show('puff');
+               	        show7();
 
                     }
                    if(current2==1){
@@ -465,7 +465,7 @@
 
                    if(current6==1){
                         current6=0;
-               	        hide6()
+               	        hide6();
                     }
             }else if(level==1){
 
@@ -493,7 +493,7 @@
                     }
                     if(current7==1){
                             current7=0;
-                            $('.level7').hide({effect:'fade',duration:600});
+                            hide7();
                     }
             }else if(level==2){
                      if(current2==1){
@@ -519,7 +519,7 @@
                       }
                       if(current7==1){
                             current7=0;
-                            $('.level7').hide();
+                            hide7();
                     }
             }else if(level==3){
                     if(current2==1){
@@ -532,7 +532,7 @@
                     }
                      if(current6==1){
                         current6=0;
-                        $('.level6').hide();
+                        hide6();
                      }
                     if(current5==1){
                             current5=0;
@@ -544,7 +544,7 @@
                     }
                     if(current7==1){
                             current7=0;
-                            $('.level7').hide();
+                            hide7();
                     }
             }else if(level==4){
                           if(current2==1){
@@ -553,7 +553,7 @@
                             }
                          if(current6==1){
                             current6=0;
-                            $('.level6').hide();
+                            hide6();
                          }
                         if(current4==1){
                             current4=0;
@@ -569,12 +569,12 @@
                         }
                         if(current7==1){
                             current7=0;
-                            $('.level7').hide();
+                            hide7();
                     }
             }else if(level==5){
                      if(current6==1){
                         current6=0;
-                        $('.level6').hide();
+                        hide6();
                      }
                      if(current3==1){
                             current3=0;
@@ -594,9 +594,19 @@
                     }
                     if(current7==1){
                             current7=0;
-                            $('.level7').hide();
+                            hide7()
                     }
             }
+        }
+        function hide7(){
+
+			$('.level7').hide({effect:'fade',duration:600});
+        	$( ".scroll" ).css({'bottom':'-100%','opacity':0.5});
+        }
+        function show7(){
+
+			$('.level7').show({effect:'fade',duration:600});
+        	$( ".scroll" ).css({'bottom':'20px','opacity':1});
         }
         function show6(){
         	$('.level6').show('puff');
@@ -938,6 +948,7 @@ color: white;
 		height:auto;
 		-webkit-animation:spin linear infinite 5s;
 	}
+	@-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tweenjs/1.0.2/tweenjs.min.js"></script>
@@ -1267,16 +1278,16 @@ color: white;
 		position:absolute;
 	}
 	.noticeText{
-		    position: absolute;
-    font-size: 36px;
-    z-index: 1;
-    color: white;
-    text-shadow: 1px 1px 7px black;
-    padding: 19px;
-    text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Bebas-Neue-Book';
+		position: absolute;
+		font-size: 36px;
+		z-index: 1;
+		color: white;
+		text-shadow: 1px 1px 7px black;
+		padding: 19px;
+		text-align: center;
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: 'Bebas-Neue-Book';
 	}
 	</style>
 </head>
@@ -1295,13 +1306,20 @@ color: white;
 			<img class="n3" src="{% static 'Assets/Images/alert1.png' %}" alt="notice">
 		</div>
 		<div class="level2">
-			<div class="rivals">
-				<img src="https://4.bp.blogspot.com/-EiBpzd_vxA4/VgjfT7V07lI/AAAAAAAAkfA/Ccse-jcndc0/s1600/Hawkeye.png" alt="Hawk Eye" />
+
+			<div class="rivals" onclick=" $('#committeeframe').attr('src','/demo/');  $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+				<img src="{% static 'Assets/Images/last3.png' %}" style="     transform: rotate(0);   width: auto;    height: 18vw;" alt="Falcon" />
 			</div>
-			<div class="rivals">
-				<img src="http://vignette4.wikia.nocookie.net/marvelcinematicuniverse/images/b/b3/Civil_War_Full_Body_03.png/revision/latest?cb=20160326231028" alt="Black Widow" />
+
+			<div class="rivals" onclick="$('#committeeframe').attr('src','/core-committee/'); $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',});">
+				<img src="{% static 'Assets/Images/last2.png' %}" alt="Falcon" style="    width: auto;    height: 18vw;" />
 			</div>
+             <div class="rivals" style="float:none; width:100%;" onclick="$('#committeeframe').attr('src','');$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+				<img src="{% static 'Assets/Images/last1.png' %}" style=" transition:ease 1s;  float:none;  width: auto;    height: 18vw;" alt="Falcon" />
+			</div>
+
 		</div>
+
 		<div class="level3">
             <h1 style="color:white; font-family: 'Bebas-Neue-Book';">The Committee</h1>
 			<div class="rivals" onclick=" $('#committeeframe').attr('src','/technical/');  $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
@@ -1328,12 +1346,8 @@ color: white;
 			</div>
 
 		</div>
-		<iframe id="committeeframe" src="">
-
-			</iframe>
-		<iframe id="feedframe" src="">
-
-			</iframe>
+		<iframe id="committeeframe" src=""></iframe>
+		<iframe id="feedframe" src=""></iframe>
 		<a href="https://goo.gl/forms/Ni7X2JTUfOqusxV12" target="_blank">
 		<div class="pubg " >
 					<img class="p1" src="{% static 'Assets/Images/pubg.png' %}" alt="">
@@ -1391,18 +1405,22 @@ color: white;
 			</div>
 		</div>
 		<div class="level7 logo_center">
-				<img src="{% static 'Assets/Images/final_logo.png' %}">
+			<img src="{% static 'Assets/Images/final_logo.png' %}">
 		</div>
+
 	</div>
 </div>
+	<div class="scroll" style="position: absolute; transition:ease-out 1s; width: 100%; bottom: 20px ; height: 13%; text-align: center;">
+
+			<img src="{% static 'Assets/Images/scroll.png' %}" alt="scroll" style="  position:relative;  height: 100%; -webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both">
+		</div>
 <div class="scrollcls">
 	Scroll
 </div>
-<audio autoplay loop>
-  <!--<source src="{% static 'audio/bg.mp3' %}" type="audio/mp3">-->
-  <source src="{% static 'audio/bg.mp3' %}" type="audio/ogg">
-</audio>
-
+<!--<audio autoplay loop>-->
+  <!--<source src="{% static 'audio/bg.mp3' %}" type="audio/mpeg">-->
+<!--</audio>-->
+	<iframe src="{% static 'audio/bg.mp3' %}" allow="autoplay" id="audio" style="display:none"></iframe>
 <script src='https://production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
 </body>
 </html>

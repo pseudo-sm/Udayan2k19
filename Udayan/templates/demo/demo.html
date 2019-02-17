@@ -358,6 +358,25 @@ canvas {
 
 
   </style>
+        <style>
+         .close{
+    position: fixed;
+    right: 30px;
+    top: 14px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    z-index: 1000;
+    border-radius: 50%;
+    box-shadow: none;
+    border: 0;
+    font-size: 1.3em;
+    cursor:pointer;
+    letter-spacing: 0px;
+    font-family: sans-serif;
+
+    }
+    </style>
 </head>
 
 <body onload="doit()" style=" overflow: auto; overflow-x: hidden;">
@@ -378,6 +397,7 @@ canvas {
 <div id="aa_particles" ></div>
 
 <script src="https://vincentgarreau.com/particles.js/particles.js"></script>
+    <input type="button" class="close"  onclick="parent.closeCore()" value="X">
 <div class="container" id="particles-js">
   <h1>Udayan Faculty Committee Members</h1>
    <div class="left-content">
