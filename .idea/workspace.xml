@@ -1,68 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Udayan2k19.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Udayan2k19.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Arpan Kumar Samantaray.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Arpan Kumar Samantaray.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Dibyasourav Das.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Dibyasourav Das.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/IMG_20190108_123234.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/IMG_20190108_123234.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Jitesh Kumar Dora.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Jitesh Kumar Dora.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Prakalpajeet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Prakalpajeet.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Pratik Dasmahapatra.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Pratik Dasmahapatra.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/SUBHANKAR 4-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/SUBHANKAR 4-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Sameer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Sameer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Saroj.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Saroj.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Sripati.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/Sripati.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/dib.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/dib.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Arpan Kumar Samantaray.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Dibyasourav Das.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/IMG_20190108_123234.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Jitesh Kumar Dora.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Prakalpajeet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Pratik Dasmahapatra.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/SUBHANKAR 4-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Sameer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Saroj.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/Sripati.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/resized/dib.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai5.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/ai5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/bot4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/doctor.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/doctor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/drop.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/drop.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/final_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/final_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/gauntlet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/gauntlet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/prev.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/prev.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/pubg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/pubg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/register.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/register.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/ai1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/ai2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/ai3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/ai4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/ai5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/bot1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/bot2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/bot3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/bot4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/doctor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/drop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/final_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/gauntlet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/prev.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/pubg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/register.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/resized/strange1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/strange1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/strange1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/templates/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/templates/index3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-    </list>
+    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,13 +31,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Udayan/templates/index3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="1130" column="14" lean-forward="true" selection-start-line="1130" selection-start-column="14" selection-end-line="1130" selection-end-column="14" />
+            <state relative-caret-position="4335">
+              <caret line="255" column="16" selection-start-line="255" selection-start-column="16" selection-end-line="255" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Udayan/templates/demo/demo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="400" selection-start-line="400" selection-end-line="400" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>doctor</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,7 +64,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -139,6 +92,13 @@
               <item name="Udayan2k19" type="462c0819:PsiDirectoryNode" />
               <item name="Udayan" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Udayan2k19" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Udayan2k19" type="462c0819:PsiDirectoryNode" />
+              <item name="Udayan" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Udayan2k19" type="b2602c69:ProjectViewProjectNode" />
@@ -201,7 +161,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24917382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -254,10 +213,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Udayan/templates/demo/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="400" selection-start-line="400" selection-end-line="400" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/templates/index3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="1130" column="14" lean-forward="true" selection-start-line="1130" selection-start-column="14" selection-end-line="1130" selection-end-column="14" />
+        <state relative-caret-position="4335">
+          <caret line="255" column="16" selection-start-line="255" selection-start-column="16" selection-end-line="255" selection-end-column="16" />
         </state>
       </provider>
     </entry>
