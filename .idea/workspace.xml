@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Udayan2k19.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Udayan2k19.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="many things fixed and sound fixed for chrome">
+      <change afterPath="$PROJECT_DIR$/Udayan/static/audio/kar.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Udayan/static/audio/snap.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Udayan/static/audio/stone1.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Udayan/static/audio/stone2.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Udayan/static/audio/wbg.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/static/audio/bg.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/audio/bg.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/templates/demo/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/templates/demo/demo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Udayan/templates/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/templates/index3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +22,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
+            <state relative-caret-position="-188">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
@@ -40,21 +40,18 @@
       <file leaf-file-name="index3.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Udayan/templates/index3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="1422" column="46" selection-start-line="1422" selection-start-column="46" selection-end-line="1422" selection-end-column="46" />
+            <state relative-caret-position="672">
+              <caret line="32" column="133" selection-start-line="32" selection-start-column="133" selection-end-line="32" selection-end-column="133" />
               <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#style#1;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#script#8;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#9;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#style#2;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#3;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,6 +81,9 @@
     <findStrings>
       <find>doctor</find>
       <find>slideshow &gt; di</find>
+      <find>canvas</find>
+      <find>testcanvas</find>
+      <find>openEvent</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -199,6 +199,14 @@
       <option name="presentableId" value="Default" />
       <updated>1550330202046</updated>
     </task>
+    <task id="LOCAL-00001" summary="many things fixed and sound fixed for chrome">
+      <created>1550431288033</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550431288033</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -227,6 +235,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="many things fixed and sound fixed for chrome" />
+    <option name="LAST_COMMIT_MESSAGE" value="many things fixed and sound fixed for chrome" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -254,18 +266,15 @@
         <state relative-caret-position="5355">
           <caret line="255" column="16" selection-start-line="255" selection-start-column="16" selection-end-line="255" selection-end-column="16" />
           <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#1;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#8;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#9;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#2;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#3;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -287,20 +296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Udayan/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/templates/technical.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -315,23 +310,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-188">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Udayan/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/templates/index3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="1422" column="46" selection-start-line="1422" selection-start-column="46" selection-end-line="1422" selection-end-column="46" />
+        <state relative-caret-position="672">
+          <caret line="32" column="133" selection-start-line="32" selection-start-column="133" selection-end-line="32" selection-end-column="133" />
           <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#1;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#8;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#9;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#2;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#3;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,3 +1,37 @@
+<!doctype html>
+<!--
+ /$$      /$$/$$                      /$$                                               /$$    /$$                         /$$ /$$$$
+| $$  /$ | $| $$                     |__/                                              | $$   |__/                        | $$/$$  $$
+| $$ /$$$| $| $$$$$$$ /$$   /$$       /$$/$$$$$$$  /$$$$$$$ /$$$$$$  /$$$$$$  /$$$$$$$/$$$$$$  /$$/$$$$$$$  /$$$$$$       | $|__/\ $$
+| $$/$$ $$ $| $$__  $| $$  | $$      | $| $$__  $$/$$_____//$$__  $$/$$__  $$/$$_____|_  $$_/ | $| $$__  $$/$$__  $$      | $$   /$$/
+| $$$$_  $$$| $$  \ $| $$  | $$      | $| $$  \ $|  $$$$$$| $$  \ $| $$$$$$$| $$       | $$   | $| $$  \ $| $$  \ $$      |__/  /$$/
+| $$$/ \  $$| $$  | $| $$  | $$      | $| $$  | $$\____  $| $$  | $| $$_____| $$       | $$ /$| $| $$  | $| $$  | $$           |__/
+| $$/   \  $| $$  | $|  $$$$$$$      | $| $$  | $$/$$$$$$$| $$$$$$$|  $$$$$$|  $$$$$$$ |  $$$$| $| $$  | $|  $$$$$$$       /$$  /$$
+|__/     \__|__/  |__/\____  $$      |__|__/  |__|_______/| $$____/ \_______/\_______/  \___/ |__|__/  |__/\____  $$      |__/ |__/
+                      /$$  | $$                           | $$                                             /$$  \ $$
+                     |  $$$$$$/                           | $$                                            |  $$$$$$/
+                      \______/                            |__/                                             \______/
+  /$$$$$$                     /$$                        /$$
+ /$$__  $$                   | $$                       | $$
+| $$  \__/ /$$$$$$ /$$$$$$$ /$$$$$$   /$$$$$$  /$$$$$$$/$$$$$$         /$$   /$$ /$$$$$$$
+| $$      /$$__  $| $$__  $|_  $$_/  |____  $$/$$_____|_  $$_/        | $$  | $$/$$_____/
+| $$     | $$  \ $| $$  \ $$ | $$     /$$$$$$| $$       | $$          | $$  | $|  $$$$$$
+| $$    $| $$  | $| $$  | $$ | $$ /$$/$$__  $| $$       | $$ /$$      | $$  | $$\____  $$
+|  $$$$$$|  $$$$$$| $$  | $$ |  $$$$|  $$$$$$|  $$$$$$$ |  $$$$/      |  $$$$$$//$$$$$$$/$$
+ \______/ \______/|__/  |__/  \___/  \_______/\_______/  \___/         \______/|_______|__/
+
+
+
+  /$$$$$$  /$$$$$$ /$$    /$$/$$$$$$$$/$$      /$$ /$$$$$$ /$$   /$$/$$$$$$$ /$$$$$$$$/$$    /$$
+ /$$__  $$/$$__  $| $$   | $| $$_____| $$$    /$$$/$$__  $| $$$ | $| $$__  $| $$_____| $$   | $$
+| $$  \__| $$  \ $| $$   | $| $$     | $$$$  /$$$| $$  \ $| $$$$| $| $$  \ $| $$     | $$   | $$
+| $$     | $$$$$$$|  $$ / $$| $$$$$  | $$ $$/$$ $| $$$$$$$| $$ $$ $| $$  | $| $$$$$  |  $$ / $$/
+| $$     | $$__  $$\  $$ $$/| $$__/  | $$  $$$| $| $$__  $| $$  $$$| $$  | $| $$__/   \  $$ $$/
+| $$    $| $$  | $$ \  $$$/ | $$     | $$\  $ | $| $$  | $| $$\  $$| $$  | $| $$       \  $$$/
+|  $$$$$$| $$  | $$  \  $/  | $$$$$$$| $$ \/  | $| $$  | $| $$ \  $| $$$$$$$| $$$$$$$$  \  $/
+ \______/|__/  |__/   \_/   |________|__/     |__|__/  |__|__/  \__|_______/|________/   \_/
+
+-->
 <html>
 <head>
         {% load static %}
@@ -764,12 +798,11 @@
 
     	box-shadow: inset 0 0 9px 1px #fff, 0 0 15px 8px #e2ff6f;
 	}
-	#testcanvas{
-		display:none;
-		height:150%;
-		width: 254%;
-        left: -75%;
-        z-index: 4;
+	#testCanvas{
+		display: none;
+		height: 100%;
+		width: 100%;
+        z-index: 0;
 		position: absolute;
 	}
 	.circle{
@@ -967,6 +1000,7 @@ color: white;
 			canv;
 
 		function init() {
+
 		  canvas = document.getElementById("testCanvas");
 		  canvas.width = window.innerWidth;
 		  canvas.height = window.innerHeight;
@@ -1071,28 +1105,33 @@ color: white;
 	function openEvent(ev){
 		if(ev==1){
 			$(".stone1").css('box-shadow', 'inset 0 0 4px 1px #fff, 0 0 11px 3px #ffffff');
-
+			$('#stone1').trigger('play');
 			$("#eventframe").attr("src", "/viewevent/");
 			$("#eventframe").css({'left':$('.stone1').offset().left,'top':$('.stone1').offset().top});
 			$('#eventframe').stop().animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
 		}else if(ev==2){
+		$('#stone2').trigger('play');
 			$(".stone2").css('box-shadow', 'inset 0 0 4px 1px #fff, 0 0 7px 4px #ff764b');
 			$("#eventframe").attr("src", "/vieweventetc/");
 			$("#eventframe").css({'left':$('.stone2').offset().left,'top':$('.stone2').offset().top});
 			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
 		}else if(ev==3){
+			$('#stone1').trigger('play');
 			$("#eventframe").attr("src", "/vieweventeee/");
 			$("#eventframe").css({'left':$('.stone3').offset().left,'top':$('.stone3').offset().top});
 			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
 		}else if(ev==4){
+			$('#stone2').trigger('play');
 			$("#eventframe").attr("src", "/vieweventee/");
 			$("#eventframe").css({'left':$('.stone4').offset().left,'top':$('.stone4').offset().top});
 			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
 		}else if(ev==5){
+		$('#stone1').trigger('play');
 			$("#eventframe").attr("src", "/vieweventmech/");
 			$("#eventframe").css({'left':$('.stone5').offset().left,'top':$('.stone5').offset().top});
 			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
 		}else if(ev==6){
+		$('#stone2').trigger('play');
 			$("#eventframe").attr("src", "/vieweventcivil/");
 			$("#eventframe").css({'left':$('.stone6').offset().left,'top':$('.stone6').offset().top});
 			$('#eventframe').animate({'left':'0','top':'0',"height":"100%","width":"100%","opacity":"1"},1500);
@@ -1101,13 +1140,16 @@ color: white;
 	function closeIFrame(){
 		 $(".stone").delay(1000).css('box-shadow', '')
 		 $('#eventframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
+		 $('#snap').trigger('play');
 	}
 	function closeCore(){
 	 	$('#committeeframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
+	 	$('#snap').trigger('play');
 	}
 	function closeFeed(){
 	 	$('#feedframe').animate({'opacity':0,'height':0,'width':0,'left':'50%','top':'50%','duration':1500});
 	 	$('.feedEntry').css({height: (feedEntryHeight), width: feedEntryHeight});
+	 	$('#snap').trigger('play');
 	}
 	$(function(){
 	    feedEntryHeight=$('.feedEntry').height();
@@ -1121,7 +1163,9 @@ color: white;
 		$('.slide1R').css('display','none');
 
 		$('.feedEntry').bind("click",function(){
-		console.log('clicked');
+
+			 	$('#strange').trigger('play');
+
 			//$('.feedEntry').css({height: ($(this).height()*50.5), width: ($(this).width()*50.5)});
 			$('#feedframe').attr('src','/feed/');
 			$('#feedframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})
@@ -1290,12 +1334,124 @@ color: white;
 		font-family: 'Bebas-Neue-Book';
 	}
 	</style>
+
+	<!--loader-->
+	<style>
+
+		.avenger {
+		  height: 100%;
+		  width: 100%;
+		  display: flex;
+		  position:absolute;
+		  z-index:50;
+		  align-items: center;
+		  justify-content: center;
+		  background: #f00;
+		  border-radius: 0%;
+		  transition: background 1s;
+		}
+		.avenger__icon {
+		  height: 200px;
+		  width: 200px;
+		  transition: -webkit-clip-path 0.5s;
+		  transition: clip-path 0.5s;
+		  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
+		}
+		.avenger--fist {
+		  background: #875094;
+		}
+		.avenger--fist .avenger__icon {
+		  background: #a2cd48;
+		  -webkit-clip-path: polygon(85% 90%,75% 55%,89% 42%,89% 24%,82% 22%,80% 9%,70% 7%,68% 10%,66% 6%,56% 5%,53% 8%,51% 4%,38% 5%,36% 9%,34% 7%,25% 8%,23% 12%,17% 17%,16% 41%,26% 54%,20% 90%);
+				  clip-path: polygon(85% 90%,75% 55%,89% 42%,89% 24%,82% 22%,80% 9%,70% 7%,68% 10%,66% 6%,56% 5%,53% 8%,51% 4%,38% 5%,36% 9%,34% 7%,25% 8%,23% 12%,17% 17%,16% 41%,26% 54%,20% 90%);
+		}
+		.avenger--hammer {
+		  background: #a00f20;
+		}
+		.avenger--hammer .avenger__icon {
+		  background: #dceaea;
+		  -webkit-clip-path: polygon(45% 95%,55% 95%,55% 40%,60% 40%,62.5% 42.5%,85% 42.5%,85% 7.5%,62.5% 7.5%,60% 5%,40% 5%,37.5% 7.5%,15% 7.5%,15% 42.5%,37.5% 42.5%,40% 40%,45% 40%,45% 95%,45% 95%,45% 95%,45% 95%,45% 95%);
+				  clip-path: polygon(45% 95%,55% 95%,55% 40%,60% 40%,62.5% 42.5%,85% 42.5%,85% 7.5%,62.5% 7.5%,60% 5%,40% 5%,37.5% 7.5%,15% 7.5%,15% 42.5%,37.5% 42.5%,40% 40%,45% 40%,45% 95%,45% 95%,45% 95%,45% 95%,45% 95%);
+		}
+		.avenger--shield {
+		  background: #1e5285;
+		}
+		.avenger--shield .avenger__icon {
+		  background: #fff;
+		  -webkit-clip-path: polygon(79% 96%,79% 96%,68% 62%,68% 62%,98% 40%,98% 40%,61% 40%,61% 40%,50% 5%,50% 5%,39% 40%,39% 40%,2% 40%,2% 40%,32% 62%,32% 62%,21% 96%,21% 96%,50% 75%,50% 75%,50% 75%);
+				  clip-path: polygon(79% 96%,79% 96%,68% 62%,68% 62%,98% 40%,98% 40%,61% 40%,61% 40%,50% 5%,50% 5%,39% 40%,39% 40%,2% 40%,2% 40%,32% 62%,32% 62%,21% 96%,21% 96%,50% 75%,50% 75%,50% 75%);
+		}
+		.avenger--helmet {
+		  background: #aa0505;
+		}
+		.avenger--helmet .avenger__icon {
+		  background: #fbca03;
+		  -webkit-clip-path: polygon(60% 95%,70% 75%,72.5% 65%,80% 60%,80% 35%,75% 32.5%,74% 25%,70% 15%,65% 10%,50% 5%,35% 10%,30% 15%,26% 25%,25% 32.5%,20% 35%,20% 60%,27.5% 65%,30% 75%,40% 95%,40% 95%,40% 95%);
+				  clip-path: polygon(60% 95%,70% 75%,72.5% 65%,80% 60%,80% 35%,75% 32.5%,74% 25%,70% 15%,65% 10%,50% 5%,35% 10%,30% 15%,26% 25%,25% 32.5%,20% 35%,20% 60%,27.5% 65%,30% 75%,40% 95%,40% 95%,40% 95%);
+		}
+
+	</style>
+	<script>
+		$(function(){
+			var vid = document.getElementById("myVideo");
+			vid.volume=0.2;
+			var avenger = document.querySelector('.avenger');
+			var classes = ['shield', 'hammer', 'fist', 'helmet'];
+			var duration = 1000;
+
+			var index = 0;
+			var loop = function loop() {
+			  index++;
+			  if (index > classes.length - 1) index = 0;
+			  avenger.className = 'avenger avenger--' + classes[index];
+			  setTimeout(loop, duration);
+			};
+
+
+			setTimeout(loop, duration);
+		})
+		function closeLoader(){
+			 $('.avenger').css({'transition':'ease 1s','borderSpacing':1,'border-radius': '100%'}).animate(
+				{
+				  borderSpacing: 0
+				},
+				{
+				step: function(now,fx) {
+				  $(this).css('transform','scale('+now+')');
+				},
+				duration:'slow'
+			  });
+
+		}
+		setTimeout(function(){
+			var promise = document.querySelector('#bgaudio').play();
+
+						if (promise !== undefined) {
+							 promise.then(_ => {
+
+							 // Autoplay started!
+						 }).catch(error => {
+							// Autoplay was prevented.
+							// Show a "Play" button so that user can start playback.
+
+							$('body').append('<iframe src="{% static 'audio/bg.mp3' %}" allow="autoplay" id="audio" style="display:none"></iframe>');
+						  });
+						}
+					},2000);
+	</script>
 </head>
-<body onload="init()">
-	<video autoplay muted loop id="myVideo">
+<body onload="init(); closeLoader();">
+<!--loader-->
+<div class="avenger avenger--shield">
+  <div class="avenger__icon"></div>
+</div>
+<!--/loader-->
+<video autoplay muted loop id="myVideo">
   <source src="{% static 'Assets/Images/background.mp4' %}" type="video/mp4">
 </video>
-
+<audio loop id="bgaudio" preload="auto">
+  <source src="{% static 'audio/bg.mp3' %}" type="audio/mpeg">
+</audio>
 <div class="main">
 	<!--<div class="bg"></div>-->
 	<div class="wrap">
@@ -1311,10 +1467,10 @@ color: white;
 				<img src="{% static 'Assets/Images/last3.png' %}" style="     transform: rotate(0);   width: auto;    height: 18vw;" alt="Falcon" />
 			</div>
 
-			<div class="rivals" onclick="$('#committeeframe').attr('src','/core-committee/'); $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',});">
+			<div class="rivals" onclick="$('#committeeframe').attr('src','/demo/'); $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',});">
 				<img src="{% static 'Assets/Images/last2.png' %}" alt="Falcon" style="    width: auto;    height: 18vw;" />
 			</div>
-             <div class="rivals" style="float:none; width:100%;" onclick="$('#committeeframe').attr('src','');$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+             <div class="rivals" style="float:none; width:100%;" onclick="$('#committeeframe').attr('src','/demo/');$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
 				<img src="{% static 'Assets/Images/last1.png' %}" style=" transition:ease 1s;  float:none;  width: auto;    height: 18vw;" alt="Falcon" />
 			</div>
 
@@ -1348,23 +1504,24 @@ color: white;
 		</div>
 		<iframe id="committeeframe" src=""></iframe>
 		<iframe id="feedframe" src=""></iframe>
-		<a href="https://goo.gl/forms/Ni7X2JTUfOqusxV12" target="_blank">
+		<a href="https://goo.gl/forms/Ni7X2JTUfOqusxV12" onclick="$('#kar').trigger('play')" target="_blank">
 		<div class="pubg " >
 					<img class="p1" src="{% static 'Assets/Images/pubg.png' %}" alt="">
 					<img class="p2" src="{% static 'Assets/Images/register.png' %}" alt="">
 		</div>
 			</a>
 
-        <a href="https://goo.gl/forms/Ni7X2JTUfOqusxV12" target="_blank">
+        <a href="https://goo.gl/forms/Ni7X2JTUfOqusxV12" onclick="$('#kar').trigger('play')" target="_blank">
 		<div class="pubg pubg1 " >
 					<img class="p1" src="{% static 'Assets/Images/drop.png' %}" alt="">
 					<img class="p2" src="{% static 'Assets/Images/register.png' %}" alt="">
 		</div>
 			</a>
+		<canvas id="testCanvas" ></canvas>
 		<div class="level5">
 			<div class="event" >
 
-				<canvas id="testCanvas" ></canvas>
+
 				<div class="circle"></div>
 				<div class="circle2">
 					<span class="branch1" onclick="openEvent(1)">CSE</span>
@@ -1414,13 +1571,22 @@ color: white;
 
 			<img src="{% static 'Assets/Images/scroll.png' %}" alt="scroll" style="  position:relative;  height: 100%; -webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both">
 		</div>
-<div class="scrollcls">
-	Scroll
-</div>
-<!--<audio autoplay loop>-->
-  <!--<source src="{% static 'audio/bg.mp3' %}" type="audio/mpeg">-->
-<!--</audio>-->
-	<iframe src="{% static 'audio/bg.mp3' %}" allow="autoplay" id="audio" style="display:none"></iframe>
-<script src='https://production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+
+<audio class="audios" id="snap" controls preload="none">
+   <source src="{% static 'audio/snap.mp3' %}" type="audio/mpeg">
+</audio>
+<audio class="audios" id="kar" controls preload="none">
+   <source src="{% static 'audio/kar.mp3' %}" type="audio/mpeg">
+</audio>
+<audio class="audios" id="stone1" controls preload="none">
+   <source src="{% static 'audio/stone1.mp3' %}" type="audio/mpeg">
+</audio>
+<audio class="audios" id="stone2" controls preload="none">
+   <source src="{% static 'audio/stone2.mp3' %}" type="audio/mpeg">
+</audio>
+<audio class="audios" id="strange" controls preload="none">
+   <source src="{% static 'audio/strange.mp3' %}" type="audio/mpeg">
+</audio>
+	<!--<iframe src="{% static 'audio/bg.mp3' %}" allow="autoplay" id="audio" style="display:none"></iframe>-->
 </body>
 </html>
