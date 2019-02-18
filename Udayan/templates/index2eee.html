@@ -86,7 +86,7 @@
     <input type="button" class="close"  onclick="parent.closeIFrame()" value="X">
     <div class="eventlist">
         {% for i in etc_event_list %}
-        <a href="{% url 'etc' event_name=i %}" target="view"><div class="event event1">{{i}}</div></a>
+        <a href="{% url 'ee' event_name=i %}" target="view"><div class="event event1">{{i}}</div></a>
         {% endfor %}
     </div>
     <iframe src="" class="frame" name="view" frameborder="0"></iframe>
