@@ -38,8 +38,9 @@
       <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" />
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
     <link href="{% static 'css/core.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <style>
@@ -339,8 +340,8 @@
 		}
 
 		.tech-slideshow > div {
-		  height: 196px;
-		  width: 2526px;
+		  height: 138px;
+		  width: 1773px;
 		  background: url({% static 'Assets/Images/prev.jpg'%});
 		  position: absolute;
 		  top: 0;
@@ -1533,7 +1534,7 @@ color: white;
 			<div class="rivals" onclick="$('#committeeframe').attr('src','/demo/'); $('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',});">
 				<img src="{% static 'Assets/Images/last2.png' %}" alt="Falcon" style="    width: auto;    height: 18vw;" />
 			</div>
-             <div class="rivals" style="float:none; width:100%;" onclick="$('#committeeframe').attr('src','/demo/');$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
+             <div class="rivals" style="float:none; width:100%;" onclick="$('#committeeframe').attr('src','/sponsorship/');$('#committeeframe').css({'top':'0','left':'0','width':'100%','height':'100%','opacity':'1',})">
 				<img src="{% static 'Assets/Images/last1.png' %}" style=" transition:ease 1s;  float:none;  width: auto;    height: 18vw;" alt="Falcon" />
 			</div>
 
@@ -1625,14 +1626,16 @@ color: white;
 			</div>
 		</div>
 		<div class="level7 logo_center">
-			<img src="{% static 'Assets/Images/final_logo.png' %}">
+			<img  src="{% static 'Assets/Images/final_logo.png' %}">
+
 		</div>
+
 
 	</div>
 </div>
-	<div class="scroll" style="position: absolute; transition:ease-out 1s; width: 100%; bottom: 20px ; height: 13%; text-align: center;">
+	<div class="scroll" id="scroll" onclick=" alert();" style="position: absolute; transition:ease-out 1s; width: 100%; bottom: 20px ; height: 13%; text-align: center;">
 
-			<img src="{% static 'Assets/Images/scroll.png' %}" alt="scroll" style="  position:relative;  height: 100%; -webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both">
+			<img id="l1"  src="{% static 'Assets/Images/scroll.png' %}" alt="scroll" style="  position:relative;  height: 100%; -webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both">
 		</div>
 
 <audio class="audios" id="snap" controls preload="none">
@@ -1651,5 +1654,19 @@ color: white;
    <source src="{% static 'audio/strange.mp3' %}" type="audio/mpeg">
 </audio>
 	<!--<iframe src="{% static 'audio/bg.mp3' %}" allow="autoplay" id="audio" style="display:none"></iframe>-->
+<script>
+		if(screen.width<838)
+		{
+		alert(" For better experience kindly open in desktop/laptop. ");
+		$(function(){
+			$('#l1').attr("src","{% static 'Assets/Images/android.png' %}");
+
+			document.getElementById('scroll').setAttribute('onclick','alert(1)');
+
+		});
+
+
+		}
+	</script>
 </body>
 </html>

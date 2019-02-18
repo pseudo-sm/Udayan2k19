@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'photographer-upload/',views.photographer_upload,name="photographer_upload"),
     url(r'feed/',views.feed,name="feed"),
     url(r'sponsors/',views.sponsors,name="sponsors"),
+    url(r'sponsorship/', views.sponsorship, name="sponsorship"),
     url(r'publicity/',views.publicity,name="publicity"),
     url(r'viewevent/',views.viewevents,name="viewevents"),
     url(r'vieweventetc/',views.vieweventsetc,name="vieweventsetc"),
