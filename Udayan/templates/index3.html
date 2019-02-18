@@ -22,14 +22,14 @@
 
 
 
-  /$$$$$$  /$$$$$$ /$$    /$$/$$$$$$$$/$$      /$$ /$$$$$$ /$$   /$$/$$$$$$$ /$$$$$$$$/$$    /$$
- /$$__  $$/$$__  $| $$   | $| $$_____| $$$    /$$$/$$__  $| $$$ | $| $$__  $| $$_____| $$   | $$
-| $$  \__| $$  \ $| $$   | $| $$     | $$$$  /$$$| $$  \ $| $$$$| $| $$  \ $| $$     | $$   | $$
-| $$     | $$$$$$$|  $$ / $$| $$$$$  | $$ $$/$$ $| $$$$$$$| $$ $$ $| $$  | $| $$$$$  |  $$ / $$/
-| $$     | $$__  $$\  $$ $$/| $$__/  | $$  $$$| $| $$__  $| $$  $$$| $$  | $| $$__/   \  $$ $$/
-| $$    $| $$  | $$ \  $$$/ | $$     | $$\  $ | $| $$  | $| $$\  $$| $$  | $| $$       \  $$$/
-|  $$$$$$| $$  | $$  \  $/  | $$$$$$$| $$ \/  | $| $$  | $| $$ \  $| $$$$$$$| $$$$$$$$  \  $/
- \______/|__/  |__/   \_/   |________|__/     |__|__/  |__|__/  \__|_______/|________/   \_/
+  /$$$$$$   /$$$$$$  /$$    /$$ /$$$$$$$$ /$$      /$$ /$$$$$$$$ /$$   /$$ /$$$$$$$  /$$$$$$$$ /$$    /$$
+ /$$__  $$ /$$__  $$| $$   | $$| $$_____/| $$$    /$$$| $$_____/| $$$ | $$| $$__  $$| $$_____/| $$   | $$
+| $$  \__/| $$  \ $$| $$   | $$| $$      | $$$$  /$$$$| $$      | $$$$| $$| $$  \ $$| $$      | $$   | $$
+| $$      | $$$$$$$$|  $$ / $$/| $$$$$   | $$ $$/$$ $$| $$$$$   | $$ $$ $$| $$  | $$| $$$$$   |  $$ / $$/
+| $$      | $$__  $$ \  $$ $$/ | $$__/   | $$  $$$| $$| $$__/   | $$  $$$$| $$  | $$| $$__/    \  $$ $$/
+| $$    $$| $$  | $$  \  $$$/  | $$      | $$\  $ | $$| $$      | $$\  $$$| $$  | $$| $$        \  $$$/
+|  $$$$$$/| $$  | $$   \  $/   | $$$$$$$$| $$ \/  | $$| $$$$$$$$| $$ \  $$| $$$$$$$/| $$$$$$$$   \  $/
+ \______/ |__/  |__/    \_/    |________/|__/     |__/|________/|__/  \__/|_______/ |________/    \_/
 
 -->
 <html>
@@ -356,6 +356,78 @@
 		@keyframes moveSlideshow {
 		  100% {
 			-webkit-transform: translateX(-66.6666%);
+		  }
+		}
+
+
+		.tech-slideshow1 {
+			height: 100vh;
+			max-width: 20%;
+			width:20%;
+			left: 0;
+			top:0;
+    		margin: 0px 20px;
+			/* z-index: 9999; */
+			/* margin: 14px auto; */
+			position: absolute;
+			overflow: hidden;
+			-webkit-transform: translate3d(0, 0, 0);
+			<!--display: none;-->
+		}
+
+		.tech-slideshow1 > div {
+			height: 1773px;
+			width: 100%;
+			background: url(/static/Assets/Images/left.jpg);
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-size: cover;
+		  -webkit-transform: translate3d(0, 0, 0);
+		}
+		.tech-slideshow1 .mover-2 {
+		  animation: moveSlideshow1 12s linear infinite;
+		}
+
+		@keyframes moveSlideshow1 {
+		  100% {
+			-webkit-transform: translateY(-66.6666%);
+		  }
+		}
+
+
+		.tech-slideshow2 {
+			height: 100vh;
+			max-width: 20%;
+			width:20%;
+			right: 0;
+			top:0;
+    		margin: 0px 20px;
+			/* z-index: 9999; */
+			/* margin: 14px auto; */
+			position: absolute;
+			overflow: hidden;
+			-webkit-transform: translate3d(0, 0, 0);
+			<!--display: none;-->
+		}
+
+		.tech-slideshow2 > div {
+			height: 1773px;
+			width: 100%;
+			background: url(/static/Assets/Images/right.jpg);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-size: cover;
+		  -webkit-transform: translate3d(0, 0, 0);
+		}
+		.tech-slideshow2 .mover-3 {
+		  animation: moveSlideshow2 12s linear infinite;
+		}
+
+		@keyframes moveSlideshow2 {
+		  100% {
+			-webkit-transform: translateY(66.6666%);
 		  }
 		}
 		#hud1{
@@ -702,6 +774,9 @@
         	 $('.level4').css({'left':'-100%','display':'block'});
                 $('.notice').delay(1000).css({'left':'-100%','opacity':'0'});
 			     $('.noticeText').html(' ');
+        }
+        function scrollto(){
+            scroll(1);
         }
     </script>
 
@@ -1565,6 +1640,12 @@ color: white;
 				<img src="{% static 'Assets/Images/strange1.png' %}"  alt="Scarlet Witch" />
 			</div>
 
+			<div class="tech-slideshow1">
+ 					 <div class="mover-2"></div>
+			</div>
+			<div class="tech-slideshow2">
+ 					 <div class="mover-3"></div>
+			</div>
 		</div>
 		<iframe id="committeeframe" src=""></iframe>
 		<iframe id="feedframe" src=""></iframe>
@@ -1633,7 +1714,7 @@ color: white;
 
 	</div>
 </div>
-	<div class="scroll" id="scroll" onclick=" alert();" style="position: absolute; transition:ease-out 1s; width: 100%; bottom: 20px ; height: 13%; text-align: center;">
+	<div class="scroll" id="scroll" onclick=" scrollto(1);" style="position: absolute; transition:ease-out 1s; width: 100%; bottom: 20px ; height: 13%; text-align: center;">
 
 			<img id="l1"  src="{% static 'Assets/Images/scroll.png' %}" alt="scroll" style="  position:relative;  height: 100%; -webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both">
 		</div>
@@ -1658,10 +1739,12 @@ color: white;
 		if(screen.width<838)
 		{
 		alert(" For better experience kindly open in desktop/laptop. ");
+
 		$(function(){
 			$('#l1').attr("src","{% static 'Assets/Images/android.png' %}");
 
-			document.getElementById('scroll').setAttribute('onclick','alert(1)');
+			document.getElementById('scroll').setAttribute('onclick','alert("Android app coming soon!")');
+			//document.getElementById('scroll').setAttribute('onclick','window.open("#","self")');
 
 		});
 
