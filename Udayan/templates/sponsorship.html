@@ -13,7 +13,7 @@ html, body {
 	max-width: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	background-color: #0000001c;
+	background-color: #0000007d;
 }
 
 #slideshow {
@@ -143,11 +143,27 @@ html, body {
 		font-size: 21px;
 		font-family: 'Bebas-Neue-Book';
 	}
+	    .close{
+    position: fixed;
+    right: 30px;
+    top: 14px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    z-index: 1;
+    border-radius: 50%;
+    box-shadow: none;
+    border: 0;
+    font-size: 1.3em;
+    cursor:pointer;
+    }
     </style>
 	</head>
 	<body>
+
+<input type="button" class="close"  onclick="parent.closeCore()" value="X">
 		<!-- 3D Slideshow Section -->
-        <h1 style="font-family: 'Bebas-Neue-Book'; text-align:center; width:100%; ">OUR SPONSORS</h1>
+        <h1 style="color:white; margin-top:10px; font-family: 'Bebas-Neue-Book'; text-align:center; width:100%; ">OUR SPONSORS</h1>
 <section id="slideshow">
 
 			<div class="entire-content">
