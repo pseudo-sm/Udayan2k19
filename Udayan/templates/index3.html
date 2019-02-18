@@ -44,7 +44,13 @@
     <link href="{% static 'css/core.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <style>
-    	* {cursor: url(http://cur.cursors-4u.net/others/oth-1/oth26.ani), url(http://cur.cursors-4u.net/others/oth-1/oth26.png), auto !important;}
+    	* {
+			 -webkit-user-select: none; /* Safari 3.1+ */
+			  -moz-user-select: none; /* Firefox 2+ */
+			  -ms-user-select: none; /* IE 10+ */
+			  user-select: none; /* Standard syntax */
+    		cursor: url(http://cur.cursors-4u.net/others/oth-1/oth26.ani), url(http://cur.cursors-4u.net/others/oth-1/oth26.png), auto !important;
+		}
 		.scrollcls{
 			display:none;
 		}
@@ -551,7 +557,7 @@
 					if(current7==0){
                         current7=1;
                	        show7();
-
+						$('.pubg').hide();
                     }
                    if(current2==1){
                             current2=0;
@@ -596,6 +602,7 @@
                    if(current6==0){
                         current6=1;
                        // console.log("aya");
+               	        $('.pubg').hide();
                	        show6();
                     }
                     if(current7==1){
@@ -648,6 +655,7 @@
                     if(current4==0){
                             current4=1;
                            show4();
+                           $('.pubg').hide();
                     }
                     if(current7==1){
                             current7=0;
@@ -673,6 +681,7 @@
                          if(current3==0){
                             current3=1;
                             $('.level3').show('puff');
+                            $('.pubg').hide();
                         }
                         if(current7==1){
                             current7=0;
@@ -698,6 +707,7 @@
                      if(current2==0){
                         current2=1;
                         $('.level2').show('puff');
+                        $('.pubg').hide();
                     }
                     if(current7==1){
                             current7=0;
@@ -749,7 +759,7 @@
         }
         function hide5(){
         	 $('.level5').hide();
-        	 $('.gauntlet').hide()
+        	 $('.gauntlet').hide();
         	 $('.pubg').hide();
         	 setTimeout(function(){
 			     $('.notice').delay(1000).css({'top':'-100%','opacity':'0'});
