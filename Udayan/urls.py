@@ -48,7 +48,6 @@ urlpatterns = [
     url(r'vieweventcivil/',views.vieweventscivil,name="vieweventscivil"),
     url(r'^add-event/',views.add_events,name="addevent"),
     url(r'^committee/',views.committee,name="committee"),
-    url(r'^sponsors/',views.sponsors,name="sponsors"),
     url(r'^core-committee/',views.core_committee,name="core_committee"),
     url(r'^technical/',views.technical,name="technical"),
     url(r'',views.index,name="index"),
