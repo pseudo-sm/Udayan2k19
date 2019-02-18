@@ -36,10 +36,9 @@ urlpatterns = [
     url(r'^mech/(?P<event_name>\w.*)/', views.mech, name="mech"),
     url(r'^civil/(?P<event_name>\w.*)/', views.civil, name="civil"),
     url(r'photographer-upload/',views.photographer_upload,name="photographer_upload"),
-     url(r'feed/',views.feed,name="feed"),
-
-     url(r'sponsors/',views.sponsors,name="sponsors"),
-     url(r'publicity/',views.publicity,name="publicity"),
+    url(r'feed/',views.feed,name="feed"),
+    url(r'sponsors/',views.sponsors,name="sponsors"),
+    url(r'publicity/',views.publicity,name="publicity"),
     url(r'viewevent/',views.viewevents,name="viewevents"),
     url(r'vieweventetc/',views.vieweventsetc,name="vieweventsetc"),
     url(r'vieweventeee/',views.vieweventseee,name="vieweventseee"),
