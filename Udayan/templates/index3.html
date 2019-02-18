@@ -137,7 +137,7 @@
             transition: linear 1s;
         }
 
-        .logo_center img {
+        .logo_center .logo {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -1064,7 +1064,7 @@ color: white;
 	<script src="https://cdn.jsdelivr.net/gh/CreateJS/sandbox@bfcfb5afaaed512c983159285a582dd8c0bbb6ab/Kaleidoscope/Kaleidoscope.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/CreateJS/TweenJS@ad33975f09949e456d579defbbe425f750966b21/src/tweenjs/plugins/ColorPlugin.js"></script>
 	<script src="https://lab.gskinner.com/content/assets/template.min.js"></script>
-
+    <link rel="icon" href="{% static 'Assets/Images/fav.png' %}" type="image/gif" sizes="16x16">
 	<script>
 		var canvas, stage;
 
@@ -1707,7 +1707,8 @@ color: white;
 			</div>
 		</div>
 		<div class="level7 logo_center">
-			<img  src="{% static 'Assets/Images/final_logo.png' %}">
+            <a href="http://tat.trident.ac.in"><img style="position: absolute; top: 0;left: 0;right: 0;margin: auto; width: 54%;" src="{% static 'Assets/Images/trident.png' %}" alt="trident"></a>
+			<img class="logo" src="{% static 'Assets/Images/final_logo.png' %}">
 
 		</div>
 
