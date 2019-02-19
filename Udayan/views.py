@@ -331,7 +331,7 @@ def events_api(request):
     for branch in events:
         ind_event = []
         for event in events[branch]:
-            events[branch][event].update({"event name":event})
+            events[branch][event].update({"eventname":event})
             ind_event.append(events[branch][event])
         response.update({branch:ind_event})
     return JsonResponse(response,safe=False)
