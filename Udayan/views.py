@@ -326,11 +326,20 @@ def sponsorsship(request):
 
 def events_api(request):
 
-    branch = request.GET.get("branch")
+    take = request.GET.get("branch")
     response = {'success':'y'}
     tempresp = []
+    if take == '0':
+        branch = "Computer Science & IT"
+    elif take == '1':
+        branch = 'Civil'
+    elif take == '3':
+        branch = 'Electrical & Electronics'
+    elif take == '2':
+        branch = 'Mechanical'
+    elif take == '4':
+        branch = 'Electronics & Telecommunication'
     events = dict(db.child("events").child(branch).get().val())
-
     ind_event = []
     studentname=[]
     studentemail=[]
