@@ -302,7 +302,7 @@ def sponsors(request):
     names = ['Abhinash Dhal','Bidhu Bhusan Dash','Biswajeet Mangaraj','Adarsh Mohanty','Chinmayee Mekup','Sailesh Mahapatra','Bibhuti Swain','Abhinash Dash','Sk. Fukkaran Ali','Shaswat Sucharit Patnaik']
     branch = ['ETC','ETC','CSE','CSE','CSE & IT','MECH','MECH','CIVIL','EEE','EE']
     phone = ['7609937976','7008412591','9348910702','9090154358','8280474863','7008111430','7978619955','9124457352','8984873440','8658138404']
-    images = []
+    images = ['https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg','../static/Assets/Images/Committee/shaikh.jpg','../static/Assets/Images/Committee/shaswat.jpg']
     for i in range(len(names)):
         images.append('https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg')
     context = zip(names,branch,phone,images)
