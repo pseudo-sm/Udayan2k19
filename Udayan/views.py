@@ -326,12 +326,29 @@ def sponsorsship(request):
 
 def events_api(request):
 
+    branch = request.POST.get("branch")
     response = {'success':'y'}
-    events = dict(db.child("events").get().val())
-    for branch in events:
-        ind_event = []
-        for event in events[branch]:
-            events[branch][event].update({"eventname":event})
-            ind_event.append(events[branch][event])
-        response.update({branch:ind_event})
+    tempresp = {}
+    events = dict(db.child("events").child(branch).get().val())
+
+    ind_event = []
+    studentname=[]
+    studentemail=[]
+    studentphone=[]
+    facultyname=[]
+    facultyemail=[]
+    facultyphone=[]
+    for event in events:
+        events[event].update({"eventname":event})
+        for member in events[event]["committee"]:
+            if events[event]["committee"][member]["role"] == "Student":
+                studentemail.append(events[event]["committee"][member]["email"])
+                studentphone.append(events[event]["committee"][member]["phone"])
+                studentname.append(member)
+            else:
+                facultyemail.append(events[event]["committee"][member]["email"])
+                facultyphone.append(events[event]["committee"][member]["phone"])
+                facultyname.append(member)
+        tempresp.update({"eventname":event,"about":events[event]["about"],"prize1":events[event]["prize1"],"prize2":events[event]["prize2"],"faculty_coordinator":facultyname,"faculty_contact":facultyphone,"faculty_email":facultyemail,"student_coordinator":studentname,"student_contact":studentphone,"student_email":studentemail})
+    response.update({branch:[tempresp]})
     return JsonResponse(response,safe=False)
