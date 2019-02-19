@@ -79,13 +79,13 @@ def vieweventsetc(request):
     print(etc_event_list)
     return render(request,"index2etc.html",{"etc_event_list":etc_event_list})
 def vieweventseee(request):
-    etc_events = dict(db.child("events").child("Electrical").get().val())
+    etc_events = dict(db.child("events").child("Electrical & Electronics").get().val())
     etc_event_list = list(etc_events.keys())
     print(etc_event_list)
     return render(request,"index2eee.html",{"etc_event_list":etc_event_list})
 
 def vieweventsee(request):
-    etc_events = dict(db.child("events").child("Electrical").get().val())
+    etc_events = dict(db.child("events").child("Electrical & Electronics").get().val())
     etc_event_list = list(etc_events.keys())
     print(etc_event_list)
     return render(request,"index2ee.html",{"etc_event_list":etc_event_list})
