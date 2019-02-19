@@ -281,6 +281,7 @@ def feed(request):
     return render(request,"feed.html")
 def sponsorship(request):
 
+
     return render(request,"sponsorship.html")
 
 
@@ -317,10 +318,10 @@ def publicity(request):
     context = zip(names,branch,phone,images)
     return render(request,"publicity.html",{"context":context})
 
-def sponsorsship(request):
+def sponsorship(request):
 
 
-    return render(request,"sponsors.html")
+    return render(request,"sponsorship.html")
 
 
 

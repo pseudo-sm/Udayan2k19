@@ -460,14 +460,15 @@
     	current5=0;
     	current6=0;
         statuscode=0;
-        detectthreshold=5;
+        detectthreshold=10;
         currentthreshold=0;
     	//first=$(".main").css("perspective").replace("px", "");
         $(document).bind('mousewheel keydown MozMousePixelScroll ', function(e) {
-          if(currentthreshold++>detectthreshold){
+
+          if((currentthreshold++>detectthreshold)&&!(e.which==38 ||e.which==40 )){
                 currentthreshold=0;
                 console.log('scrolled');
-           }else{
+           }else if(!(e.which==38 ||e.which==40 )){
                 return;
                 }
 			console.log($(".main").css("perspective").replace("px", "") );
