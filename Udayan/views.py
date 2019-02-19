@@ -351,5 +351,5 @@ def events_api(request):
                 facultyname.append(member)
         tempresp.append({"eventname":event,"about":events[event]["about"],"prize1":events[event]["prize1"],"prize2":events[event]["prize2"],"faculty_coordinator":facultyname,"faculty_contact":facultyphone,"faculty_email":facultyemail,"student_coordinator":studentname,"student_contact":studentphone,"student_email":studentemail})
 
-    response.update({branch:[tempresp]})
+    response.update({branch:tempresp})
     return JsonResponse(response,safe=False)
