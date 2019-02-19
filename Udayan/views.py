@@ -340,14 +340,15 @@ def events_api(request):
     elif take == '4':
         branch = 'Electronics & Telecommunication'
     events = dict(db.child("events").child(branch).get().val())
-    ind_event = []
-    studentname=[]
-    studentemail=[]
-    studentphone=[]
-    facultyname=[]
-    facultyemail=[]
-    facultyphone=[]
+
     for event in events:
+        ind_event = []
+        studentname=[]
+        studentemail=[]
+        studentphone=[]
+        facultyname=[]
+        facultyemail=[]
+        facultyphone=[]
         events[event].update({"eventname":event})
         for member in events[event]["committee"]:
             if events[event]["committee"][member]["role"] == "Student":
