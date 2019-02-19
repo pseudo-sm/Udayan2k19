@@ -328,7 +328,7 @@ def events_api(request):
 
     branch = request.GET.get("branch")
     response = {'success':'y'}
-    tempresp = {}
+    tempresp = []
     events = dict(db.child("events").child(branch).get().val())
 
     ind_event = []
@@ -349,6 +349,7 @@ def events_api(request):
                 facultyemail.append(events[event]["committee"][member]["email"])
                 facultyphone.append(events[event]["committee"][member]["phone"])
                 facultyname.append(member)
-        tempresp.update({"eventname":event,"about":events[event]["about"],"prize1":events[event]["prize1"],"prize2":events[event]["prize2"],"faculty_coordinator":facultyname,"faculty_contact":facultyphone,"faculty_email":facultyemail,"student_coordinator":studentname,"student_contact":studentphone,"student_email":studentemail})
+        tempresp.append({"eventname":event,"about":events[event]["about"],"prize1":events[event]["prize1"],"prize2":events[event]["prize2"],"faculty_coordinator":facultyname,"faculty_contact":facultyphone,"faculty_email":facultyemail,"student_coordinator":studentname,"student_contact":studentphone,"student_email":studentemail})
+
     response.update({branch:[tempresp]})
     return JsonResponse(response,safe=False)

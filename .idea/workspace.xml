@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="Rishav bhaya firse bole !!">
+    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Udayan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Udayan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="328" column="25" selection-start-line="328" selection-start-column="25" selection-end-line="328" selection-end-column="25" />
+            <state relative-caret-position="260">
+              <caret line="354" column="32" selection-start-line="354" selection-start-column="32" selection-end-line="354" selection-end-column="32" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
               </folding>
@@ -39,25 +38,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Udayan/tests.py">
+        <entry file="file://$PROJECT_DIR$/Udayan/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#69#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Udayan/templates/index2mech.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1136" />
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -92,6 +88,7 @@
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/Udayan/urls.py" />
         <option value="$PROJECT_DIR$/Udayan/tests.py" />
+        <option value="$PROJECT_DIR$/Udayan/test.py" />
         <option value="$PROJECT_DIR$/Udayan/views.py" />
       </list>
     </option>
@@ -160,7 +157,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.views">
     <configuration name="run.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="Udayan2k19" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,6 +169,54 @@
       <option name="PARAMETERS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Udayan2k19" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Udayan" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Udayan/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Udayan2k19" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Udayan" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Udayan/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -217,13 +262,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32866043" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32866043" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49966952" weight="0.32905984" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49107733" visible="true" weight="0.36604363" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49107733" weight="0.36604363" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5089227" side_tool="true" weight="0.32763532" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49834764" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -257,7 +302,9 @@
     <MESSAGE value="eee" />
     <MESSAGE value="Galti Hogaya" />
     <MESSAGE value="Rishav bhaya bole" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rishav bhaya bole" />
+    <MESSAGE value="Rishav bhaya firse bole !!" />
+    <MESSAGE value="POST &lt;-&gt; GET" />
+    <option name="LAST_COMMIT_MESSAGE" value="POST &lt;-&gt; GET" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Udayan2k19/__init__.py">
@@ -341,21 +388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Udayan/templates/index2mech.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1136" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Udayan/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -366,10 +398,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Udayan/templates/index2mech.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="82" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Udayan/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Udayan/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="328" column="25" selection-start-line="328" selection-start-column="25" selection-end-line="328" selection-end-column="25" />
+        <state relative-caret-position="260">
+          <caret line="354" column="32" selection-start-line="354" selection-start-column="32" selection-end-line="354" selection-end-column="32" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>
