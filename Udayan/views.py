@@ -79,13 +79,13 @@ def vieweventsetc(request):
     print(etc_event_list)
     return render(request,"index2etc.html",{"etc_event_list":etc_event_list})
 def vieweventseee(request):
-    etc_events = dict(db.child("events").child("Electrical & Electronics").get().val())
+    etc_events = dict(db.child("events").child("Electrical").get().val())
     etc_event_list = list(etc_events.keys())
     print(etc_event_list)
     return render(request,"index2eee.html",{"etc_event_list":etc_event_list})
 
 def vieweventsee(request):
-    etc_events = dict(db.child("events").child("Electrical & Electronics").get().val())
+    etc_events = dict(db.child("events").child("Electrical").get().val())
     etc_event_list = list(etc_events.keys())
     print(etc_event_list)
     return render(request,"index2ee.html",{"etc_event_list":etc_event_list})
@@ -148,7 +148,7 @@ def eee(request,event_name):
 
     faculty = []
     students = []
-    cse_events = dict(db.child("events").child("Electrical & Electronics").get().val())
+    cse_events = dict(db.child("events").child("Electrical").get().val())
     about = (cse_events[event_name]["about"])
     prize1 = (cse_events[event_name]["prize1"])
     prize2 = (cse_events[event_name]["prize2"])
@@ -170,7 +170,7 @@ def ee(request,event_name):
 
     faculty = []
     students = []
-    cse_events = dict(db.child("events").child("Electrical & Electronics").get().val())
+    cse_events = dict(db.child("events").child("Electrical").get().val())
     about = (cse_events[event_name]["about"])
     prize1 = (cse_events[event_name]["prize1"])
     prize2 = (cse_events[event_name]["prize2"])
@@ -331,6 +331,7 @@ def events_api(request):
     for branch in events:
         ind_event = []
         for event in events[branch]:
+            events[branch][event].update({"event name":event})
             ind_event.append(events[branch][event])
         response.update({branch:ind_event})
     return JsonResponse(response,safe=False)
