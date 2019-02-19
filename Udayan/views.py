@@ -326,7 +326,7 @@ def sponsorsship(request):
 
 def events_api(request):
 
-    branch = request.POST.get("branch")
+    branch = request.GET.get("branch")
     response = {'success':'y'}
     tempresp = {}
     events = dict(db.child("events").child(branch).get().val())
