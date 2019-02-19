@@ -20,6 +20,7 @@ from . import views
 
 urlpatterns = [
 
+    url(r'events-api/',views.events_api,name="events_api"),
     url(r'admin/',views.admin,name="admin"),
     url(r'feed/',views.feed,name="feed"),
     url(r'demo/',views.demo,name="demo"),

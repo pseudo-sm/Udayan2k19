@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse,HttpResponseRedirect
 import json
+from django.http import JsonResponse
 import pyrebase
 from datetime import datetime
 # Create your views here.
@@ -315,3 +316,21 @@ def publicity(request):
         images.append('https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg')
     context = zip(names,branch,phone,images)
     return render(request,"publicity.html",{"context":context})
+
+def sponsorsship(request):
+
+
+    return render(request,"sponsors.html")
+
+
+
+def events_api(request):
+
+    response = {'success':'y'}
+    events = dict(db.child("events").get().val())
+    for branch in events:
+        ind_event = []
+        for event in events[branch]:
+            ind_event.append(events[branch][event])
+        response.update({branch:ind_event})
+    return JsonResponse(response,safe=False)
