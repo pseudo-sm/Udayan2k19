@@ -148,7 +148,7 @@ def eee(request,event_name):
 
     faculty = []
     students = []
-    cse_events = dict(db.child("events").child("Electrical").get().val())
+    cse_events = dict(db.child("events").child("Electrical & Electronics").get().val())
     about = (cse_events[event_name]["about"])
     prize1 = (cse_events[event_name]["prize1"])
     prize2 = (cse_events[event_name]["prize2"])
@@ -170,7 +170,7 @@ def ee(request,event_name):
 
     faculty = []
     students = []
-    cse_events = dict(db.child("events").child("Electrical").get().val())
+    cse_events = dict(db.child("events").child("Electrical & Electronics").get().val())
     about = (cse_events[event_name]["about"])
     prize1 = (cse_events[event_name]["prize1"])
     prize2 = (cse_events[event_name]["prize2"])
