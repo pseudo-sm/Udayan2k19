@@ -723,6 +723,7 @@
 			$('.level7').hide({effect:'fade',duration:600});
         	$( ".scroll" ).css({'bottom':'-100%','opacity':0.5});
         	$('.agenda').hide({effect:'fade',duration:600});
+        	$("#mar").hide();
         }
         function show7(){
 
@@ -730,6 +731,7 @@
 			$('.agenda').show();
         	$( ".scroll" ).css({'bottom':'20px','opacity':1});
         	document.getElementById('down').setAttribute('onclick','scrollto(1);');
+        	$("#mar").show();
         }
         function show6(){
         	$('.level6').show('puff');
@@ -1664,6 +1666,18 @@ color: white;
     opacity: 1;
   }
 }
+	marquee{
+		    position: absolute;
+			bottom: 132px;
+			background: #403232;
+			width: 100%;
+			/* left: -49%; */
+			font-size: 29px;
+			color: white;
+			padding: 10px;
+			font-family: 'Bebas-Neue-Book';
+			border: 2px solid white;
+	}
 	</style>
 	<script>
 		$(function(){
@@ -1865,8 +1879,9 @@ color: white;
             <a href="http://tat.trident.ac.in"><img style="position: absolute; top: 0;left: 0;right: 0;margin: auto; width: 54%;" src="{% static 'Assets/Images/trident.png' %}" alt="trident"></a>
 			<img class="logo" src="{% static 'Assets/Images/final_logo.png' %}">
 
-		</div>
 
+		</div>
+		<marquee id="mar">Due to <strong>all Odisha strike, Udayan2k19 has been shifted from "21-Feb-2019 - 23-Feb-2019" to "22-Feb-2019 - 24-Feb-2019"</strong>. The events in the agenda will be followed accordingly from 22nd Feb instead of 21st Feb. </marquee>
 
 	</div>
 </div>
