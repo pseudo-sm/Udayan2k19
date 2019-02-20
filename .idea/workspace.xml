@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="chutiyapa photo uploads and button shown to scroll on every page">
+    <list default="true" id="95c00713-8e31-47d0-97cd-69021e47f121" name="Default Changelist" comment="new sponsors adn stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/12.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/templates/feed.html" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/templates/feed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/templates/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/templates/index3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/static/Assets/Images/sponsors/21.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Udayan/templates/sponsorship.html" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/templates/sponsorship.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,8 +85,8 @@
       <file leaf-file-name="sponsorship.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Udayan/templates/sponsorship.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
+            <state relative-caret-position="83">
+              <caret line="236" column="88" selection-start-line="236" selection-start-column="88" selection-end-line="236" selection-end-column="88" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -234,6 +235,15 @@
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="Assets" type="462c0819:PsiDirectoryNode" />
               <item name="Images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Udayan2k19" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Udayan2k19" type="462c0819:PsiDirectoryNode" />
+              <item name="Udayan" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="Assets" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+              <item name="sponsors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Udayan2k19" type="b2602c69:ProjectViewProjectNode" />
@@ -415,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550646955134</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="new sponsors adn stuff">
+      <created>1550661210274</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1550661210274</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -481,7 +498,8 @@
     <MESSAGE value="added missing tech committee photo" />
     <MESSAGE value="chutiyapa photo uploads" />
     <MESSAGE value="chutiyapa photo uploads and button shown to scroll on every page" />
-    <option name="LAST_COMMIT_MESSAGE" value="chutiyapa photo uploads and button shown to scroll on every page" />
+    <MESSAGE value="new sponsors adn stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="new sponsors adn stuff" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/faculty/154.JPG">
@@ -851,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/templates/sponsorship.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
+        <state relative-caret-position="83">
+          <caret line="236" column="88" selection-start-line="236" selection-start-column="88" selection-end-line="236" selection-end-column="88" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
