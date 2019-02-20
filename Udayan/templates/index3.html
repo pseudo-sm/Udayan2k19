@@ -722,10 +722,12 @@
 
 			$('.level7').hide({effect:'fade',duration:600});
         	$( ".scroll" ).css({'bottom':'-100%','opacity':0.5});
+        	$('.agenda').hide({effect:'fade',duration:600});
         }
         function show7(){
 
 			$('.level7').show({effect:'fade',duration:600});
+			$('.agenda').show();
         	$( ".scroll" ).css({'bottom':'20px','opacity':1});
         	document.getElementById('down').setAttribute('onclick','scrollto(1);');
         }
@@ -1494,7 +1496,9 @@ color: white;
 
 	<!--loader-->
 	<style>
-
+		audio{
+		display: none;
+		}
 		.avenger {
 		  height: 100%;
 		  width: 100%;
@@ -1838,7 +1842,26 @@ color: white;
 
 			</div>
 		</div>
+		<a href="{% static 'AGENDA.pdf' %}" class="agenda" style="
+    right: 20px;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    top: 20px;
+"><img style="position: relative;top: 0;left: 0;right: 0;margin: auto;height: 80%;width: auto;" src="/static/Assets/Images/download.png" alt="download"> <br> <h2 style="
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    height: 20%;
+    margin-top: 12px;
+    color: white;
+    font-family: 'bebas', sans-serif;
+">Udayan2k19 Agenda</h2></a>
 		<div class="level7 logo_center">
+
             <a href="http://tat.trident.ac.in"><img style="position: absolute; top: 0;left: 0;right: 0;margin: auto; width: 54%;" src="{% static 'Assets/Images/trident.png' %}" alt="trident"></a>
 			<img class="logo" src="{% static 'Assets/Images/final_logo.png' %}">
 
