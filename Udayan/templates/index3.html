@@ -683,6 +683,7 @@
                             current3=1;
                             $('.level3').show('puff');
                             $('.pubg').hide();
+                            document.getElementById('down').setAttribute('onclick','scrollto(5);');
                         }
                         if(current7==1){
                             current7=0;
@@ -709,10 +710,11 @@
                         current2=1;
                         $('.level2').show('puff');
                         $('.pubg').hide();
+                        document.getElementById('down').setAttribute('onclick','scrollto(0);');
                     }
                     if(current7==1){
                             current7=0;
-                            hide7()
+                            hide7();
                     }
             }
         }
@@ -725,6 +727,7 @@
 
 			$('.level7').show({effect:'fade',duration:600});
         	$( ".scroll" ).css({'bottom':'20px','opacity':1});
+        	document.getElementById('down').setAttribute('onclick','scrollto(1);');
         }
         function show6(){
         	$('.level6').show('puff');
@@ -732,6 +735,7 @@
             $('.slide1L').delay( 2000 ).show('slide');
             $('.slide1R').delay( 2000 ).show({effect:'slide',direction:'right'});
             $('.pubg').hide();
+            document.getElementById('down').setAttribute('onclick','scrollto(2);');
         }
         function hide6(){
 			 $('.level6').hide();
@@ -747,6 +751,7 @@
 			 $('.gauntlet').delay(900).show('fade');
 			 $('.pubg').delay(200).show({effect:'fade',duration:500});
 			 $('.notice').css({'top':'-100%','left':'50%','transform':'translateX(-50%)'});
+			 document.getElementById('down').setAttribute('onclick','scrollto(3);');
 
 			 $('.notice').css({'opacity':'1','transition':'ease 1s'});
 			 $('.noticeText').html('Click on the branch to show the Events');
@@ -779,6 +784,7 @@
 			     $('.noticeText').html(' ');
 			 },7000);
 			  $('.pubg').hide();
+			  document.getElementById('down').setAttribute('onclick','scrollto(4);');
         }
         function hide4(){
         	 $('.level4').hide();
@@ -786,11 +792,12 @@
                 $('.notice').delay(1000).css({'left':'-100%','opacity':'0'});
 			     $('.noticeText').html(' ');
         }
-        function scrollto(){
-            scroll(1);
+        function scrollto(v){
+            scroll(v);
         }
-    </script>
 
+    </script>
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<style>
 	.event{
 	    box-sizing: border-box;
@@ -1539,7 +1546,120 @@ color: white;
 		  -webkit-clip-path: polygon(60% 95%,70% 75%,72.5% 65%,80% 60%,80% 35%,75% 32.5%,74% 25%,70% 15%,65% 10%,50% 5%,35% 10%,30% 15%,26% 25%,25% 32.5%,20% 35%,20% 60%,27.5% 65%,30% 75%,40% 95%,40% 95%,40% 95%);
 				  clip-path: polygon(60% 95%,70% 75%,72.5% 65%,80% 60%,80% 35%,75% 32.5%,74% 25%,70% 15%,65% 10%,50% 5%,35% 10%,30% 15%,26% 25%,25% 32.5%,20% 35%,20% 60%,27.5% 65%,30% 75%,40% 95%,40% 95%,40% 95%);
 		}
-
+		.down{
+			position: absolute;
+			right: 20px;
+			bottom: 20px;
+			font-size:40px;
+			color:white;
+			z-index: 999999999;
+			-webkit-animation: bounce-top 0.9s cubic-bezier(0.895, 0.030, 0.685, 0.220) infinite alternate-reverse both;
+	        animation: bounce-top 0.9s cubic-bezier(0.895, 0.030, 0.685, 0.220) infinite alternate-reverse both;
+		}
+		@-webkit-keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+@keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
 	</style>
 	<script>
 		$(function(){
@@ -1604,6 +1724,7 @@ color: white;
 </audio>
 <div class="main">
 	<!--<div class="bg"></div>-->
+	<div class="down" id="down" onclick="scrollto(2);"><i class="far fa-arrow-alt-circle-down"></i></div>
 	<div class="wrap">
 		<div class="notice">
 			<div class="noticeText"></div>
