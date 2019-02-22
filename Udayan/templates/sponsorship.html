@@ -70,6 +70,15 @@ html, body {
 	float: right;
 	animation: rotar 15s infinite linear;
 	transform-style: preserve-3d;
+	animation-delay: 2s;
+}
+.content-carrousel1 {
+	width: 100%;
+	position: absolute;
+	float: right;
+	animation: rotar1 15s infinite linear;
+	transform-style: preserve-3d;
+	animation-delay: 2s;
 }
 
 .content-carrousel:hover {
@@ -84,31 +93,67 @@ html, body {
 	overflow: hidden;
 	position: absolute;
 }
+.content-carrousel1:hover {
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
+.content-carrousel1 figure {
+	width: 100%;
+	height: 120px;
+	border: 1px solid #3b444b;
+	overflow: hidden;
+	position: absolute;
+}
 
 .content-carrousel figure:nth-child(1) {
 	transform: rotateY(0deg) translateZ(300px);
 } .content-carrousel figure:nth-child(2) {
-	transform: rotateY(36deg) translateZ(300px);
+	transform: rotateY(32.73deg) translateZ(300px);
 } .content-carrousel figure:nth-child(3) {
-	transform: rotateY(72deg) translateZ(300px);
+	transform: rotateY(65.45deg) translateZ(300px);
 } .content-carrousel figure:nth-child(4) {
-	transform: rotateY(108deg) translateZ(300px);
+	transform: rotateY(98.18deg) translateZ(300px);
 } .content-carrousel figure:nth-child(5) {
-	transform: rotateY(144deg) translateZ(300px);
+	transform: rotateY(130.91deg) translateZ(300px);
 } .content-carrousel figure:nth-child(6) {
-	transform: rotateY(180deg) translateZ(300px);
+	transform: rotateY(163.64deg) translateZ(300px);
 } .content-carrousel figure:nth-child(7) {
-	transform: rotateY(216deg) translateZ(300px);
+	transform: rotateY(196.37deg) translateZ(300px);
 } .content-carrousel figure:nth-child(8) {
-	transform: rotateY(252deg) translateZ(300px);
+	transform: rotateY(229.11deg) translateZ(300px);
 } .content-carrousel figure:nth-child(9) {
-	transform: rotateY(288deg) translateZ(300px);
+	transform: rotateY(261.84deg) translateZ(300px);
 } .content-carrousel figure:nth-child(10) {
-	transform: rotateY(324deg) translateZ(300px);
+	transform: rotateY(294.57deg) translateZ(300px);
 }.content-carrousel figure:nth-child(11) {
+	transform: rotateY(330.29deg) translateZ(300px);
+}.content-carrousel figure:nth-child(12) {
 	transform: rotateY(360deg) translateZ(300px);
 }
-
+.content-carrousel1 figure:nth-child(1) {
+	transform: rotateY(0deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(2) {
+	transform: rotateY(36deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(3) {
+	transform: rotateY(72deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(4) {
+	transform: rotateY(108deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(5) {
+	transform: rotateY(144deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(6) {
+	transform: rotateY(180deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(7) {
+	transform: rotateY(216deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(8) {
+	transform: rotateY(252deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(9) {
+	transform: rotateY(288deg) translateZ(300px);
+} .content-carrousel1 figure:nth-child(10) {
+	transform: rotateY(324deg) translateZ(300px);
+}.content-carrousel1 figure:nth-child(11) {
+	transform: rotateY(360deg) translateZ(300px);
+}
 .shadow {
     position: absolute;
     box-shadow: 0px 0px 20px 0px #000;
@@ -126,12 +171,30 @@ html, body {
 	transform: scale(1.2);
 	transition: all 300ms;
 }
+.content-carrousel1 img {
+	image-rendering: auto;
+	transition: all 300ms;
+	width: 100%;
+	height: 100%;
+}
+
+.content-carrousel1 img:hover {
+	transform: scale(1.2);
+	transition: all 300ms;
+}
 
 @keyframes rotar {
 	from {
 		transform: rotateY(0deg);
 	} to {
 		transform: rotateY(360deg);
+	}
+}
+@keyframes rotar1 {
+	from {
+		transform: rotateY(0deg);
+	} to {
+		transform: rotateY(-360deg);
 	}
 }
 @font-face {
@@ -171,8 +234,8 @@ html, body {
 			<div class="entire-content">
 				<div class="content-carrousel">
 
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/11.jpg' %}"/></figure>
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/1.jpg' %}"/></figure>
-					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/2.jpg' %}"/></figure>
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/3.jpg' %}"/></figure>
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/4.jpg' %}"/></figure>
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/5.jpg' %}"/></figure>
@@ -180,8 +243,21 @@ html, body {
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/7.jpg' %}"/></figure>
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/8.jpg' %}"/></figure>
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/9.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/2.jpg' %}"/></figure>
 					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/10.jpg' %}"/></figure>
-					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/11.jpg' %}"/></figure>
+		</div>
+				<div class="content-carrousel1" style="  top: -77%;">
+
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/21.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/13.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/14.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/15.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/16.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/17.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/18.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/19.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/20.jpg' %}"/></figure>
+					<figure class="shadow"><img src="{% static 'Assets/Images/sponsors/12.jpg' %}"/></figure>
 		</div>
 	</div>
 </section>
