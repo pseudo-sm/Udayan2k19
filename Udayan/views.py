@@ -278,7 +278,27 @@ def demo(request):
 
 def feed(request):
 
+    days = []
+    titles = []
+    all_feed = dict(db.child("feed").get().val())
+    for day in all_feed:
+        days.append(day)
+        item_titles = []
+        for item in all_feed[day]:
+            pass
     return render(request,"feed.html")
+
+def add_feed(request):
+
+    files = request.FILES
+    image = files["image"]
+    day = request.POST.get("day")
+    title = request.POST.get("title")
+    description = request.POST.get("description")
+    db.child("feed").child(day).child(str(image)).update({"title":title,"description":description})
+    storage.child("feed").child(day).child(image)
+    return HttpResponseRedirect('/feed-admin/')
+
 def sponsorship(request):
 
 
@@ -323,6 +343,11 @@ def sponsorship(request):
 
     return render(request,"sponsorship.html")
 
+def feed_admin(request):
+
+    print("sasasasd")
+    return render(request,"feed_admin.html")
+
 
 
 def events_api(request):
@@ -364,3 +389,4 @@ def events_api(request):
 
     response.update({branch:tempresp})
     return JsonResponse(response,safe=False)
+
