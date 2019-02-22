@@ -504,14 +504,15 @@ h3 {
    <div class="heading">
         <div id="wrapper"></div>
    </div>
-<!--<div class="gallery">-->
-  <!--<figure class="photo">-->
+<div class="gallery">
+    {% for title,item_desc,image in day1 %}
+  <figure class="photo">
+    <img src ="{{image}}" alt="Hippo" />
+    <figcaption>{{title}}</figcaption>
+  </figure>
+    {% endfor %}
 
-    <!--<img src ="http://lorempixel.com/300/300/animals/1" alt="Hippo" />-->
-    <!--<figcaption>Heinrich</figcaption>-->
-  <!--</figure>-->
-
-<!--</div>-->
+</div>
 <div class="container">
   <h3>COMING SOON</h3>
   <div class="bar">

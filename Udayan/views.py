@@ -278,15 +278,22 @@ def demo(request):
 
 def feed(request):
 
-    days = []
-    titles = []
+    auth.sign_in_with_email_and_password("admin@gmail.com","password")
+    user = auth.current_user
+
     all_feed = dict(db.child("feed").get().val())
-    for day in all_feed:
-        days.append(day)
-        item_titles = []
-        for item in all_feed[day]:
-            pass
-    return render(request,"feed.html")
+
+    item_titles = []
+    images_temp = []
+    item_desc = []
+    for item in all_feed["Day 1"]:
+        images_temp.append(storage.child("feed").child("Day 1").child(item).get_url(user["idToken"]))
+        item_titles.append(all_feed["Day 1"][item]["title"])
+        item_desc.append(all_feed["Day 1"][item]["description"])
+
+    context = zip(item_titles,item_desc,images_temp)
+    print(context)
+    return render(request,"feed.html",{"day1":context})
 
 def add_feed(request):
 
@@ -295,8 +302,11 @@ def add_feed(request):
     day = request.POST.get("day")
     title = request.POST.get("title")
     description = request.POST.get("description")
-    db.child("feed").child(day).child(str(image)).update({"title":title,"description":description})
-    storage.child("feed").child(day).child(image)
+    i = db.child("feed").child("count").get().val()
+    i+=1
+    db.child("feed").child(day).child(str(i)+'s').update({"title":title,"description":description})
+    db.child("feed").update({"count":i})
+    storage.child("feed").child(day).child(str(i)+'s').put(image)
     return HttpResponseRedirect('/feed-admin/')
 
 def sponsorship(request):
