@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="923be985-5e7b-484b-86c5-50ff46f5ec9d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/templates/feed.html" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/templates/feed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Udayan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Udayan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,12 +14,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Udayan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="313" column="74" selection-start-line="313" selection-start-column="74" selection-end-line="313" selection-end-column="74" />
+            <state relative-caret-position="261">
+              <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
               </folding>
@@ -29,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+            <state relative-caret-position="-245">
+              <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -80,13 +81,13 @@
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/Udayan/tests.py" />
         <option value="$PROJECT_DIR$/Udayan/test.py" />
-        <option value="$PROJECT_DIR$/Udayan/urls.py" />
         <option value="$PROJECT_DIR$/Udayan/templates/sponsors.html" />
         <option value="$PROJECT_DIR$/Udayan/templates/sponsorship.html" />
         <option value="$PROJECT_DIR$/Udayan/templates/demo/demo.html" />
         <option value="$PROJECT_DIR$/Udayan/templates/index3.html" />
-        <option value="$PROJECT_DIR$/Udayan/views.py" />
         <option value="$PROJECT_DIR$/Udayan/templates/feed.html" />
+        <option value="$PROJECT_DIR$/Udayan/views.py" />
+        <option value="$PROJECT_DIR$/Udayan/urls.py" />
       </list>
     </option>
   </component>
@@ -285,9 +286,10 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Educational.CheckDetails" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32866043" />
@@ -296,7 +298,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49966952" weight="0.32905984" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49107733" weight="0.36604363" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49107733" visible="true" weight="0.36604363" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5089227" side_tool="true" weight="0.32763532" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49834764" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -340,7 +342,8 @@
     <MESSAGE value="addded" />
     <MESSAGE value="admin feed ready (almost)" />
     <MESSAGE value="Feed Fetch added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feed Fetch added" />
+    <MESSAGE value="3 Day feed Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 Day feed Update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/faculty/154.JPG">
@@ -522,13 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/templates/feed.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -536,10 +532,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Udayan/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-245">
+          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="313" column="74" selection-start-line="313" selection-start-column="74" selection-end-line="313" selection-end-column="74" />
+        <state relative-caret-position="261">
+          <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>
