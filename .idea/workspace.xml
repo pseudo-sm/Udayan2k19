@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="923be985-5e7b-484b-86c5-50ff46f5ec9d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Udayan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Udayan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Udayan/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +15,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Udayan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="-1309">
               <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
@@ -86,8 +83,8 @@
         <option value="$PROJECT_DIR$/Udayan/templates/demo/demo.html" />
         <option value="$PROJECT_DIR$/Udayan/templates/index3.html" />
         <option value="$PROJECT_DIR$/Udayan/templates/feed.html" />
-        <option value="$PROJECT_DIR$/Udayan/views.py" />
         <option value="$PROJECT_DIR$/Udayan/urls.py" />
+        <option value="$PROJECT_DIR$/Udayan/views.py" />
       </list>
     </option>
   </component>
@@ -343,7 +340,8 @@
     <MESSAGE value="admin feed ready (almost)" />
     <MESSAGE value="Feed Fetch added" />
     <MESSAGE value="3 Day feed Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 Day feed Update" />
+    <MESSAGE value="3 Day feed Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 Day feed Updated" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Udayan/static/Assets/Images/Committee/faculty/154.JPG">
@@ -541,7 +539,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Udayan/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
+        <state relative-caret-position="-1309">
           <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />

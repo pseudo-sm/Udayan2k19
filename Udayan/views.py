@@ -315,8 +315,6 @@ def feed(request):
 
 def add_feed(request):
 
-
-
     files = request.FILES
     image = files["image"]
     day = request.POST.get("day")
