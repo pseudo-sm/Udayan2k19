@@ -512,12 +512,26 @@ h3 {
   </figure>
     {% endfor %}
 
+    {% for title,item_desc,image in day2 %}
+  <figure class="photo">
+    <img src ="{{image}}" alt="Hippo" />
+    <figcaption>{{title}}</figcaption>
+  </figure>
+    {% endfor %}
+
+    {% for title,item_desc,image in day3 %}
+  <figure class="photo">
+    <img src ="{{image}}" alt="Hippo" />
+    <figcaption>{{title}}</figcaption>
+  </figure>
+    {% endfor %}
+
 </div>
-<div class="container">
-  <h3>COMING SOON</h3>
-  <div class="bar">
-    <div class="progress"></div>
-  </div>
-</div>
+<!--<div class="container">-->
+  <!--<h3>COMING SOON</h3>-->
+  <!--<div class="bar">-->
+    <!--<div class="progress"></div>-->
+  <!--</div>-->
+<!--</div>-->
 </body>
 </html>

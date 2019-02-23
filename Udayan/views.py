@@ -286,14 +286,32 @@ def feed(request):
     item_titles = []
     images_temp = []
     item_desc = []
+
+    item_titles2 = []
+    images_temp2 = []
+    item_desc2 = []
+
+    item_titles3 = []
+    images_temp3 = []
+    item_desc3 = []
+
     for item in all_feed["Day 1"]:
         images_temp.append(storage.child("feed").child("Day 1").child(item).get_url(user["idToken"]))
         item_titles.append(all_feed["Day 1"][item]["title"])
         item_desc.append(all_feed["Day 1"][item]["description"])
+    for item in all_feed["Day 2"]:
+        images_temp2.append(storage.child("feed").child("Day 1").child(item).get_url(user["idToken"]))
+        item_titles2.append(all_feed["Day 1"][item]["title"])
+        item_desc2.append(all_feed["Day 1"][item]["description"])
+    for item in all_feed["Day 3"]:
+        images_temp3.append(storage.child("feed").child("Day 1").child(item).get_url(user["idToken"]))
+        item_titles3.append(all_feed["Day 1"][item]["title"])
+        item_desc3.append(all_feed["Day 1"][item]["description"])
 
-    context = zip(item_titles,item_desc,images_temp)
-    print(context)
-    return render(request,"feed.html",{"day1":context})
+    day1 = zip(item_titles,item_desc,images_temp)
+    day2 = zip(item_titles2,item_desc2,images_temp2)
+    day3 = zip(item_titles3,item_desc3,images_temp3)
+    return render(request,"feed.html",{"day1":day1,"day2":day2,"day3":day3})
 
 def add_feed(request):
 
